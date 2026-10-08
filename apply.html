@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apply | Vaal Accommodation Network</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        header {
+            background: #12345b;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #f1d48a;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-card h2 {
+            color: #12345b;
+            margin-bottom: 8px;
+        }
+
+        .intro {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #a87800;
+        }
+
+        .section h3 {
+            color: #12345b;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 18px;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #12345b;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            background: #12345b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #a87800;
+        }
+
+        #status {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #12345b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .form-card {
+                padding: 25px 20px;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>VAAL ACCOMMODATION NETWORK</h1>
+        <p>Student Accommodation for 2027</p>
+    </header>
+
+    <div class="container">
+
+        <div class="form-card">
+
+            <h2>Accommodation Application</h2>
+
+            <p class="intro">
+                Complete the form below to apply for student accommodation.
+            </p>
+
+            <form id="applicationForm">
+
+                <div class="section">
+                    <h3>Accommodation Selection</h3>
+                </div>
+
+                <label for="property">Property</label>
+
+                <select id="property" name="property" required>
+                    <option value="">Select a property</option>
+                    <option value="BW-01">BW-01</option>
+                    <option value="SW-01">SW-01</option>
+                    <option value="SW-02">SW-02</option>
+                </select>
+
+
+                <label for="roomOption">Room / Option</label>
+
+                <select id="roomOption" name="roomOption" required>
+                    <option value="">Select a room option</option>
+                    <option value="Option A">Option A</option>
+                    <option value="Option B">Option B</option>
+                    <option value="Option C">Option C</option>
+                </select>
+
+
+                <div class="section">
+                    <h3>Applicant Details</h3>
+                </div>
+
+                <label for="name">Initials & Surname</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your initials and surname"
+                    required
+                >
+
+
+                <label for="whatsapp">WhatsApp Number</label>
+
+                <input
+                    type="tel"
+                    id="whatsapp"
+                    name="whatsapp"
+                    placeholder="Enter your WhatsApp number"
+                    required
+                >
+
+
+                <label for="studentNumber">Student Number</label>
+
+                <input
+                    type="text"
+                    id="studentNumber"
+                    name="studentNumber"
+                    placeholder="Enter your student number"
+                    required
+                >
+
+
+                <div class="section">
+                    <h3>Funding Information</h3>
+                </div>
+
+                <label for="funding">Funding Type</label>
+
+                <select id="funding" name="funding" required>
+                    <option value="">Select funding type</option>
+                    <option value="NSFAS">NSFAS</option>
+                    <option value="Private Bursary">Private Bursary</option>
+                    <option value="Self-Funded">Self-Funded</option>
+                </select>
+
+
+                <div class="section">
+                    <h3>Additional Information</h3>
+                </div>
+
+                <label for="message">Message</label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Enter any additional information"
+                ></textarea>
+
+
+                <button type="submit">
+                    SUBMIT APPLICATION
+                </button>
+
+                <p id="status"></p>
+
+            </form>
+
+            <a href="index.html" class="back">
+                ← Back to Accommodation
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const form = document.getElementById("applicationForm");
+
+        const status = document.getElementById("status");
+
+        const scriptURL =
+            "https://script.google.com/macros/s/AKfycbxHFNCmW6higbBhUCYCaTh6a-EQ6OKouaOkjlej94btcdfrFrC53uHrm_nMyT6x82QR/exec";
+
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            status.textContent = "Submitting application...";
+
+            fetch(scriptURL, {
+                method: "POST",
+                mode: "no-cors",
+                body: new URLSearchParams(formData)
+            })
+            .then(function() {
+
+                status.textContent =
+                    "Application submitted successfully.";
+
+                form.reset();
+
+            })
+            .catch(function() {
+
+                status.textContent =
+                    "There was a problem submitting your application.";
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
