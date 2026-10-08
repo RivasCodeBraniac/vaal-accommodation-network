@@ -54,11 +54,13 @@
             display: flex;
             align-items: center;
             gap: 13px;
+            min-width: 0;
         }
 
         .brand-icon {
             width: 46px;
             height: 46px;
+            flex-shrink: 0;
             border-radius: 10px;
             background: var(--gold);
             color: var(--navy);
@@ -82,11 +84,45 @@
             font-size: 12px;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .header-label {
             font-size: 12px;
             color: #f3d783;
             letter-spacing: 1px;
             text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .home-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 10px 17px;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .home-button:hover {
+            background: #f0ca62;
+            transform: translateY(-1px);
+        }
+
+        .home-button:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 3px;
         }
 
         /* Page layout */
@@ -169,6 +205,7 @@
         .required-note {
             font-size: 12px;
             color: var(--muted);
+            white-space: nowrap;
         }
 
         .required-star {
@@ -260,7 +297,7 @@
             font-weight: 800;
         }
 
-        button {
+        .submit-button {
             width: 100%;
             min-height: 51px;
             padding: 14px 20px;
@@ -275,15 +312,15 @@
             transition: background 0.2s, transform 0.2s;
         }
 
-        button:hover {
+        .submit-button:hover {
             background: var(--navy-light);
         }
 
-        button:active {
+        .submit-button:active {
             transform: translateY(1px);
         }
 
-        button:disabled {
+        .submit-button:disabled {
             opacity: 0.65;
             cursor: not-allowed;
         }
@@ -429,25 +466,39 @@
 
         @media (max-width: 560px) {
             .topbar-inner {
-                padding: 15px 18px;
+                padding: 15px 14px;
+                gap: 10px;
+            }
+
+            .brand {
+                gap: 9px;
+            }
+
+            .brand-name {
+                font-size: 13px;
+            }
+
+            .brand-caption {
+                font-size: 10px;
+            }
+
+            .brand-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 20px;
+            }
+
+            .header-actions {
+                gap: 0;
             }
 
             .header-label {
                 display: none;
             }
 
-            .brand-name {
-                font-size: 15px;
-            }
-
-            .brand-caption {
-                font-size: 11px;
-            }
-
-            .brand-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 22px;
+            .home-button {
+                padding: 9px 11px;
+                font-size: 12px;
             }
 
             .page {
@@ -498,6 +549,7 @@
 
 <header class="topbar">
     <div class="topbar-inner">
+
         <div class="brand">
             <div class="brand-icon">V</div>
 
@@ -507,7 +559,15 @@
             </div>
         </div>
 
-        <div class="header-label">2027 Applications</div>
+        <div class="header-actions">
+            <div class="header-label">2027 Applications</div>
+
+            <a href="index.html" class="home-button">
+                <span aria-hidden="true">&#8962;</span>
+                Home
+            </a>
+        </div>
+
     </div>
 </header>
 
@@ -520,8 +580,8 @@
 
         <p>
             Complete the application form below to register your interest
-            in one of our student accommodations. Please ensure your information is
-            accurate before submitting.
+            in one of our student accommodations. Please ensure your
+            information is accurate before submitting.
         </p>
     </section>
 
@@ -544,13 +604,16 @@
                 target="submissionFrame"
             >
 
-                <h3 class="section-title">01 &nbsp; Personal Information</h3>
+                <h3 class="section-title">
+                    01 &nbsp; Personal Information
+                </h3>
 
                 <div class="form-grid">
 
                     <div class="field full-width">
                         <label for="name">
-                            Initials and Surname <span class="required-star">*</span>
+                            Initials and Surname
+                            <span class="required-star">*</span>
                         </label>
 
                         <input
@@ -565,7 +628,8 @@
 
                     <div class="field">
                         <label for="phone">
-                            WhatsApp Phone Number <span class="required-star">*</span>
+                            WhatsApp Phone Number
+                            <span class="required-star">*</span>
                         </label>
 
                         <input
@@ -580,7 +644,8 @@
 
                     <div class="field">
                         <label for="gender">
-                            Gender <span class="required-star">*</span>
+                            Gender
+                            <span class="required-star">*</span>
                         </label>
 
                         <select id="gender" name="gender" required>
@@ -592,13 +657,16 @@
 
                 </div>
 
-                <h3 class="section-title">02 &nbsp; Study Information</h3>
+                <h3 class="section-title">
+                    02 &nbsp; Study Information
+                </h3>
 
                 <div class="form-grid">
 
                     <div class="field full-width">
                         <label for="year">
-                            Year of Study in 2027 <span class="required-star">*</span>
+                            Year of Study in 2027
+                            <span class="required-star">*</span>
                         </label>
 
                         <select id="year" name="year" required>
@@ -609,19 +677,21 @@
                             <option value="4th Year">4th Year</option>
                             <option value="5th Year">5th Year</option>
                             <option value="Postgraduate">Postgraduate</option>
-                            
                         </select>
                     </div>
 
                 </div>
 
-                <h3 class="section-title">03 &nbsp; Accommodation Preferences</h3>
+                <h3 class="section-title">
+                    03 &nbsp; Accommodation Preferences
+                </h3>
 
                 <div class="form-grid">
 
                     <div class="field">
                         <label for="accommodation">
-                            Accommodation Option <span class="required-star">*</span>
+                            Accommodation Option
+                            <span class="required-star">*</span>
                         </label>
 
                         <select id="accommodation" name="accommodation" required>
@@ -634,7 +704,8 @@
 
                     <div class="field">
                         <label for="funding">
-                            Funding Type <span class="required-star">*</span>
+                            Funding Type
+                            <span class="required-star">*</span>
                         </label>
 
                         <select id="funding" name="funding" required>
@@ -659,7 +730,11 @@
                         </span>
                     </div>
 
-                    <button type="submit" id="submitButton">
+                    <button
+                        type="submit"
+                        id="submitButton"
+                        class="submit-button"
+                    >
                         Submit Application &nbsp; &#8594;
                     </button>
 
@@ -694,7 +769,9 @@
                     <div class="step-number">1</div>
                     <div>
                         <strong>Enter your details</strong>
-                        <span>Provide your personal and study information.</span>
+                        <span>
+                            Provide your personal and study information.
+                        </span>
                     </div>
                 </div>
 
@@ -702,7 +779,9 @@
                     <div class="step-number">2</div>
                     <div>
                         <strong>Choose your option</strong>
-                        <span>Select your preferred accommodation and funding type.</span>
+                        <span>
+                            Select your preferred accommodation and funding type.
+                        </span>
                     </div>
                 </div>
 
@@ -710,7 +789,9 @@
                     <div class="step-number">3</div>
                     <div>
                         <strong>Submit your application</strong>
-                        <span>Check that your information is correct before sending.</span>
+                        <span>
+                            Check that your information is correct before sending.
+                        </span>
                     </div>
                 </div>
             </section>
@@ -720,14 +801,14 @@
 
                 <p>
                     Make sure your name is correct and your WhatsApp number
-                    is active.
+                    is active so the accommodation team can contact you.
                 </p>
 
                 <div class="side-divider"></div>
 
                 <p>
                     Choose the correct accommodation code from the available
-                    options
+                    options: BW-01, SW-01 or SW-02.
                 </p>
             </section>
 
@@ -813,3 +894,4 @@
 
 </body>
 </html>
+
