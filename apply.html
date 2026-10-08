@@ -271,40 +271,35 @@
     <script>
 
 const form = document.getElementById("applicationForm");
-
 const status = document.getElementById("status");
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbxHFNCmW6higbBhUCYCaTh6a-EQ6OKouaOkjlej94btcdfrFrC53uHrm_nMyT6x82QR/exec";
-
 
 form.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
-    const formData = new FormData(form);
-
     status.textContent = "Submitting application...";
 
+    const formData = new FormData(form);
 
     fetch(scriptURL, {
         method: "POST",
-        body: new URLSearchParams(formData)
+        mode: "no-cors",
+        body: formData
     })
-
-    .then(function(response) {
+    .then(function() {
 
         status.textContent = "Application submitted successfully.";
 
         form.reset();
 
     })
-
     .catch(function(error) {
 
-        console.error(error);
+        status.textContent = "There was a problem submitting your application.";
 
-        status.textContent =
-            "There was a problem submitting your application.";
+        console.log(error);
 
     });
 
