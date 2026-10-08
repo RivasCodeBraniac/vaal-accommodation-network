@@ -6,37 +6,39 @@
 
     <title>Apply | Vaal Accommodation Network</title>
 
+    <meta name="description" content="Apply for student accommodation with Vaal Accommodation Network for 2027.">
+
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
             background: #f5f7fa;
             color: #12345b;
         }
 
-        .header {
+        header {
             background: #12345b;
             color: white;
-            padding: 25px;
+            padding: 25px 20px;
             text-align: center;
         }
 
-        .header h1 {
-            margin: 0;
+        header h1 {
             font-size: 28px;
+            margin-bottom: 8px;
         }
 
-        .header p {
-            margin: 8px 0 0;
-            color: #e0b84f;
+        header p {
+            color: #f1f1f1;
         }
 
         .container {
-            max-width: 650px;
+            max-width: 700px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -45,33 +47,39 @@
             background: white;
             padding: 35px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
         .form-box h2 {
-            margin-top: 0;
             margin-bottom: 10px;
+            color: #12345b;
         }
 
         .intro {
-            color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
             font-weight: bold;
+            margin-bottom: 8px;
+            color: #12345b;
         }
 
         input,
         select {
             width: 100%;
             padding: 13px;
-            margin-bottom: 22px;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 7px;
             font-size: 15px;
+            background: white;
         }
 
         input:focus,
@@ -82,59 +90,87 @@
 
         button {
             width: 100%;
-            padding: 14px;
+            padding: 15px;
+            border: none;
+            border-radius: 7px;
             background: #a87800;
             color: white;
-            border: none;
-            border-radius: 6px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
         }
 
         button:hover {
-            background: #8f6800;
+            background: #8f6700;
         }
 
         #status {
-            text-align: center;
             margin-top: 20px;
+            text-align: center;
             font-weight: bold;
+            color: #12345b;
         }
 
-        .back {
+        .back-link {
+            display: block;
             text-align: center;
             margin-top: 20px;
-        }
-
-        .back a {
             color: #12345b;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #12345b;
+            color: white;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .form-box {
+                padding: 25px 20px;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="header">
-        <h1>VAAL ACCOMMODATION NETWORK</h1>
-        <p>Student Accommodation for 2027</p>
-    </div>
+<header>
+    <h1>VAAL ACCOMMODATION NETWORK</h1>
+    <p>Student Accommodation for 2027</p>
+</header>
 
-    <div class="container">
 
-        <div class="form-box">
+<div class="container">
 
-            <h2>Accommodation Application</h2>
+    <div class="form-box">
 
-            <p class="intro">
-                Complete the form below to apply for student accommodation.
-            </p>
+        <h2>Accommodation Application</h2>
 
-            <form id="applicationForm">
+        <p class="intro">
+            Complete the form below to apply for student accommodation for 2027.
+            Please make sure that all information is correct.
+        </p>
 
+
+        <form id="applicationForm">
+
+            <!-- Initials and Surname -->
+            <div class="form-group">
                 <label for="name">Initials and Surname</label>
+
                 <input
                     type="text"
                     id="name"
@@ -142,8 +178,13 @@
                     placeholder="Enter your initials and surname"
                     required
                 >
+            </div>
 
+
+            <!-- WhatsApp Number -->
+            <div class="form-group">
                 <label for="whatsapp">WhatsApp Phone Number</label>
+
                 <input
                     type="tel"
                     id="whatsapp"
@@ -151,8 +192,13 @@
                     placeholder="e.g. 0712345678"
                     required
                 >
+            </div>
 
+
+            <!-- Accommodation -->
+            <div class="form-group">
                 <label for="accommodation">Accommodation Option</label>
+
                 <select
                     id="accommodation"
                     name="accommodation"
@@ -163,8 +209,13 @@
                     <option value="SW-01">SW-01</option>
                     <option value="SW-02">SW-02</option>
                 </select>
+            </div>
 
+
+            <!-- Funding -->
+            <div class="form-group">
                 <label for="funding">Funding Type</label>
+
                 <select
                     id="funding"
                     name="funding"
@@ -175,8 +226,13 @@
                     <option value="Private Bursary">Private Bursary</option>
                     <option value="Self-Funded">Self-Funded</option>
                 </select>
+            </div>
 
+
+            <!-- Gender -->
+            <div class="form-group">
                 <label for="gender">Gender</label>
+
                 <select
                     id="gender"
                     name="gender"
@@ -186,8 +242,13 @@
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
                 </select>
+            </div>
 
+
+            <!-- Year of Study -->
+            <div class="form-group">
                 <label for="year">Year of Study in 2027</label>
+
                 <select
                     id="year"
                     name="year"
@@ -201,59 +262,71 @@
                     <option value="5th Year">5th Year</option>
                     <option value="Postgraduate">Postgraduate</option>
                 </select>
+            </div>
 
-                <button type="submit">
-                    SUBMIT APPLICATION
-                </button>
 
-            </form>
+            <button type="submit">
+                SUBMIT APPLICATION
+            </button>
 
             <p id="status"></p>
 
-        </div>
+        </form>
 
-        <div class="back">
-            <a href="index.html">← Back to Accommodation</a>
-        </div>
+        <a href="index.html" class="back-link">
+            ← Back to Accommodation
+        </a>
 
     </div>
 
-    <script>
+</div>
 
-        const scriptURL = "https://script.google.com/macros/s/AKfycbzJDgSz1PpeiP3tE6jLrNuMvdz8gQi0KNe_DQmjkuyWv9o_K1EB5SmnKl0M38q_IZg4/exec";
-        const form = document.getElementById("applicationForm");
-        const status = document.getElementById("status");
 
-        form.addEventListener("submit", function(event) {
+<footer>
+    © 2026 VaalAccommodationNetwork. All Rights Reserved.
+</footer>
 
-            event.preventDefault();
 
-            status.textContent = "Submitting application...";
+<script>
 
-            const formData = new FormData(form);
+const scriptURL = "https://script.google.com/macros/s/AKfycbzJDgSz1PpeiP3tE6jLrNuMvdz8gQi0KNe_DQmjkuyWv9o_K1EB5SmnKl0M38q_IZg4/exec";
 
-            fetch(scriptURL, {
-                method: "POST",
-                mode: "no-cors",
-                body: new URLSearchParams(formData)
-            })
-            .then(function() {
+const form = document.getElementById("applicationForm");
+const status = document.getElementById("status");
 
-                status.textContent = "Application submitted successfully.";
 
-                form.reset();
+form.addEventListener("submit", function(event) {
 
-            })
-            .catch(function() {
+    event.preventDefault();
 
-                status.textContent =
-                    "There was a problem submitting your application.";
+    status.textContent = "Submitting application...";
 
-            });
+    const formData = new FormData(form);
 
-        });
+    fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: new URLSearchParams(formData)
+    })
 
-    </script>
+    .then(function() {
+
+        status.textContent = "Application submitted successfully.";
+
+        form.reset();
+
+    })
+
+    .catch(function() {
+
+        status.textContent =
+            "There was a problem submitting your application.";
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
