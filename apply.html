@@ -270,45 +270,47 @@
 
     <script>
 
-        const form = document.getElementById("applicationForm");
+const form = document.getElementById("applicationForm");
 
-        const status = document.getElementById("status");
+const status = document.getElementById("status");
 
-        const scriptURL =
-            "https://script.google.com/macros/s/AKfycbxHFNCmW6higbBhUCYCaTh6a-EQ6OKouaOkjlej94btcdfrFrC53uHrm_nMyT6x82QR/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxHFNCmW6higbBhUCYCaTh6a-EQ6OKouaOkjlej94btcdfrFrC53uHrm_nMyT6x82QR/exec";
 
 
-        form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function(event) {
 
-            event.preventDefault();
+    event.preventDefault();
 
-            const formData = new FormData(form);
+    const formData = new FormData(form);
 
-            status.textContent = "Submitting application...";
+    status.textContent = "Submitting application...";
 
-            fetch(scriptURL, {
-                method: "POST",
-                mode: "no-cors",
-                body: new URLSearchParams(formData)
-            })
-            .then(function() {
 
-                status.textContent =
-                    "Application submitted successfully.";
+    fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+    })
 
-                form.reset();
+    .then(function(response) {
 
-            })
-            .catch(function() {
+        status.textContent = "Application submitted successfully.";
 
-                status.textContent =
-                    "There was a problem submitting your application.";
+        form.reset();
 
-            });
+    })
 
-        });
+    .catch(function(error) {
 
-    </script>
+        console.error(error);
+
+        status.textContent =
+            "There was a problem submitting your application.";
+
+    });
+
+});
+
+</script>
 
 </body>
 
