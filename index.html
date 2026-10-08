@@ -1,815 +1,1000 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="0VyBU_O677xSD36c2hJqSU4DLvtuL_0a2jcIlVUSP7s" />
 
-    <title>Vaal Accommodation Network | Application</title>
+<title>Vaal Accommodation Network | Student Accommodation</title>
 
-    <style>
-        :root {
-            --navy: #102747;
-            --navy-light: #19385e;
-            --gold: #e4b63e;
-            --gold-light: #fff5d8;
-            --background: #f4f6fa;
-            --text: #253247;
-            --muted: #718096;
-            --border: #dfe5ee;
-            --white: #ffffff;
-        }
+<meta name="description" content="Find quality student accommodation for 2027 with Vaal Accommodation Network. Furnished rooms, Wi-Fi, NSFAS options and convenient locations.">
 
-        * {
-            box-sizing: border-box;
-        }
+<meta property="og:title" content="Vaal Accommodation Network | Student Accommodation">
+<meta property="og:description" content="Find quality student accommodation for 2027. Furnished rooms, Wi-Fi, NSFAS options and convenient locations.">
+<meta property="og:url" content="https://vaalaccommodationnetwork.pages.dev/">
+<meta property="og:type" content="website">
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-        /* Header */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+        color: #333;
+    }
 
-        .topbar {
-            background: var(--navy);
-            color: var(--white);
-            border-bottom: 4px solid var(--gold);
-        }
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+</style>
 
-        .topbar-inner {
-            max-width: 1100px;
-            margin: auto;
-            padding: 18px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-        }
-
-        .brand-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 10px;
-            background: var(--gold);
-            color: var(--navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            font-weight: 800;
-        }
-
-        .brand-name {
-            margin: 0;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-        }
-
-        .brand-caption {
-            margin: 2px 0 0;
-            color: #d0d9e6;
-            font-size: 12px;
-        }
-
-        .header-label {
-            font-size: 12px;
-            color: #f3d783;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Page layout */
-
-        .page {
-            max-width: 1100px;
-            margin: 42px auto;
-            padding: 0 24px;
-        }
-
-        .page-heading {
-            max-width: 680px;
-            margin-bottom: 28px;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            color: #8a6710;
-            background: var(--gold-light);
-            border: 1px solid #f0dfa9;
-            border-radius: 30px;
-            padding: 5px 12px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .page-heading h1 {
-            color: var(--navy);
-            font-size: clamp(28px, 4vw, 38px);
-            line-height: 1.2;
-            margin: 15px 0 10px;
-            letter-spacing: -0.8px;
-        }
-
-        .page-heading p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 15px;
-            max-width: 590px;
-        }
-
-        /* Main content */
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 300px;
-            gap: 25px;
-            align-items: start;
-        }
-
-        .form-card,
-        .side-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            box-shadow: 0 8px 28px rgba(16, 39, 71, 0.05);
-        }
-
-        .form-card {
-            overflow: hidden;
-        }
-
-        .card-heading {
-            padding: 23px 28px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-        }
-
-        .card-heading h2 {
-            margin: 0;
-            font-size: 19px;
-            color: var(--navy);
-        }
-
-        .required-note {
-            font-size: 12px;
-            color: var(--muted);
-        }
-
-        .required-star {
-            color: #c24135;
-        }
-
-        form {
-            padding: 28px;
-        }
-
-        .section-title {
-            color: var(--navy);
-            font-size: 14px;
-            font-weight: 700;
-            margin: 0 0 18px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #edf0f5;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 19px 20px;
-            margin-bottom: 29px;
-        }
-
-        .field {
-            min-width: 0;
-        }
-
-        .field.full-width {
-            grid-column: 1 / -1;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 7px;
-            color: #34445a;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        input,
-        select {
-            width: 100%;
-            min-height: 47px;
-            padding: 12px 13px;
-            background: #fff;
-            border: 1px solid #d5dce7;
-            border-radius: 7px;
-            color: var(--text);
-            font-family: inherit;
-            font-size: 14px;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        input::placeholder {
-            color: #a0a9b7;
-        }
-
-        input:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--navy-light);
-            box-shadow: 0 0 0 3px rgba(25, 56, 94, 0.10);
-        }
-
-        select {
-            cursor: pointer;
-        }
-
-        .form-footer {
-            padding-top: 22px;
-            border-top: 1px solid var(--border);
-        }
-
-        .privacy-note {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .privacy-symbol {
-            color: var(--navy-light);
-            font-weight: 800;
-        }
-
-        button {
-            width: 100%;
-            min-height: 51px;
-            padding: 14px 20px;
-            background: var(--navy);
-            color: var(--white);
-            border: none;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 700;
-            font-family: inherit;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
-        }
-
-        button:hover {
-            background: var(--navy-light);
-        }
-
-        button:active {
-            transform: translateY(1px);
-        }
-
-        button:disabled {
-            opacity: 0.65;
-            cursor: not-allowed;
-        }
-
-        #successMessage,
-        #errorMessage {
-            display: none;
-            padding: 14px 16px;
-            margin-top: 18px;
-            border-radius: 7px;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        #successMessage {
-            color: #176334;
-            background: #eaf7ee;
-            border: 1px solid #c9e8d2;
-        }
-
-        #errorMessage {
-            color: #9b2c23;
-            background: #fff0ed;
-            border: 1px solid #f2d0ca;
-        }
-
-        /* Information sidebar */
-
-        .side-card {
-            padding: 23px;
-            margin-bottom: 18px;
-        }
-
-        .side-card h3 {
-            margin: 0 0 12px;
-            color: var(--navy);
-            font-size: 16px;
-        }
-
-        .side-card p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.7;
-        }
-
-        .side-divider {
-            height: 1px;
-            background: var(--border);
-            margin: 18px 0;
-        }
-
-        .step {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-            margin-top: 18px;
-        }
-
-        .step-number {
-            flex-shrink: 0;
-            width: 29px;
-            height: 29px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: var(--gold-light);
-            color: #77580a;
-            font-size: 12px;
-            font-weight: 800;
-        }
-
-        .step strong {
-            display: block;
-            color: var(--text);
-            font-size: 13px;
-            margin-bottom: 2px;
-        }
-
-        .step span {
-            display: block;
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        .notice-card {
-            background: var(--navy);
-            border-color: var(--navy);
-        }
-
-        .notice-card h3 {
-            color: var(--white);
-        }
-
-        .notice-card p {
-            color: #d3dce8;
-        }
-
-        .notice-accent {
-            width: 38px;
-            height: 3px;
-            background: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        /* Footer */
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 22px 20px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        footer strong {
-            color: var(--navy);
-        }
-
-        /* Responsive layout */
-
-        @media (max-width: 850px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 18px;
-            }
-
-            .side-card {
-                margin-bottom: 0;
-            }
-
-            .notice-card {
-                grid-column: 1 / -1;
-            }
-        }
-
-        @media (max-width: 560px) {
-            .topbar-inner {
-                padding: 15px 18px;
-            }
-
-            .header-label {
-                display: none;
-            }
-
-            .brand-name {
-                font-size: 15px;
-            }
-
-            .brand-caption {
-                font-size: 11px;
-            }
-
-            .brand-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 22px;
-            }
-
-            .page {
-                margin: 28px auto;
-                padding: 0 14px;
-            }
-
-            .page-heading h1 {
-                font-size: 29px;
-            }
-
-            .page-heading p {
-                font-size: 14px;
-            }
-
-            .card-heading {
-                padding: 20px;
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            form {
-                padding: 20px;
-            }
-
-            .form-grid {
-                grid-template-columns: 1fr;
-                gap: 17px;
-            }
-
-            .field.full-width {
-                grid-column: auto;
-            }
-
-            .sidebar {
-                grid-template-columns: 1fr;
-            }
-
-            .notice-card {
-                grid-column: auto;
-            }
-        }
-    </style>
 </head>
-
 <body>
 
-<header class="topbar">
-    <div class="topbar-inner">
-        <div class="brand">
-            <div class="brand-icon">V</div>
+<div style="
+    font-family:Arial,sans-serif;
+    background:#ffffff;
+    color:#333;
+    width:100%;
+    margin:0;
+    padding:0;
+">
 
-            <div>
-                <p class="brand-name">Vaal Accommodation Network</p>
-                <p class="brand-caption">Student Accommodation Applications</p>
-            </div>
+<!-- =========================
+     HEADER
+========================== -->
+
+<div style="
+    background:#12345b;
+    color:white;
+    padding:22px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+">
+
+    <div>
+        <div style="
+            font-size:22px;
+            font-weight:bold;
+        ">
+            VAAL ACCOMMODATION NETWORK
         </div>
 
-        <div class="header-label">2027 Applications</div>
+        <div style="
+            color:#d9e0e8;
+            font-size:13px;
+            margin-top:4px;
+        ">
+            Student Accommodation for 2027
+        </div>
     </div>
-</header>
 
-<main class="page">
+    <div style="margin-top:10px;">
 
-    <section class="page-heading">
-        <span class="eyebrow">Application Portal</span>
+        <a href="FAQ.html"
+           style="
+               color:white;
+               text-decoration:none;
+               margin:0 8px;
+               font-size:14px;
+           ">
+            FAQ
+        </a>
 
-        <h1>Find your place to stay.</h1>
+        <a href="#apply"
+           style="
+               color:white;
+               text-decoration:none;
+               margin:0 8px;
+               font-size:14px;
+           ">
+            Apply
+        </a>
 
-        <p>
-            Complete the application form below to register your interest
-            in one of our student accommodations. Please ensure your information is
-            accurate before submitting.
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<div style="
+    text-align:center;
+    padding:65px 6%;
+    background:#ffffff;
+">
+
+    <div style="
+        display:inline-block;
+        background:#a87800;
+        color:white;
+        padding:7px 16px;
+        border-radius:20px;
+        font-size:12px;
+        font-weight:bold;
+        margin-bottom:18px;
+    ">
+        2027 STUDENT ACCOMMODATION
+    </div>
+
+    <h1 style="
+        color:#12345b;
+        font-size:38px;
+        margin:0 0 15px;
+        line-height:1.2;
+    ">
+        Find Your Student Home
+    </h1>
+
+    <p style="
+        max-width:650px;
+        margin:0 auto;
+        color:#666;
+        font-size:16px;
+        line-height:1.7;
+    ">
+        Comfortable, furnished student accommodation
+        with options for NSFAS, private bursary and
+        self-funded students.
+    </p>
+
+    <div style="margin-top:28px;">
+
+        <a href="#accommodation"
+           style="
+               display:inline-block;
+               background:#12345b;
+               color:white;
+               padding:13px 25px;
+               border-radius:6px;
+               text-decoration:none;
+               font-weight:bold;
+               font-size:14px;
+               margin:5px;
+           ">
+            VIEW ACCOMMODATION
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     QUICK INFORMATION
+========================== -->
+
+<div style="
+    background:#f3f4f6;
+    padding:25px 6%;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+">
+
+    <div style="
+        background:white;
+        padding:15px 25px;
+        border-radius:8px;
+        text-align:center;
+        min-width:150px;
+    ">
+        <strong style="color:#12345b;">
+            NSFAS
+        </strong>
+
+        <br>
+
+        <span style="
+            font-size:13px;
+            color:#666;
+        ">
+            Accepted
+        </span>
+    </div>
+
+
+    <div style="
+        background:white;
+        padding:15px 25px;
+        border-radius:8px;
+        text-align:center;
+        min-width:150px;
+    ">
+        <strong style="color:#12345b;">
+            PRIVATE BURSARY
+        </strong>
+
+        <br>
+
+        <span style="
+            font-size:13px;
+            color:#666;
+        ">
+            Accepted
+        </span>
+    </div>
+
+
+    <div style="
+        background:white;
+        padding:15px 25px;
+        border-radius:8px;
+        text-align:center;
+        min-width:150px;
+    ">
+        <strong style="color:#12345b;">
+            FURNISHED
+        </strong>
+
+        <br>
+
+        <span style="
+            font-size:13px;
+            color:#666;
+        ">
+            Student Rooms
+        </span>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ACCOMMODATION
+========================== -->
+
+<div id="accommodation"
+     style="
+         padding:55px 6%;
+         background:white;
+     ">
+
+    <div style="
+        text-align:center;
+        margin-bottom:35px;
+    ">
+
+        <h2 style="
+            color:#12345b;
+            font-size:30px;
+            margin:0 0 8px;
+        ">
+            Our Accommodations
+        </h2>
+
+        <p style="
+            color:#666;
+            margin:0;
+        ">
+            Choose the accommodation that suits you.
         </p>
-    </section>
 
-    <div class="content-grid">
+    </div>
 
-        <section class="form-card">
 
-            <div class="card-heading">
-                <h2>Student Application Form</h2>
+    <!-- =========================
+         BW-01 PROPERTY
+    ========================== -->
 
-                <span class="required-note">
-                    <span class="required-star">*</span> Required fields
-                </span>
-            </div>
+    <div style="
+        max-width:900px;
+        margin:0 auto 35px;
+        background:#ffffff;
+        border:1px solid #e1e1e1;
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow:0 4px 15px rgba(0,0,0,0.06);
+    ">
 
-            <form
-                id="applicationForm"
-                action="https://script.google.com/macros/s/AKfycbz5Hh2vX-OJR2f1MjHC-Eok1AUwdtlyjcRRpExVfTSnJ6cTeVEIIKj3f-Rf_RZVv4_m/exec"
-                method="POST"
-                target="submissionFrame"
+        <div style="
+            display:flex;
+            width:100%;
+            gap:3px;
+            background:#ffffff;
+        ">
+
+            <img
+                src="https://i.ibb.co/8gQLSq5X/Whats-App-Image-2026-10-06-at-4-13-30-PM.jpg"
+                alt="BW-01 Student Accommodation"
+                style="
+                    width:50%;
+                    height:330px;
+                    object-fit:cover;
+                    display:block;
+                "
             >
 
-                <h3 class="section-title">01 &nbsp; Personal Information</h3>
+            <img
+                src="https://i.ibb.co/mCxqqcGJ/Whats-App-Image-2026-10-06-at-4-13-29-PM-3.jpg"
+                alt="BW-01 Student Accommodation"
+                style="
+                    width:50%;
+                    height:330px;
+                    object-fit:cover;
+                    display:block;
+                "
+            >
 
-                <div class="form-grid">
+        </div>
 
-                    <div class="field full-width">
-                        <label for="name">
-                            Initials and Surname <span class="required-star">*</span>
-                        </label>
 
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your initials and surname"
-                            autocomplete="name"
-                            required
-                        >
-                    </div>
+        <div style="padding:28px;">
 
-                    <div class="field">
-                        <label for="phone">
-                            WhatsApp Phone Number <span class="required-star">*</span>
-                        </label>
+            <div style="
+                display:inline-block;
+                background:#12345b;
+                color:white;
+                padding:6px 12px;
+                border-radius:4px;
+                font-size:20px;
+                font-weight:bold;
+                margin-bottom:12px;
+            ">
+                BW-01
+            </div>
 
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="e.g. 082 123 4567"
-                            autocomplete="tel"
-                            required
-                        >
-                    </div>
 
-                    <div class="field">
-                        <label for="gender">
-                            Gender <span class="required-star">*</span>
-                        </label>
+            <h3 style="
+                color:#12345b;
+                font-size:25px;
+                margin:0 0 20px;
+            ">
+            </h3>
 
-                        <select id="gender" name="gender" required>
-                            <option value="">Select gender</option>
-                            <option value="Female">Female</option>
-                            <option value="Male">Male</option>
-                        </select>
-                    </div>
 
-                </div>
+            <div style="
+                border-top:1px solid #eeeeee;
+                padding-top:18px;
+            ">
 
-                <h3 class="section-title">02 &nbsp; Study Information</h3>
-
-                <div class="form-grid">
-
-                    <div class="field full-width">
-                        <label for="year">
-                            Year of Study in 2027 <span class="required-star">*</span>
-                        </label>
-
-                        <select id="year" name="year" required>
-                            <option value="">Select your year of study</option>
-                            <option value="1st Year">1st Year</option>
-                            <option value="2nd Year">2nd Year</option>
-                            <option value="3rd Year">3rd Year</option>
-                            <option value="4th Year">4th Year</option>
-                            <option value="5th Year">5th Year</option>
-                            <option value="Postgraduate">Postgraduate</option>
-                            
-                        </select>
-                    </div>
-
-                </div>
-
-                <h3 class="section-title">03 &nbsp; Accommodation Preferences</h3>
-
-                <div class="form-grid">
-
-                    <div class="field">
-                        <label for="accommodation">
-                            Accommodation Option <span class="required-star">*</span>
-                        </label>
-
-                        <select id="accommodation" name="accommodation" required>
-                            <option value="">Choose an option</option>
-                            <option value="BW-01">BW-01</option>
-                            <option value="SW-01">SW-01</option>
-                            <option value="SW-02">SW-02</option>
-                        </select>
-                    </div>
-
-                    <div class="field">
-                        <label for="funding">
-                            Funding Type <span class="required-star">*</span>
-                        </label>
-
-                        <select id="funding" name="funding" required>
-                            <option value="">Select funding type</option>
-                            <option value="NSFAS">NSFAS</option>
-                            <option value="Self-funded">Self-funded</option>
-                            <option value="Bursary">Bursary</option>
-                        </select>
-                    </div>
-
-                </div>
-
-                <div class="form-footer">
-
-                    <div class="privacy-note">
-                        <span class="privacy-symbol">&#10003;</span>
-
-                        <span>
-                            Please review your details before submitting.
-                            Your application records your interest in a
-                            preferred option but does not guarantee a booking.
-                        </span>
-                    </div>
-
-                    <button type="submit" id="submitButton">
-                        Submit Application &nbsp; &#8594;
-                    </button>
-
-                    <div id="successMessage" role="status" aria-live="polite">
-                        Application submitted. Your form has been cleared.
-                        Please note that this message confirms a response
-                        was received, not independently verified storage.
-                    </div>
-
-                    <div id="errorMessage" role="alert">
-                        We could not confirm the submission. Check your
-                        connection and contact the accommodation team before
-                        submitting again.
-                    </div>
-
-                </div>
-
-            </form>
-
-        </section>
-
-        <aside class="sidebar">
-
-            <section class="side-card">
-                <h3>How to Apply</h3>
-
-                <p>
-                    Follow these steps to complete your application.
+                <p style="margin:9px 0;color:#555;line-height:1.6;">
+                    <strong style="color:#12345b;">
+                        📍 Location:
+                    </strong>
+                    Bedworth Park — 24 minutes walk to campus
+                    (transport available)
                 </p>
 
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div>
-                        <strong>Enter your details</strong>
-                        <span>Provide your personal and study information.</span>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div>
-                        <strong>Choose your option</strong>
-                        <span>Select your preferred accommodation and funding type.</span>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div>
-                        <strong>Submit your application</strong>
-                        <span>Check that your information is correct before sending.</span>
-                    </div>
-                </div>
-            </section>
-
-            <section class="side-card">
-                <h3>Before You Submit</h3>
-
-                <p>
-                    Make sure your name is correct and your WhatsApp number
-                    is active.
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        👥 Gender:
+                    </strong>
+                    Any
                 </p>
 
-                <div class="side-divider"></div>
-
-                <p>
-                    Choose the correct accommodation code from the available
-                    options
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        🛏️ Room Type:
+                    </strong>
+                    Singles
                 </p>
-            </section>
 
-            <section class="side-card notice-card">
-                <div class="notice-accent"></div>
-
-                <h3>Important Information</h3>
-
-                <p>
-                    Submitting an application does not automatically confirm
-                    room availability, allocation or booking. Wait for
-                    confirmation from the accommodation team.
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        💰 Self-Funded:
+                    </strong>
+                    R3,500 per month
                 </p>
-            </section>
 
-        </aside>
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        🎓 Funding:
+                    </strong>
+                    NSFAS &amp; Private Bursary Accepted
+                </p>
+
+            </div>
+
+
+            <div style="
+                background:#f3f4f6;
+                padding:18px;
+                border-radius:8px;
+                margin-top:20px;
+            ">
+
+                <strong style="
+                    color:#12345b;
+                    display:block;
+                    margin-bottom:8px;
+                ">
+                    🏠 Amenities
+                </strong>
+
+                <span style="
+                    color:#666;
+                    font-size:14px;
+                    line-height:1.8;
+                ">
+                    Wi-Fi • Furnished Rooms • Swimming Pool •
+                    Kitchen • Laundry • Security •
+                    Water &amp; Electricity
+                </span>
+
+            </div>
+
+
+            <div style="
+                margin-top:25px;
+                display:flex;
+                flex-wrap:wrap;
+                gap:10px;
+            ">
+
+                <a href="apply.html"
+                   target="_blank"
+                   style="
+                       flex:1;
+                       min-width:150px;
+                       text-align:center;
+                       background:#12345b;
+                       color:white;
+                       padding:14px;
+                       border-radius:6px;
+                       text-decoration:none;
+                       font-weight:bold;
+                       font-size:13px;
+                   ">
+                    APPLY / BOOK
+                </a>
+
+
+                <a href="YOUR_BW01_PHOTOS_LINK"
+                   target="_blank"
+                   style="
+                       flex:1;
+                       min-width:150px;
+                       text-align:center;
+                       background:#a87800;
+                       color:white;
+                       padding:14px;
+                       border-radius:6px;
+                       text-decoration:none;
+                       font-weight:bold;
+                       font-size:13px;
+                   ">
+                    VIEW MORE PHOTOS
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
-</main>
 
-<footer>
-    <strong>Vaal Accommodation Network</strong>
-    <br>
-    Student Accommodation Applications &copy; 2027
-</footer>
+    <!-- =========================
+         SW-01 PROPERTY
+    ========================== -->
 
-<iframe
-    name="submissionFrame"
-    id="submissionFrame"
-    title="Application submission response"
-    style="display: none;"
-></iframe>
+    <div style="
+        max-width:900px;
+        margin:0 auto 35px;
+        background:#ffffff;
+        border:1px solid #e1e1e1;
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow:0 4px 15px rgba(0,0,0,0.06);
+    ">
 
-<script>
-    const form = document.getElementById("applicationForm");
-    const submitButton = document.getElementById("submitButton");
-    const successMessage = document.getElementById("successMessage");
-    const errorMessage = document.getElementById("errorMessage");
-    const submissionFrame = document.getElementById("submissionFrame");
+        <!-- SW-01 IMAGE SPACES -->
 
-    let submissionPending = false;
-    let submissionTimer;
+        <div style="
+            display:flex;
+            width:100%;
+            gap:3px;
+            background:#ffffff;
+        ">
 
-    form.addEventListener("submit", function () {
-        submissionPending = true;
+            <div style="
+                width:50%;
+                height:330px;
+                background:#f3f4f6;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:#999;
+                font-size:14px;
+            ">
+                IMAGE 1
+            </div>
 
-        successMessage.style.display = "none";
-        errorMessage.style.display = "none";
+            <div style="
+                width:50%;
+                height:330px;
+                background:#f3f4f6;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:#999;
+                font-size:14px;
+            ">
+                IMAGE 2
+            </div>
 
-        submitButton.disabled = true;
-        submitButton.textContent = "Submitting Application...";
+        </div>
 
-        clearTimeout(submissionTimer);
 
-        submissionTimer = setTimeout(function () {
-            if (submissionPending) {
-                errorMessage.style.display = "block";
+        <div style="padding:28px;">
 
-                submitButton.disabled = false;
-                submitButton.textContent = "Submit Application";
-            }
-        }, 20000);
-    });
+            <div style="
+                display:inline-block;
+                background:#12345b;
+                color:white;
+                padding:6px 12px;
+                border-radius:4px;
+                font-size:20px;
+                font-weight:bold;
+                margin-bottom:12px;
+            ">
+                SW-01
+            </div>
 
-    submissionFrame.addEventListener("load", function () {
-        if (!submissionPending) {
-            return;
-        }
 
-        submissionPending = false;
-        clearTimeout(submissionTimer);
+            <div style="
+                border-top:1px solid #eeeeee;
+                padding-top:18px;
+            ">
 
-        form.reset();
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        📍 Location:
+                    </strong>
+                    SE7 — 10 minutes walk to campus
+                </p>
 
-        successMessage.style.display = "block";
-        errorMessage.style.display = "none";
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        👥 Gender:
+                    </strong>
+                    Any
+                </p>
 
-        submitButton.disabled = false;
-        submitButton.textContent = "Submit Application";
-    });
-</script>
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        🛏️ Room Type:
+                    </strong>
+                    Singles
+                </p>
+
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        💰 Self-Funded:
+                    </strong>
+                    R2,500 / R3,000 per month
+                </p>
+
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        🎓 Funding:
+                    </strong>
+                    NSFAS &amp; Private Bursary Accepted
+                </p>
+
+            </div>
+
+
+            <div style="
+                background:#f3f4f6;
+                padding:18px;
+                border-radius:8px;
+                margin-top:20px;
+            ">
+
+                <strong style="
+                    color:#12345b;
+                    display:block;
+                    margin-bottom:8px;
+                ">
+                    🏠 Amenities
+                </strong>
+
+                <span style="
+                    color:#666;
+                    font-size:14px;
+                    line-height:1.8;
+                ">
+                    Wi-Fi • Furnished Rooms • Kitchen •
+                    Laundry • Security • Water &amp; Electricity
+                </span>
+
+            </div>
+
+
+            <div style="
+                margin-top:25px;
+                display:flex;
+                flex-wrap:wrap;
+                gap:10px;
+            ">
+
+                <a href="apply.html"
+                   target="_blank"
+                   style="
+                       flex:1;
+                       min-width:150px;
+                       text-align:center;
+                       background:#12345b;
+                       color:white;
+                       padding:14px;
+                       border-radius:6px;
+                       text-decoration:none;
+                       font-weight:bold;
+                       font-size:13px;
+                   ">
+                    APPLY / BOOK
+                </a>
+
+
+                <a href="YOUR_SW01_PHOTOS_LINK"
+                   target="_blank"
+                   style="
+                       flex:1;
+                       min-width:150px;
+                       text-align:center;
+                       background:#a87800;
+                       color:white;
+                       padding:14px;
+                       border-radius:6px;
+                       text-decoration:none;
+                       font-weight:bold;
+                       font-size:13px;
+                   ">
+                    VIEW MORE PHOTOS
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SW-02 PROPERTY
+    ========================== -->
+
+    <div style="
+        max-width:900px;
+        margin:0 auto 35px;
+        background:#ffffff;
+        border:1px solid #e1e1e1;
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow:0 4px 15px rgba(0,0,0,0.06);
+    ">
+
+        <!-- SW-02 IMAGE SPACES -->
+
+        <div style="
+            display:flex;
+            width:100%;
+            gap:3px;
+            background:#ffffff;
+        ">
+
+            <div style="
+                width:50%;
+                height:330px;
+                background:#f3f4f6;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:#999;
+                font-size:14px;
+            ">
+                IMAGE 1
+            </div>
+
+            <div style="
+                width:50%;
+                height:330px;
+                background:#f3f4f6;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:#999;
+                font-size:14px;
+            ">
+                IMAGE 2
+            </div>
+
+        </div>
+
+
+        <div style="padding:28px;">
+
+            <div style="
+                display:inline-block;
+                background:#12345b;
+                color:white;
+                padding:6px 12px;
+                border-radius:4px;
+                font-size:20px;
+                font-weight:bold;
+                margin-bottom:12px;
+            ">
+                SW-02
+            </div>
+
+
+            <div style="
+                border-top:1px solid #eeeeee;
+                padding-top:18px;
+            ">
+
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        📍 Location:
+                    </strong>
+                    SE7 — 5 minutes walk to campus
+                </p>
+
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        👥 Gender:
+                    </strong>
+                    Any
+                </p>
+
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        🛏️ Room Type:
+                    </strong>
+                    Singles
+                </p>
+
+                <p style="margin:9px 0;color:#555;">
+                    <strong style="color:#12345b;">
+                        🎓 Funding:
+                    </strong>
+                    NSFAS &amp; Private Bursary Accepted
+                </p>
+
+            </div>
+
+
+            <div style="
+                background:#f3f4f6;
+                padding:18px;
+                border-radius:8px;
+                margin-top:20px;
+            ">
+
+                <strong style="
+                    color:#12345b;
+                    display:block;
+                    margin-bottom:8px;
+                ">
+                    🏠 Amenities
+                </strong>
+
+                <span style="
+                    color:#666;
+                    font-size:14px;
+                    line-height:1.8;
+                ">
+                    Wi-Fi • Furnished Rooms • Kitchen •
+                    Laundry • Security • Water &amp; Electricity
+                </span>
+
+            </div>
+
+
+            <div style="
+                margin-top:25px;
+                display:flex;
+                flex-wrap:wrap;
+                gap:10px;
+            ">
+
+                <a href="apply.html"
+                   target="_blank"
+                   style="
+                       flex:1;
+                       min-width:150px;
+                       text-align:center;
+                       background:#12345b;
+                       color:white;
+                       padding:14px;
+                       border-radius:6px;
+                       text-decoration:none;
+                       font-weight:bold;
+                       font-size:13px;
+                   ">
+                    APPLY / BOOK
+                </a>
+
+
+                <a href="YOUR_SW02_PHOTOS_LINK"
+                   target="_blank"
+                   style="
+                       flex:1;
+                       min-width:150px;
+                       text-align:center;
+                       background:#a87800;
+                       color:white;
+                       padding:14px;
+                       border-radius:6px;
+                       text-decoration:none;
+                       font-weight:bold;
+                       font-size:13px;
+                   ">
+                    VIEW MORE PHOTOS
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     APPLY / BOOK NOW
+========================== -->
+
+<div id="apply"
+     style="
+         background:#ffffff;
+         text-align:center;
+         padding:50px 6%;
+     ">
+
+    <h2 style="
+        color:#12345b;
+        margin:0 0 10px;
+    ">
+        Ready to Find Your Room?
+    </h2>
+
+    <p style="
+        color:#666;
+        margin:0 0 25px;
+    ">
+        Apply for student accommodation today.
+    </p>
+
+    <a href="apply.html"
+       target="_blank"
+       style="
+           display:inline-block;
+           background:#12345b;
+           color:white;
+           padding:14px 35px;
+           border-radius:6px;
+           text-decoration:none;
+           font-weight:bold;
+           font-size:14px;
+       ">
+        APPLY / BOOK NOW
+    </a>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<div style="
+    background:#12345b;
+    color:white;
+    text-align:center;
+    padding:40px 6% 25px;
+">
+
+    <h2 style="
+        margin:0 0 8px;
+        font-size:21px;
+    ">
+        VAAL ACCOMMODATION NETWORK
+    </h2>
+
+    <p style="
+        color:#d9e0e8;
+        font-size:13px;
+        margin:0 0 22px;
+    ">
+        Student Accommodation for 2027
+    </p>
+
+
+    <div style="margin-bottom:22px;">
+
+        <a href="https://wa.me/message/C3XPVKIU5QH5P1"
+           target="_blank"
+           style="
+               display:inline-block;
+               background:#25D366;
+               color:white;
+               padding:11px 20px;
+               border-radius:5px;
+               text-decoration:none;
+               margin:4px;
+               font-size:13px;
+               font-weight:bold;
+           ">
+            💬 WhatsApp
+        </a>
+
+
+        <a href="YOUR_TIKTOK_LINK"
+           target="_blank"
+           style="
+               display:inline-block;
+               background:#000000;
+               color:white;
+               padding:11px 20px;
+               border-radius:5px;
+               text-decoration:none;
+               margin:4px;
+               font-size:13px;
+               font-weight:bold;
+           ">
+            ♪ TikTok
+        </a>
+
+    </div>
+
+
+    <div style="
+        border-top:1px solid rgba(255,255,255,0.25);
+        padding-top:18px;
+    ">
+
+        <p style="
+            color:#d9e0e8;
+            font-size:12px;
+            margin:0 0 10px;
+        ">
+            © 2026 VaalAccommodationNetwork.
+            All Rights Reserved.
+        </p>
+
+
+        <a href="YOUR_TERMS_LINK"
+           style="
+               color:white;
+               text-decoration:none;
+               font-size:12px;
+           ">
+            Terms &amp; Conditions
+        </a>
+
+        <span style="color:#9eabb8;">
+            &nbsp; | &nbsp;
+        </span>
+
+
+        <a href="YOUR_PRIVACY_LINK"
+           style="
+               color:white;
+               text-decoration:none;
+               font-size:12px;
+           ">
+            Privacy Policy
+        </a>
+
+    </div>
+
+</div>
+```
+
+</div>
 
 </body>
 </html>
