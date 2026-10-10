@@ -1,1000 +1,1037 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="0VyBU_O677xSD36c2hJqSU4DLvtuL_0a2jcIlVUSP7s" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vaal Accommodation Network | Student Accommodation</title>
+    <meta name="google-site-verification" content="0VyBU_O677xSD36c2hJqSU4DLvtuL_0a2jcIlVUSP7s">
 
-<meta name="description" content="Find quality student accommodation for 2027 with Vaal Accommodation Network. Furnished rooms, Wi-Fi, NSFAS options and convenient locations.">
+    <title>Vaal Accommodation Network | Student Accommodation 2027</title>
 
-<meta property="og:title" content="Vaal Accommodation Network | Student Accommodation">
-<meta property="og:description" content="Find quality student accommodation for 2027. Furnished rooms, Wi-Fi, NSFAS options and convenient locations.">
-<meta property="og:url" content="https://vaalaccommodationnetwork.pages.dev/">
-<meta property="og:type" content="website">
+    <meta name="description" content="Find student accommodation near Vaal University of Technology. Explore furnished rooms with NSFAS, private bursary and self-funded options for 2027.">
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
+    <meta name="theme-color" content="#12345b">
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #ffffff;
-        color: #333;
-    }
+    <meta property="og:title" content="Vaal Accommodation Network">
+    <meta property="og:description" content="Find your student home for 2027. Explore student accommodation options and apply online.">
+    <meta property="og:url" content="https://vaalaccommodationnetwork.pages.dev/">
+    <meta property="og:type" content="website">
 
-    a {
-        -webkit-tap-highlight-color: transparent;
-    }
-</style>
+    <style>
+        :root {
+            --navy: #12345b;
+            --navy-light: #1b4777;
+            --gold: #a87800;
+            --gold-light: #f5edda;
+            --white: #ffffff;
+            --light: #f5f7fa;
+            --text: #222222;
+            --muted: #5b6470;
+            --border: #e0e5eb;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #f2c14e;
+            outline-offset: 3px;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 20px 6%;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-mark {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            border: 2px solid var(--gold);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f2c14e;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #f2c14e;
+        }
+
+        nav .nav-apply {
+            background: var(--gold);
+            padding: 10px 17px;
+            border-radius: 5px;
+        }
+
+        nav .nav-apply:hover {
+            background: #896100;
+            color: var(--white);
+        }
+
+        /* HERO */
+
+        .hero {
+            background: var(--light);
+            padding: 72px 6%;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 6px 13px;
+            border-radius: 20px;
+            margin-bottom: 17px;
+        }
+
+        .hero h2 {
+            color: var(--navy);
+            font-size: clamp(32px, 5vw, 46px);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 28px;
+            font-size: 17px;
+            color: var(--muted);
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 13px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .button:hover {
+            background: #896100;
+            transform: translateY(-1px);
+        }
+
+        /* QUICK INFORMATION */
+
+        .quick-info {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 6%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--gold);
+            border-radius: 8px;
+            padding: 22px 16px;
+            text-align: center;
+        }
+
+        .info-card h3 {
+            color: var(--navy);
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* ACCOMMODATION SECTION */
+
+        .accommodation-section {
+            padding: 55px 6% 70px;
+            background: var(--light);
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 35px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(27px, 4vw, 34px);
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .property-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .property-card {
+            min-width: 0;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(18, 52, 91, 0.06);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .property-card:hover {
+            box-shadow: 0 8px 24px rgba(18, 52, 91, 0.11);
+            transform: translateY(-2px);
+        }
+
+        /* PROPERTY PHOTOS */
+
+        .property-photos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 4px;
+            height: 200px;
+            background: #e7ebf0;
+            overflow: hidden;
+        }
+
+        .property-photos a {
+            display: block;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .property-photos img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .property-photos a:hover img {
+            transform: scale(1.04);
+        }
+
+        .photo-placeholder {
+            min-width: 0;
+            height: 200px;
+            background: #e7ebf0;
+            color: var(--navy);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .photo-placeholder span {
+            color: var(--gold);
+            font-size: 35px;
+            margin-bottom: 4px;
+        }
+
+        /* PROPERTY DETAILS */
+
+        .property-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .property-code {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .property-content h3 {
+            color: var(--navy);
+            font-size: 22px;
+            line-height: 1.35;
+            margin-bottom: 7px;
+        }
+
+        .location {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .property-facts {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .property-facts li {
+            padding: 8px 0;
+            font-size: 14px;
+            border-bottom: 1px solid #edf0f3;
+        }
+
+        .property-facts strong {
+            color: var(--navy);
+        }
+
+        .self-funded {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .amenities {
+            margin: 10px 0 22px;
+        }
+
+        .amenities h4 {
+            color: var(--navy);
+            font-size: 15px;
+            margin-bottom: 9px;
+        }
+
+        .amenity-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .amenity {
+            background: #f0f3f7;
+            color: #34465b;
+            font-size: 12px;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        .property-actions {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .apply-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--navy);
+            color: var(--white);
+            padding: 13px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .apply-button:hover {
+            background: var(--navy-light);
+        }
+
+        .photos-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--gold);
+            color: var(--white);
+            padding: 13px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .photos-button:hover {
+            background: #896100;
+        }
+
+        /* APPLY SECTION */
+
+        .apply-section {
+            background: var(--white);
+            padding: 60px 6%;
+            text-align: center;
+        }
+
+        .apply-section h2 {
+            color: var(--navy);
+            font-size: clamp(27px, 4vw, 34px);
+            margin-bottom: 12px;
+        }
+
+        .apply-section p {
+            max-width: 650px;
+            margin: 0 auto 24px;
+            color: var(--muted);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 38px 6% 25px;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-description {
+            color: #e2e8f0;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 22px 0;
+        }
+
+        .footer-button {
+            display: inline-block;
+            padding: 11px 18px;
+            border-radius: 5px;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+        }
+
+        .whatsapp-button:hover {
+            background: #1da851;
+        }
+
+        .footer-link {
+            color: var(--white);
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        .footer-link:hover {
+            color: #f2c14e;
+        }
+
+        .copyright {
+            color: #d5dce5;
+            font-size: 12px;
+            margin-top: 18px;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 1000px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            .property-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+            header {
+                padding: 19px 5%;
+            }
+
+            .brand {
+                align-items: flex-start;
+            }
+
+            .brand-mark {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            nav {
+                width: 100%;
+                gap: 10px 16px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            nav .nav-apply {
+                padding: 9px 12px;
+            }
+
+            .hero {
+                padding: 48px 6%;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .quick-info {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 23px 6%;
+            }
+
+            .info-card {
+                padding: 18px 14px;
+            }
+
+            .accommodation-section {
+                padding: 42px 5% 50px;
+            }
+
+            .section-heading {
+                margin-bottom: 25px;
+            }
+
+            .property-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 430px;
+            }
+
+            .property-photos,
+            .property-photos img,
+            .photo-placeholder {
+                height: 210px;
+            }
+
+            .property-content {
+                padding: 20px;
+            }
+
+            .apply-section {
+                padding: 45px 6%;
+            }
+
+            footer {
+                padding: 32px 5% 22px;
+            }
+
+            .footer-links {
+                gap: 8px;
+            }
+        }
+
+        /* REDUCED MOTION */
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div style="
-    font-family:Arial,sans-serif;
-    background:#ffffff;
-    color:#333;
-    width:100%;
-    margin:0;
-    padding:0;
-">
+    <!-- HEADER -->
 
-<!-- =========================
-     HEADER
-========================== -->
+    <header>
+        <div class="header-content">
 
-<div style="
-    background:#12345b;
-    color:white;
-    padding:22px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-">
+            <a href="index.html"
+               class="brand"
+               aria-label="Vaal Accommodation Network home">
 
-    <div>
-        <div style="
-            font-size:22px;
-            font-weight:bold;
-        ">
+                <span class="brand-mark" aria-hidden="true">V</span>
+
+                <span>
+                    <span style="
+                        display:block;
+                        color:#ffffff;
+                        font-size:21px;
+                        font-weight:bold;
+                        line-height:1.3;
+                    ">
+                        VAAL ACCOMMODATION NETWORK
+                    </span>
+
+                    <span style="
+                        display:block;
+                        color:#e2e8f0;
+                        font-size:13px;
+                        margin-top:4px;
+                    ">
+                        Student Accommodation for 2027
+                    </span>
+                </span>
+
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="#accommodation">Accommodation</a>
+                <a href="apply.html" class="nav-apply">Apply Now</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    YOUR STUDENT HOME FOR 2027
+                </span>
+
+                <h2>Find Your Student Home</h2>
+
+                <p>
+                    Explore student accommodation near Vaal University
+                    of Technology. Compare room options, prices and
+                    funding arrangements, then apply online.
+                </p>
+
+                <a href="#accommodation" class="button">
+                    VIEW ACCOMMODATION
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- QUICK INFORMATION -->
+
+        <section class="quick-info" aria-label="Accommodation benefits">
+
+            <div class="info-card">
+                <h3>NSFAS Accepted</h3>
+                <p>Explore accommodation options for NSFAS-funded students.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Private Bursaries</h3>
+                <p>Options available for students funded by private bursaries.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Furnished Rooms</h3>
+                <p>Find rooms with essential student living amenities.</p>
+            </div>
+
+        </section>
+
+
+        <!-- ACCOMMODATION -->
+
+        <section class="accommodation-section" id="accommodation">
+
+            <div class="section-heading">
+                <h2>Available Accommodation</h2>
+
+                <p>
+                    Compare our properties and choose the accommodation
+                    that best suits your needs for 2027.
+                </p>
+            </div>
+
+
+            <div class="property-grid">
+
+                <!-- BW-01 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="https://i.ibb.co/8gQLSq5X/Whats-App-Image-2026-10-06-at-4-13-30-PM.jpg"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="View BW-01 photo 1">
+
+                            <img
+                                src="https://i.ibb.co/8gQLSq5X/Whats-App-Image-2026-10-06-at-4-13-30-PM.jpg"
+                                alt="BW-01 student accommodation"
+                                loading="lazy">
+                        </a>
+
+                        <a href="https://i.ibb.co/mCxqqcGJ/Whats-App-Image-2026-10-06-at-4-13-29-PM-3.jpg"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="View BW-01 photo 2">
+
+                            <img
+                                src="https://i.ibb.co/mCxqqcGJ/Whats-App-Image-2026-10-06-at-4-13-29-PM-3.jpg"
+                                alt="Another view of BW-01 accommodation"
+                                loading="lazy">
+                        </a>
+
+                    </div>
+
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY BW-01</span>
+
+                        <h3>Bedworth Park</h3>
+
+                        <p class="location">
+                            Approximately 24 minutes' walk to campus.
+                            Transport available.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Self-funded:</strong> <span class="self-funded">R3,500/month</span></li>
+                            <li><strong>NSFAS:</strong> Accepted</li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Swimming pool</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://i.ibb.co/8gQLSq5X/Whats-App-Image-2026-10-06-at-4-13-30-PM.jpg"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=BW-01"
+                               class="apply-button">
+                                APPLY FOR BW-01
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- SW-01 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <div class="photo-placeholder">
+                            <span aria-hidden="true">⌂</span>
+                            <p>SW-01 Photo 1</p>
+                        </div>
+
+                        <div class="photo-placeholder">
+                            <span aria-hidden="true">⌂</span>
+                            <p>SW-01 Photo 2</p>
+                        </div>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY SW-01</span>
+
+                        <h3>SE7 Accommodation</h3>
+
+                        <p class="location">
+                            Approximately 10 minutes' walk to campus.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Self-funded:</strong> <span class="self-funded">R2,500–R3,000/month</span></li>
+                            <li><strong>NSFAS:</strong> Accepted</li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="#"
+                               class="photos-button"
+                               onclick="return false;">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=SW-01"
+                               class="apply-button">
+                                APPLY FOR SW-01
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- SW-02 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <div class="photo-placeholder">
+                            <span aria-hidden="true">⌂</span>
+                            <p>SW-02 Photo 1</p>
+                        </div>
+
+                        <div class="photo-placeholder">
+                            <span aria-hidden="true">⌂</span>
+                            <p>SW-02 Photo 2</p>
+                        </div>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY SW-02</span>
+
+                        <h3>SE7 Accommodation</h3>
+
+                        <p class="location">
+                            Approximately 5 minutes' walk to campus.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Self-funded:</strong> <span class="self-funded">Contact us for pricing</span></li>
+                            <li><strong>NSFAS:</strong> Accepted</li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="#"
+                               class="photos-button"
+                               onclick="return false;">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=SW-02"
+                               class="apply-button">
+                                APPLY FOR SW-02
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- APPLY SECTION -->
+
+        <section class="apply-section" id="apply">
+
+            <h2>Ready to Find Your Room?</h2>
+
+            <p>
+                Choose your preferred accommodation and complete
+                the online application form. When applying through
+                a property card, your selected property will be passed
+                to the application page.
+            </p>
+
+            <a href="apply.html" class="button">
+                APPLY NOW
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p class="footer-title">
             VAAL ACCOMMODATION NETWORK
-        </div>
-
-        <div style="
-            color:#d9e0e8;
-            font-size:13px;
-            margin-top:4px;
-        ">
-            Student Accommodation for 2027
-        </div>
-    </div>
-
-    <div style="margin-top:10px;">
-
-        <a href="FAQ.html"
-           style="
-               color:white;
-               text-decoration:none;
-               margin:0 8px;
-               font-size:14px;
-           ">
-            FAQ
-        </a>
-
-        <a href="#apply"
-           style="
-               color:white;
-               text-decoration:none;
-               margin:0 8px;
-               font-size:14px;
-           ">
-            Apply
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     HERO
-========================== -->
-
-<div style="
-    text-align:center;
-    padding:65px 6%;
-    background:#ffffff;
-">
-
-    <div style="
-        display:inline-block;
-        background:#a87800;
-        color:white;
-        padding:7px 16px;
-        border-radius:20px;
-        font-size:12px;
-        font-weight:bold;
-        margin-bottom:18px;
-    ">
-        2027 STUDENT ACCOMMODATION
-    </div>
-
-    <h1 style="
-        color:#12345b;
-        font-size:38px;
-        margin:0 0 15px;
-        line-height:1.2;
-    ">
-        Find Your Student Home
-    </h1>
-
-    <p style="
-        max-width:650px;
-        margin:0 auto;
-        color:#666;
-        font-size:16px;
-        line-height:1.7;
-    ">
-        Comfortable, furnished student accommodation
-        with options for NSFAS, private bursary and
-        self-funded students.
-    </p>
-
-    <div style="margin-top:28px;">
-
-        <a href="#accommodation"
-           style="
-               display:inline-block;
-               background:#12345b;
-               color:white;
-               padding:13px 25px;
-               border-radius:6px;
-               text-decoration:none;
-               font-weight:bold;
-               font-size:14px;
-               margin:5px;
-           ">
-            VIEW ACCOMMODATION
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     QUICK INFORMATION
-========================== -->
-
-<div style="
-    background:#f3f4f6;
-    padding:25px 6%;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-">
-
-    <div style="
-        background:white;
-        padding:15px 25px;
-        border-radius:8px;
-        text-align:center;
-        min-width:150px;
-    ">
-        <strong style="color:#12345b;">
-            NSFAS
-        </strong>
-
-        <br>
-
-        <span style="
-            font-size:13px;
-            color:#666;
-        ">
-            Accepted
-        </span>
-    </div>
-
-
-    <div style="
-        background:white;
-        padding:15px 25px;
-        border-radius:8px;
-        text-align:center;
-        min-width:150px;
-    ">
-        <strong style="color:#12345b;">
-            PRIVATE BURSARY
-        </strong>
-
-        <br>
-
-        <span style="
-            font-size:13px;
-            color:#666;
-        ">
-            Accepted
-        </span>
-    </div>
-
-
-    <div style="
-        background:white;
-        padding:15px 25px;
-        border-radius:8px;
-        text-align:center;
-        min-width:150px;
-    ">
-        <strong style="color:#12345b;">
-            FURNISHED
-        </strong>
-
-        <br>
-
-        <span style="
-            font-size:13px;
-            color:#666;
-        ">
-            Student Rooms
-        </span>
-    </div>
-
-</div>
-
-
-<!-- =========================
-     ACCOMMODATION
-========================== -->
-
-<div id="accommodation"
-     style="
-         padding:55px 6%;
-         background:white;
-     ">
-
-    <div style="
-        text-align:center;
-        margin-bottom:35px;
-    ">
-
-        <h2 style="
-            color:#12345b;
-            font-size:30px;
-            margin:0 0 8px;
-        ">
-            Our Accommodations
-        </h2>
-
-        <p style="
-            color:#666;
-            margin:0;
-        ">
-            Choose the accommodation that suits you.
         </p>
 
-    </div>
-
-
-    <!-- =========================
-         BW-01 PROPERTY
-    ========================== -->
-
-    <div style="
-        max-width:900px;
-        margin:0 auto 35px;
-        background:#ffffff;
-        border:1px solid #e1e1e1;
-        border-radius:12px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(0,0,0,0.06);
-    ">
-
-        <div style="
-            display:flex;
-            width:100%;
-            gap:3px;
-            background:#ffffff;
-        ">
-
-            <img
-                src="https://i.ibb.co/8gQLSq5X/Whats-App-Image-2026-10-06-at-4-13-30-PM.jpg"
-                alt="BW-01 Student Accommodation"
-                style="
-                    width:50%;
-                    height:330px;
-                    object-fit:cover;
-                    display:block;
-                "
-            >
-
-            <img
-                src="https://i.ibb.co/mCxqqcGJ/Whats-App-Image-2026-10-06-at-4-13-29-PM-3.jpg"
-                alt="BW-01 Student Accommodation"
-                style="
-                    width:50%;
-                    height:330px;
-                    object-fit:cover;
-                    display:block;
-                "
-            >
-
-        </div>
-
-
-        <div style="padding:28px;">
-
-            <div style="
-                display:inline-block;
-                background:#12345b;
-                color:white;
-                padding:6px 12px;
-                border-radius:4px;
-                font-size:20px;
-                font-weight:bold;
-                margin-bottom:12px;
-            ">
-                BW-01
-            </div>
-
-
-            <h3 style="
-                color:#12345b;
-                font-size:25px;
-                margin:0 0 20px;
-            ">
-            </h3>
-
-
-            <div style="
-                border-top:1px solid #eeeeee;
-                padding-top:18px;
-            ">
-
-                <p style="margin:9px 0;color:#555;line-height:1.6;">
-                    <strong style="color:#12345b;">
-                        📍 Location:
-                    </strong>
-                    Bedworth Park — 24 minutes walk to campus
-                    (transport available)
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        👥 Gender:
-                    </strong>
-                    Any
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        🛏️ Room Type:
-                    </strong>
-                    Singles
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        💰 Self-Funded:
-                    </strong>
-                    R3,500 per month
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        🎓 Funding:
-                    </strong>
-                    NSFAS &amp; Private Bursary Accepted
-                </p>
-
-            </div>
-
-
-            <div style="
-                background:#f3f4f6;
-                padding:18px;
-                border-radius:8px;
-                margin-top:20px;
-            ">
-
-                <strong style="
-                    color:#12345b;
-                    display:block;
-                    margin-bottom:8px;
-                ">
-                    🏠 Amenities
-                </strong>
-
-                <span style="
-                    color:#666;
-                    font-size:14px;
-                    line-height:1.8;
-                ">
-                    Wi-Fi • Furnished Rooms • Swimming Pool •
-                    Kitchen • Laundry • Security •
-                    Water &amp; Electricity
-                </span>
-
-            </div>
-
-
-            <div style="
-                margin-top:25px;
-                display:flex;
-                flex-wrap:wrap;
-                gap:10px;
-            ">
-
-                <a href="apply.html"
-                   target="_blank"
-                   style="
-                       flex:1;
-                       min-width:150px;
-                       text-align:center;
-                       background:#12345b;
-                       color:white;
-                       padding:14px;
-                       border-radius:6px;
-                       text-decoration:none;
-                       font-weight:bold;
-                       font-size:13px;
-                   ">
-                    APPLY / BOOK
-                </a>
-
-
-                <a href="YOUR_BW01_PHOTOS_LINK"
-                   target="_blank"
-                   style="
-                       flex:1;
-                       min-width:150px;
-                       text-align:center;
-                       background:#a87800;
-                       color:white;
-                       padding:14px;
-                       border-radius:6px;
-                       text-decoration:none;
-                       font-weight:bold;
-                       font-size:13px;
-                   ">
-                    VIEW MORE PHOTOS
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         SW-01 PROPERTY
-    ========================== -->
-
-    <div style="
-        max-width:900px;
-        margin:0 auto 35px;
-        background:#ffffff;
-        border:1px solid #e1e1e1;
-        border-radius:12px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(0,0,0,0.06);
-    ">
-
-        <!-- SW-01 IMAGE SPACES -->
-
-        <div style="
-            display:flex;
-            width:100%;
-            gap:3px;
-            background:#ffffff;
-        ">
-
-            <div style="
-                width:50%;
-                height:330px;
-                background:#f3f4f6;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:#999;
-                font-size:14px;
-            ">
-                IMAGE 1
-            </div>
-
-            <div style="
-                width:50%;
-                height:330px;
-                background:#f3f4f6;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:#999;
-                font-size:14px;
-            ">
-                IMAGE 2
-            </div>
-
-        </div>
-
-
-        <div style="padding:28px;">
-
-            <div style="
-                display:inline-block;
-                background:#12345b;
-                color:white;
-                padding:6px 12px;
-                border-radius:4px;
-                font-size:20px;
-                font-weight:bold;
-                margin-bottom:12px;
-            ">
-                SW-01
-            </div>
-
-
-            <div style="
-                border-top:1px solid #eeeeee;
-                padding-top:18px;
-            ">
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        📍 Location:
-                    </strong>
-                    SE7 — 10 minutes walk to campus
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        👥 Gender:
-                    </strong>
-                    Any
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        🛏️ Room Type:
-                    </strong>
-                    Singles
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        💰 Self-Funded:
-                    </strong>
-                    R2,500 / R3,000 per month
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        🎓 Funding:
-                    </strong>
-                    NSFAS &amp; Private Bursary Accepted
-                </p>
-
-            </div>
-
-
-            <div style="
-                background:#f3f4f6;
-                padding:18px;
-                border-radius:8px;
-                margin-top:20px;
-            ">
-
-                <strong style="
-                    color:#12345b;
-                    display:block;
-                    margin-bottom:8px;
-                ">
-                    🏠 Amenities
-                </strong>
-
-                <span style="
-                    color:#666;
-                    font-size:14px;
-                    line-height:1.8;
-                ">
-                    Wi-Fi • Furnished Rooms • Kitchen •
-                    Laundry • Security • Water &amp; Electricity
-                </span>
-
-            </div>
-
-
-            <div style="
-                margin-top:25px;
-                display:flex;
-                flex-wrap:wrap;
-                gap:10px;
-            ">
-
-                <a href="apply.html"
-                   target="_blank"
-                   style="
-                       flex:1;
-                       min-width:150px;
-                       text-align:center;
-                       background:#12345b;
-                       color:white;
-                       padding:14px;
-                       border-radius:6px;
-                       text-decoration:none;
-                       font-weight:bold;
-                       font-size:13px;
-                   ">
-                    APPLY / BOOK
-                </a>
-
-
-                <a href="YOUR_SW01_PHOTOS_LINK"
-                   target="_blank"
-                   style="
-                       flex:1;
-                       min-width:150px;
-                       text-align:center;
-                       background:#a87800;
-                       color:white;
-                       padding:14px;
-                       border-radius:6px;
-                       text-decoration:none;
-                       font-weight:bold;
-                       font-size:13px;
-                   ">
-                    VIEW MORE PHOTOS
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         SW-02 PROPERTY
-    ========================== -->
-
-    <div style="
-        max-width:900px;
-        margin:0 auto 35px;
-        background:#ffffff;
-        border:1px solid #e1e1e1;
-        border-radius:12px;
-        overflow:hidden;
-        box-shadow:0 4px 15px rgba(0,0,0,0.06);
-    ">
-
-        <!-- SW-02 IMAGE SPACES -->
-
-        <div style="
-            display:flex;
-            width:100%;
-            gap:3px;
-            background:#ffffff;
-        ">
-
-            <div style="
-                width:50%;
-                height:330px;
-                background:#f3f4f6;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:#999;
-                font-size:14px;
-            ">
-                IMAGE 1
-            </div>
-
-            <div style="
-                width:50%;
-                height:330px;
-                background:#f3f4f6;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:#999;
-                font-size:14px;
-            ">
-                IMAGE 2
-            </div>
-
-        </div>
-
-
-        <div style="padding:28px;">
-
-            <div style="
-                display:inline-block;
-                background:#12345b;
-                color:white;
-                padding:6px 12px;
-                border-radius:4px;
-                font-size:20px;
-                font-weight:bold;
-                margin-bottom:12px;
-            ">
-                SW-02
-            </div>
-
-
-            <div style="
-                border-top:1px solid #eeeeee;
-                padding-top:18px;
-            ">
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        📍 Location:
-                    </strong>
-                    SE7 — 5 minutes walk to campus
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        👥 Gender:
-                    </strong>
-                    Any
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        🛏️ Room Type:
-                    </strong>
-                    Singles
-                </p>
-
-                <p style="margin:9px 0;color:#555;">
-                    <strong style="color:#12345b;">
-                        🎓 Funding:
-                    </strong>
-                    NSFAS &amp; Private Bursary Accepted
-                </p>
-
-            </div>
-
-
-            <div style="
-                background:#f3f4f6;
-                padding:18px;
-                border-radius:8px;
-                margin-top:20px;
-            ">
-
-                <strong style="
-                    color:#12345b;
-                    display:block;
-                    margin-bottom:8px;
-                ">
-                    🏠 Amenities
-                </strong>
-
-                <span style="
-                    color:#666;
-                    font-size:14px;
-                    line-height:1.8;
-                ">
-                    Wi-Fi • Furnished Rooms • Kitchen •
-                    Laundry • Security • Water &amp; Electricity
-                </span>
-
-            </div>
-
-
-            <div style="
-                margin-top:25px;
-                display:flex;
-                flex-wrap:wrap;
-                gap:10px;
-            ">
-
-                <a href="apply.html"
-                   target="_blank"
-                   style="
-                       flex:1;
-                       min-width:150px;
-                       text-align:center;
-                       background:#12345b;
-                       color:white;
-                       padding:14px;
-                       border-radius:6px;
-                       text-decoration:none;
-                       font-weight:bold;
-                       font-size:13px;
-                   ">
-                    APPLY / BOOK
-                </a>
-
-
-                <a href="YOUR_SW02_PHOTOS_LINK"
-                   target="_blank"
-                   style="
-                       flex:1;
-                       min-width:150px;
-                       text-align:center;
-                       background:#a87800;
-                       color:white;
-                       padding:14px;
-                       border-radius:6px;
-                       text-decoration:none;
-                       font-weight:bold;
-                       font-size:13px;
-                   ">
-                    VIEW MORE PHOTOS
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     APPLY / BOOK NOW
-========================== -->
-
-<div id="apply"
-     style="
-         background:#ffffff;
-         text-align:center;
-         padding:50px 6%;
-     ">
-
-    <h2 style="
-        color:#12345b;
-        margin:0 0 10px;
-    ">
-        Ready to Find Your Room?
-    </h2>
-
-    <p style="
-        color:#666;
-        margin:0 0 25px;
-    ">
-        Apply for student accommodation today.
-    </p>
-
-    <a href="apply.html"
-       target="_blank"
-       style="
-           display:inline-block;
-           background:#12345b;
-           color:white;
-           padding:14px 35px;
-           border-radius:6px;
-           text-decoration:none;
-           font-weight:bold;
-           font-size:14px;
-       ">
-        APPLY / BOOK NOW
-    </a>
-
-</div>
-
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<div style="
-    background:#12345b;
-    color:white;
-    text-align:center;
-    padding:40px 6% 25px;
-">
-
-    <h2 style="
-        margin:0 0 8px;
-        font-size:21px;
-    ">
-        VAAL ACCOMMODATION NETWORK
-    </h2>
-
-    <p style="
-        color:#d9e0e8;
-        font-size:13px;
-        margin:0 0 22px;
-    ">
-        Student Accommodation for 2027
-    </p>
-
-
-    <div style="margin-bottom:22px;">
-
-        <a href="https://wa.me/message/C3XPVKIU5QH5P1"
-           target="_blank"
-           style="
-               display:inline-block;
-               background:#25D366;
-               color:white;
-               padding:11px 20px;
-               border-radius:5px;
-               text-decoration:none;
-               margin:4px;
-               font-size:13px;
-               font-weight:bold;
-           ">
-            💬 WhatsApp
-        </a>
-
-
-        <a href="YOUR_TIKTOK_LINK"
-           target="_blank"
-           style="
-               display:inline-block;
-               background:#000000;
-               color:white;
-               padding:11px 20px;
-               border-radius:5px;
-               text-decoration:none;
-               margin:4px;
-               font-size:13px;
-               font-weight:bold;
-           ">
-            ♪ TikTok
-        </a>
-
-    </div>
-
-
-    <div style="
-        border-top:1px solid rgba(255,255,255,0.25);
-        padding-top:18px;
-    ">
-
-        <p style="
-            color:#d9e0e8;
-            font-size:12px;
-            margin:0 0 10px;
-        ">
-            © 2026 VaalAccommodationNetwork.
-            All Rights Reserved.
+        <p class="footer-description">
+            Helping students find accommodation for 2027.
         </p>
 
+        <div class="footer-links">
 
-        <a href="YOUR_TERMS_LINK"
-           style="
-               color:white;
-               text-decoration:none;
-               font-size:12px;
-           ">
-            Terms &amp; Conditions
-        </a>
+            <a href="https://wa.me/message/C3XPVKIU5QH5P1"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="footer-button whatsapp-button">
+                WhatsApp Us
+            </a>
 
-        <span style="color:#9eabb8;">
-            &nbsp; | &nbsp;
-        </span>
+            <a href="FAQ.html" class="footer-link">
+                FAQ
+            </a>
 
+            <a href="YOUR_TERMS_LINK" class="footer-link">
+                Terms &amp; Conditions
+            </a>
 
-        <a href="YOUR_PRIVACY_LINK"
-           style="
-               color:white;
-               text-decoration:none;
-               font-size:12px;
-           ">
-            Privacy Policy
-        </a>
+            <a href="YOUR_PRIVACY_LINK" class="footer-link">
+                Privacy Policy
+            </a>
 
-    </div>
+        </div>
 
-</div>
-```
+        <p class="copyright">
+            &copy; 2027 Vaal Accommodation Network. All rights reserved.
+        </p>
 
-</div>
+    </footer>
 
 </body>
 </html>
