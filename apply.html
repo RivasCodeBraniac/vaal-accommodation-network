@@ -57,19 +57,15 @@
             min-width: 0;
         }
 
-        .brand-icon {
+        .brand-logo {
             width: 46px;
             height: 46px;
             flex-shrink: 0;
-            border-radius: 10px;
-            background: var(--gold);
-            color: var(--navy);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            font-weight: 800;
+            object-fit: contain;
+            border-radius: 8px;
+            background: white;
         }
+
         .brand-name {
             margin: 0;
             font-size: 18px;
@@ -433,6 +429,23 @@
             color: var(--navy);
         }
 
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: var(--navy-light);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 850px) {
             .content-grid {
                 grid-template-columns: 1fr;
@@ -471,10 +484,9 @@
                 font-size: 10px;
             }
 
-            .brand-icon {
+            .brand-logo {
                 width: 36px;
                 height: 36px;
-                font-size: 20px;
             }
 
             .header-actions {
@@ -533,8 +545,8 @@
         }
     </style>
 
-    <!-- Cloudflare Turnstile -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- Cloudflare Turnstile script -->
+     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -543,13 +555,17 @@
     <div class="topbar-inner">
 
         <div class="brand">
-            <div class="brand-icon">V</div>
+            <img
+                src="logo.jpg"
+                alt="Vaal Accommodation Network Logo"
+                class="brand-logo">
 
             <div>
                 <p class="brand-name">Vaal Accommodation Network</p>
                 <p class="brand-caption">Student Accommodation Applications</p>
             </div>
         </div>
+
         <div class="header-actions">
             <div class="header-label">2027 Applications</div>
 
@@ -686,6 +702,7 @@
                             <option value="BW-01">BW-01</option>
                             <option value="SW-01">SW-01</option>
                             <option value="SW-02">SW-02</option>
+                            <option value="SW-03">SW-03</option>
                         </select>
                     </div>
 
@@ -717,7 +734,7 @@
                         </span>
                     </div>
 
-                    <!-- Keep your existing Cloudflare Turnstile site key here -->
+                    <!-- Replace this with your actual Turnstile site key -->
                     <div
                         class="cf-turnstile"
                         data-sitekey="0x4AAAAAAFTChwJJxZQQB0QP">
@@ -811,6 +828,13 @@
     <strong>Vaal Accommodation Network</strong>
     <br>
     Student Accommodation Applications &copy; 2027
+
+    <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="FAQ.html">FAQ</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </nav>
 </footer>
 
 <script>
@@ -829,7 +853,12 @@
     const urlParams = new URLSearchParams(window.location.search);
     const selectedProperty = urlParams.get("property");
 
-    const validProperties = ["BW-01", "SW-01", "SW-02"];
+    const validProperties = [
+        "BW-01",
+        "SW-01",
+        "SW-02",
+        "SW-03"
+    ];
 
     if (validProperties.includes(selectedProperty)) {
         accommodationSelect.value = selectedProperty;
@@ -895,6 +924,7 @@
             successMessage.style.display = "block";
             errorMessage.style.display = "none";
 
+            // Clear the previous property selection after submission.
             if (window.turnstile) {
                 window.turnstile.reset();
             }
