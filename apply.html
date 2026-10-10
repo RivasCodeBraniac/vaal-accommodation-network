@@ -7,6 +7,8 @@
 
     <title>Vaal Accommodation Network | Application</title>
 
+    <meta name="description" content="Apply for student accommodation for 2027 with Vaal Accommodation Network.">
+
     <style>
         :root {
             --navy: #102747;
@@ -31,8 +33,6 @@
             color: var(--text);
             line-height: 1.6;
         }
-
-        /* Header */
 
         .topbar {
             background: var(--navy);
@@ -125,8 +125,6 @@
             outline-offset: 3px;
         }
 
-        /* Page layout */
-
         .page {
             max-width: 1100px;
             margin: 42px auto;
@@ -165,8 +163,6 @@
             font-size: 15px;
             max-width: 590px;
         }
-
-        /* Main content */
 
         .content-grid {
             display: grid;
@@ -347,8 +343,6 @@
             border: 1px solid #f2d0ca;
         }
 
-        /* Information sidebar */
-
         .side-card {
             padding: 23px;
             margin-bottom: 18px;
@@ -428,8 +422,6 @@
             margin-bottom: 15px;
         }
 
-        /* Footer */
-
         footer {
             border-top: 1px solid var(--border);
             padding: 22px 20px;
@@ -441,8 +433,6 @@
         footer strong {
             color: var(--navy);
         }
-
-        /* Responsive layout */
 
         @media (max-width: 850px) {
             .content-grid {
@@ -543,6 +533,8 @@
             }
         }
     </style>
+
+    <!-- Cloudflare Turnstile -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
@@ -598,10 +590,8 @@
                 </span>
             </div>
 
-           <form
-              id="applicationForm"
-               method="POST"
-            >
+            <form id="applicationForm" method="POST">
+
                 <h3 class="section-title">
                     01 &nbsp; Personal Information
                 </h3>
@@ -620,8 +610,7 @@
                             name="name"
                             placeholder="Enter your initials and surname"
                             autocomplete="name"
-                            required
-                        >
+                            required>
                     </div>
 
                     <div class="field">
@@ -636,8 +625,7 @@
                             name="phone"
                             placeholder="e.g. 082 123 4567"
                             autocomplete="tel"
-                            required
-                        >
+                            required>
                     </div>
 
                     <div class="field">
@@ -692,7 +680,10 @@
                             <span class="required-star">*</span>
                         </label>
 
-                        <select id="accommodation" name="accommodation" required>
+                        <select
+                            id="accommodation"
+                            name="accommodation"
+                            required>
                             <option value="">Choose an option</option>
                             <option value="BW-01">BW-01</option>
                             <option value="SW-01">SW-01</option>
@@ -727,19 +718,22 @@
                             preferred option but does not guarantee a booking.
                         </span>
                     </div>
-                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAFTChwJJxZQQB0QP"></div>
+
+                    <!-- Keep your existing Cloudflare Turnstile site key here -->
+                    <div
+                        class="cf-turnstile"
+                        data-sitekey="0x4AAAAAAFTChwJJxZQQB0QP">
+                    </div>
+
                     <button
                         type="submit"
                         id="submitButton"
-                        class="submit-button"
-                    >
+                        class="submit-button">
                         Submit Application &nbsp; &#8594;
                     </button>
 
                     <div id="successMessage" role="status" aria-live="polite">
-                        Application submitted. Your form has been cleared.
-                        Please note that this message confirms a response
-                        was received, not independently verified storage.
+                        Application submitted successfully!
                     </div>
 
                     <div id="errorMessage" role="alert">
@@ -759,17 +753,13 @@
             <section class="side-card">
                 <h3>How to Apply</h3>
 
-                <p>
-                    Follow these steps to complete your application.
-                </p>
+                <p>Follow these steps to complete your application.</p>
 
                 <div class="step">
                     <div class="step-number">1</div>
                     <div>
                         <strong>Enter your details</strong>
-                        <span>
-                            Provide your personal and study information.
-                        </span>
+                        <span>Provide your personal and study information.</span>
                     </div>
                 </div>
 
@@ -777,9 +767,7 @@
                     <div class="step-number">2</div>
                     <div>
                         <strong>Choose your option</strong>
-                        <span>
-                            Select your preferred accommodation and funding type.
-                        </span>
+                        <span>Select your preferred accommodation and funding type.</span>
                     </div>
                 </div>
 
@@ -787,9 +775,7 @@
                     <div class="step-number">3</div>
                     <div>
                         <strong>Submit your application</strong>
-                        <span>
-                            Check that your information is correct before sending.
-                        </span>
+                        <span>Check that your information is correct before sending.</span>
                     </div>
                 </div>
             </section>
@@ -834,21 +820,27 @@
     Student Accommodation Applications &copy; 2027
 </footer>
 
-<iframe
-    name="submissionFrame"
-    id="submissionFrame"
-    title="Application submission response"
-    style="display: none;"
-></iframe>
-
 <script>
     const form = document.getElementById("applicationForm");
     const submitButton = document.getElementById("submitButton");
     const successMessage = document.getElementById("successMessage");
     const errorMessage = document.getElementById("errorMessage");
 
+    const accommodationSelect =
+        document.getElementById("accommodation");
+
     const WORKER_URL =
         "https://vaal-accommodation-api.rivaldochiburre.workers.dev";
+
+    // Automatically select the property chosen on the homepage.
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedProperty = urlParams.get("property");
+
+    const validProperties = ["BW-01", "SW-01", "SW-02"];
+
+    if (validProperties.includes(selectedProperty)) {
+        accommodationSelect.value = selectedProperty;
+    }
 
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -856,10 +848,9 @@
         successMessage.style.display = "none";
         errorMessage.style.display = "none";
 
-        const turnstileToken =
-            document.querySelector(
-                '[name="cf-turnstile-response"]'
-            )?.value;
+        const turnstileToken = document.querySelector(
+            '[name="cf-turnstile-response"]'
+        )?.value;
 
         if (!turnstileToken) {
             errorMessage.textContent =
@@ -919,6 +910,7 @@
             errorMessage.textContent =
                 error.message ||
                 "Something went wrong. Please try again.";
+
             errorMessage.style.display = "block";
 
             if (window.turnstile) {
@@ -934,4 +926,3 @@
 
 </body>
 </html>
-
