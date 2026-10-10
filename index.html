@@ -53,7 +53,7 @@
             text-decoration: none;
         }
 
-         {
+        img {
             display: block;
             max-width: 100%;
         }
@@ -86,8 +86,6 @@
             gap: 12px;
             min-width: 0;
         }
-
-        /* NEW LOGO */
 
         .logo {
             width: 58px;
@@ -278,7 +276,7 @@
             transform: translateY(-2px);
         }
 
-        /* PROPERTY PHOTOS */
+        /* TWO IMAGE HOLDERS PER PROPERTY */
 
         .property-photos {
             display: grid;
@@ -292,39 +290,20 @@
         .property-photos a {
             display: block;
             min-width: 0;
+            height: 200px;
             overflow: hidden;
+            background: #e7ebf0;
         }
 
-        .property-photos  {
+        .property-photos img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             transition: transform 0.3s;
         }
 
-        .property-photos a:hover  {
+        .property-photos a:hover img {
             transform: scale(1.04);
-        }
-
-        .photo-placeholder {
-            min-width: 0;
-            height: 200px;
-            background: #e7ebf0;
-            color: var(--navy);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 10px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .photo-placeholder span {
-            color: var(--gold);
-            font-size: 35px;
-            margin-bottom: 4px;
         }
 
         /* PROPERTY DETAILS */
@@ -616,8 +595,8 @@
             }
 
             .property-photos,
-            .property-photos img,
-            .photo-placeholder {
+            .property-photos a,
+            .property-photos img {
                 height: 210px;
             }
 
@@ -665,7 +644,6 @@
                class="brand"
                aria-label="Vaal Accommodation Network home">
 
-                <!-- Logo image added here -->
                 <img src="logo.jpg"
                      alt="Vaal Accommodation Network Logo"
                      class="logo">
@@ -691,7 +669,6 @@
 
         </div>
     </header>
-
 
     <main>
 
@@ -719,7 +696,6 @@
             </div>
         </section>
 
-
         <!-- QUICK INFORMATION -->
 
         <section class="quick-info" aria-label="Accommodation benefits">
@@ -741,7 +717,6 @@
 
         </section>
 
-
         <!-- ACCOMMODATION -->
 
         <section class="accommodation-section" id="accommodation">
@@ -755,10 +730,9 @@
                 </p>
             </div>
 
-
             <div class="property-grid">
 
-                <!-- BW-01 -->
+                <!-- PROPERTY BW-01 -->
 
                 <article class="property-card">
 
@@ -769,10 +743,9 @@
                            rel="noopener noreferrer"
                            aria-label="View BW-01 photo 1">
 
-                            <img
-                                src="BW01.jpg"
-                                alt="BW-01 student accommodation"
-                                loading="lazy">
+                            <img src="BW01.jpg"
+                                 alt="BW-01 student accommodation photo 1"
+                                 loading="lazy">
                         </a>
 
                         <a href="BW01-1.jpg"
@@ -780,14 +753,12 @@
                            rel="noopener noreferrer"
                            aria-label="View BW-01 photo 2">
 
-                            <img
-                                src="BW01-1"
-                                alt="Another view of BW-01 accommodation"
-                                loading="lazy">
+                            <img src="BW01-1.jpg"
+                                 alt="BW-01 student accommodation photo 2"
+                                 loading="lazy">
                         </a>
 
                     </div>
-
 
                     <div class="property-content">
 
@@ -842,22 +813,31 @@
                     </div>
                 </article>
 
-
-                <!-- SW-01 -->
+                <!-- PROPERTY SW-01 -->
 
                 <article class="property-card">
 
                     <div class="property-photos">
 
-                        <div class="photo-placeholder">
-                            <span aria-hidden="true">⌂</span>
-                            <p>SW-01 Photo 1</p>
-                        </div>
+                        <a href="SW01.jpg"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="View SW-01 photo 1">
 
-                        <div class="photo-placeholder">
-                            <span aria-hidden="true">⌂</span>
-                            <p>SW-01 Photo 2</p>
-                        </div>
+                            <img src="SW01.jpg"
+                                 alt="SW-01 student accommodation photo 1"
+                                 loading="lazy">
+                        </a>
+
+                        <a href="SW01-1.jpg"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="View SW-01 photo 2">
+
+                            <img src="SW01-1.jpg"
+                                 alt="SW-01 student accommodation photo 2"
+                                 loading="lazy">
+                        </a>
 
                     </div>
 
@@ -894,9 +874,8 @@
 
                         <div class="property-actions">
 
-                            <a href="#"
-                               class="photos-button"
-                               onclick="return false;">
+                            <a href="SW01-photos.html"
+                               class="photos-button">
                                 VIEW MORE PHOTOS
                             </a>
 
@@ -910,22 +889,31 @@
                     </div>
                 </article>
 
-
-                <!-- SW-02 -->
+                <!-- PROPERTY SW-02 -->
 
                 <article class="property-card">
 
                     <div class="property-photos">
 
-                        <div class="photo-placeholder">
-                            <span aria-hidden="true">⌂</span>
-                            <p>SW-02 Photo 1</p>
-                        </div>
+                        <a href="SW02.jpg"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="View SW-02 photo 1">
 
-                        <div class="photo-placeholder">
-                            <span aria-hidden="true">⌂</span>
-                            <p>SW-02 Photo 2</p>
-                        </div>
+                            <img src="SW02.jpg"
+                                 alt="SW-02 student accommodation photo 1"
+                                 loading="lazy">
+                        </a>
+
+                        <a href="SW02-1.jpg"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="View SW-02 photo 2">
+
+                            <img src="SW02-1.jpg"
+                                 alt="SW-02 student accommodation photo 2"
+                                 loading="lazy">
+                        </a>
 
                     </div>
 
@@ -962,9 +950,8 @@
 
                         <div class="property-actions">
 
-                            <a href="#"
-                               class="photos-button"
-                               onclick="return false;">
+                            <a href="SW02-photos.html"
+                               class="photos-button">
                                 VIEW MORE PHOTOS
                             </a>
 
@@ -980,7 +967,6 @@
 
             </div>
         </section>
-
 
         <!-- APPLY SECTION -->
 
@@ -1002,7 +988,6 @@
         </section>
 
     </main>
-
 
     <!-- FOOTER -->
 
