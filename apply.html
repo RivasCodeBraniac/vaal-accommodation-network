@@ -8,6 +8,7 @@
     <title>Vaal Accommodation Network | Application</title>
     <meta name="description" content="Apply for student accommodation for 2027 with Vaal Accommodation Network.">
     <link rel="icon" type="image/jpg" href="/logo.jpg">
+
     <style>
         :root {
             --navy: #12345b;
@@ -200,6 +201,31 @@
 
         .required-star {
             color: #c24135;
+        }
+
+        /* TWO-APPLICATION LIMIT NOTICE */
+
+        .application-limit-notice {
+            margin: 20px 28px 0;
+            padding: 16px 18px;
+            background: #fff8e7;
+            border: 1px solid #e6cf94;
+            border-left: 4px solid var(--gold);
+            border-radius: 7px;
+        }
+
+        .application-limit-notice > strong {
+            display: block;
+            color: var(--navy);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .application-limit-notice p {
+            margin: 0;
+            color: #4b5563;
+            font-size: 13px;
+            line-height: 1.7;
         }
 
         form {
@@ -531,6 +557,11 @@
                 gap: 5px;
             }
 
+            .application-limit-notice {
+                margin: 16px 20px 0;
+                padding: 14px;
+            }
+
             form {
                 padding: 20px;
             }
@@ -553,10 +584,10 @@
             }
         }
     </style>
-  <!-- Cloudflare Turnstile -->
+
+    <!-- Cloudflare Turnstile -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
-    
 
 <body>
 
@@ -611,6 +642,19 @@
                 <span class="required-note">
                     <span class="required-star">*</span> Required fields
                 </span>
+            </div>
+
+            <!-- TWO-APPLICATION LIMIT NOTICE -->
+            <div class="application-limit-notice">
+                <strong>Important: Two-Application Limit</strong>
+                <p>
+                    Each applicant can only apply up to a maximum of
+                    <strong>two accommodation applications</strong>.
+                    Choose your preferred options carefully.A third
+                    application will be rejected.
+                    Duplicate applications for the same accommodation
+                    are not allowed.
+                </p>
             </div>
 
             <form id="applicationForm" method="POST">
@@ -713,7 +757,7 @@
                             <option value="BW-01">BW-01</option>
                             <option value="SW-01">SW-01</option>
                             <option value="SW-02">SW-02</option>
-                            <option value="SW-03(Females Only)">SW-03(Females Only)</option>
+                            <option value="SW-03(Females Only)">SW-03 (Females Only)</option>
                         </select>
                     </div>
 
@@ -747,10 +791,10 @@
                         </span>
                     </div>
 
-                    <!-- Use your existing public Cloudflare Turnstile site key -->
+                    <!-- Add your existing public Cloudflare Turnstile site key -->
                     <div
                         class="cf-turnstile"
-                        data-sitekey="0x4AAAAAAFTChwJJxZQQB0QP">
+                        data-sitekey="">
                     </div>
 
                     <button
@@ -817,6 +861,12 @@
                 </p>
 
                 <div class="side-divider"></div>
+
+                <p>
+                    <strong>Remember:</strong> Each applicant is limited
+                    to two accommodation applications. Duplicate applications
+                    for the <strong>same accommodation</strong>  are not allowed.
+                </p>
             </section>
 
             <section class="side-card notice-card">
@@ -921,7 +971,16 @@
                 }
             );
 
-            const result = await response.json();
+            // Handle JSON responses from the Worker.
+            let result;
+
+            try {
+                result = await response.json();
+            } catch (parseError) {
+                throw new Error(
+                    "We could not read the server response. Please try again."
+                );
+            }
 
             if (!response.ok || result.success !== true) {
                 throw new Error(
