@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,34 +10,35 @@
 
     <title>Vaal Accommodation Network | Student Accommodation 2027</title>
 
-    <meta name="description" content="Discover student accommodation around Vaal for 2027. Explore furnished rooms, compare property options and apply online.">
+    <meta name="description"
+        content="Find student accommodation around Vaal. Explore furnished rooms with NSFAS, private bursary and self-funded options for 2027.">
 
-    <meta name="theme-color" content="#102b4e">
+    <meta name="theme-color" content="#12345b">
 
     <meta property="og:title" content="Vaal Accommodation Network">
-    <meta property="og:description" content="Find your student home for 2027. Explore accommodation options around Vaal and apply online.">
+    <meta property="og:description"
+        content="Find your student home for 2027. Explore student accommodation options and apply online.">
     <meta property="og:url" content="https://vaalaccommodationnetwork.pages.dev/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://vaalaccommodationnetwork.pages.dev/logo.jpg">
-    <meta property="og:image:alt" content="Vaal Accommodation Network logo">
-    <meta name="twitter:card" content="summary">
+    
+<!-- Website favicon -->
+      <link rel="icon" type="image/png" href="/logo.jpg">
 
-    <link rel="icon" type="image/jpeg" href="/logo.jpg">
+<!-- Website identity -->
+     <meta name="application-name" content="Vaal Accommodation Network">
+
 
     <style>
         :root {
-            --navy: #102b4e;
-            --navy-deep: #091c33;
-            --navy-light: #1b426d;
-            --gold: #c49a45;
-            --gold-dark: #9a7023;
-            --cream: #faf7f0;
+            --navy: #12345b;
+            --navy-light: #1b4777;
+            --gold: #a87800;
+            --gold-light: #f5edda;
             --white: #ffffff;
-            --background: #f5f7fa;
-            --text: #243246;
-            --muted: #69778a;
-            --border: #e3e8ef;
-            --shadow: 0 12px 35px rgba(16, 43, 78, 0.08);
+            --light: #f5f7fa;
+            --text: #222222;
+            --muted: #5b6470;
+            --border: #e0e5eb;
         }
 
         * {
@@ -47,14 +49,14 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 25px;
+            scroll-padding-top: 20px;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             background: var(--white);
             color: var(--text);
-            line-height: 1.65;
+            line-height: 1.6;
         }
 
         a {
@@ -66,624 +68,316 @@
             max-width: 100%;
         }
 
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
         a:focus-visible {
-            outline: 3px solid var(--gold);
-            outline-offset: 4px;
-        }
-
-        .container {
-            width: min(1180px, 88%);
-            margin: 0 auto;
-        }
-
-        /* ANNOUNCEMENT BAR */
-
-        .announcement {
-            background: var(--navy-deep);
-            color: #f6e8c8;
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .announcement span {
-            color: var(--gold);
-            font-weight: bold;
+            outline: 3px solid #f2c14e;
+            outline-offset: 3px;
         }
 
         /* HEADER */
 
-        .site-header {
-            position: relative;
-            z-index: 10;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
+        header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 20px 6%;
         }
 
-        .header-inner {
-            min-height: 94px;
+        .header-content {
+            max-width: 1200px;
+            margin: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 25px;
+            gap: 22px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 13px;
+            gap: 12px;
             min-width: 0;
         }
 
-        .brand-logo {
-            width: 59px;
-            height: 59px;
-            flex-shrink: 0;
+        .logo {
+            width: 58px;
+            height: 58px;
             object-fit: contain;
-            border: 1px solid #e9dfca;
-            border-radius: 12px;
-            padding: 3px;
-            background: var(--white);
+            flex-shrink: 0;
+            background: #ffffff;
+            border-radius: 6px;
         }
 
         .brand-name {
             display: block;
-            color: var(--navy);
-            font-size: 17px;
-            font-weight: 800;
-            line-height: 1.35;
-            letter-spacing: 0.4px;
-        }
-
-        .brand-subtitle {
-            display: block;
-            color: var(--muted);
-            font-size: 12px;
-            margin-top: 3px;
-        }
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .main-nav a {
-            color: var(--navy);
-            padding: 10px 12px;
-            border-radius: 7px;
-            font-size: 13px;
-            font-weight: 700;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .main-nav a:not(.nav-cta):hover {
-            background: #f0f3f7;
-        }
-
-        .main-nav .nav-cta {
-            color: var(--white);
-            background: var(--navy);
-            padding: 12px 19px;
-            margin-left: 5px;
-        }
-
-        .main-nav .nav-cta:hover {
-            background: var(--navy-light);
-        }
-
-        /* HERO SECTION */
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 85% 20%, rgba(196, 154, 69, 0.13), transparent 28%),
-                linear-gradient(135deg, #fbfcfe 0%, #f1f5fa 100%);
-            padding: 75px 0 80px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            color: var(--gold-dark);
-            background: #f8f0df;
-            border: 1px solid #ead9b5;
-            border-radius: 30px;
-            padding: 7px 13px;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1.1px;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-        }
-
-        .eyebrow-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--gold);
-        }
-
-        .hero h1 {
-            max-width: 620px;
-            color: var(--navy);
-            font-size: clamp(38px, 4.7vw, 59px);
-            line-height: 1.12;
-            letter-spacing: -2px;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 em {
-            color: var(--gold-dark);
-            font-style: normal;
-        }
-
-        .hero-description {
-            max-width: 510px;
-            color: var(--muted);
-            font-size: 16px;
-            line-height: 1.9;
-            margin-bottom: 28px;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 29px;
-        }
-
-        .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 9px;
-            padding: 14px 21px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 800;
-            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn-primary {
-            color: var(--white);
-            background: var(--navy);
-            box-shadow: 0 7px 18px rgba(16, 43, 78, 0.16);
-        }
-
-        .btn-primary:hover {
-            background: var(--navy-light);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 24px rgba(16, 43, 78, 0.20);
-        }
-
-        .btn-secondary {
-            color: var(--navy);
-            background: var(--white);
-            border: 1px solid #d9e0e9;
-        }
-
-        .btn-secondary:hover {
-            background: #f1f4f8;
-        }
-
-        .hero-note {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .hero-note-mark {
-            display: grid;
-            place-items: center;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #e5efe7;
-            color: #2d7545;
+            color: #ffffff;
+            font-size: 21px;
             font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        /* HERO PHOTO COLLAGE */
-
-        .hero-visual {
-            position: relative;
-            min-height: 390px;
-            padding: 0 0 30px 25px;
-        }
-
-        .hero-main-photo {
-            position: relative;
-            height: 365px;
-            overflow: hidden;
-            border-radius: 18px;
-            background: #dfe6ed;
-            box-shadow: 0 20px 50px rgba(16, 43, 78, 0.16);
-        }
-
-        .hero-main-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .photo-caption {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-            padding: 16px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            border-radius: 11px;
-            background: rgba(9, 28, 51, 0.88);
-            color: var(--white);
-        }
-
-        .photo-caption small {
-            display: block;
-            color: #f1d79e;
-            font-size: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 3px;
-        }
-
-        .photo-caption strong {
-            display: block;
-            font-size: 17px;
-        }
-
-        .floating-note {
-            position: absolute;
-            top: 30px;
-            left: 0;
-            background: var(--white);
-            padding: 13px 16px;
-            border-radius: 11px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        .floating-note strong {
-            display: block;
-            color: var(--navy);
-            font-size: 19px;
             line-height: 1.3;
         }
 
-        .floating-note span {
-            color: var(--muted);
-            font-size: 11px;
+        .brand-tagline {
+            display: block;
+            color: #e2e8f0;
+            font-size: 13px;
+            margin-top: 4px;
         }
 
-        .hero-gold-line {
-            position: absolute;
-            top: -16px;
-            right: -15px;
-            width: 100px;
-            height: 100px;
-            border-top: 3px solid var(--gold);
-            border-right: 3px solid var(--gold);
-            border-radius: 0 17px 0 0;
-            pointer-events: none;
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        /* BENEFITS STRIP */
+        nav a {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
 
-        .benefits {
-            background: var(--white);
+        nav a:hover {
+            color: #f2c14e;
+        }
+
+        nav .nav-apply {
+            background: var(--gold);
+            padding: 10px 17px;
+            border-radius: 5px;
+        }
+
+        nav .nav-apply:hover {
+            background: #896100;
+            color: var(--white);
+        }
+
+        /* HERO */
+
+        .hero {
+            background: var(--light);
+            padding: 72px 6%;
+            text-align: center;
             border-bottom: 1px solid var(--border);
         }
 
-        .benefits-grid {
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 6px 13px;
+            border-radius: 20px;
+            margin-bottom: 17px;
+        }
+
+        .hero h2 {
+            color: var(--navy);
+            font-size: clamp(32px, 5vw, 46px);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 28px;
+            font-size: 17px;
+            color: var(--muted);
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 13px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .button:hover {
+            background: #896100;
+            transform: translateY(-1px);
+        }
+
+        /* QUICK INFORMATION */
+
+        .quick-info {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 6%;
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            padding-top: 28px;
-            padding-bottom: 28px;
+            gap: 18px;
         }
 
-        .benefit {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 13px;
-            padding: 7px 20px;
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--gold);
+            border-radius: 8px;
+            padding: 22px 16px;
+            text-align: center;
         }
 
-        .benefit + .benefit {
-            border-left: 1px solid var(--border);
-        }
-
-        .benefit-icon {
-            display: grid;
-            place-items: center;
-            width: 43px;
-            height: 43px;
-            flex-shrink: 0;
-            border-radius: 12px;
-            background: var(--cream);
-            color: var(--gold-dark);
-            font-size: 19px;
-            font-weight: bold;
-        }
-
-        .benefit h3 {
+        .info-card h3 {
             color: var(--navy);
-            font-size: 13px;
-            margin-bottom: 2px;
+            font-size: 16px;
+            margin-bottom: 6px;
         }
 
-        .benefit p {
+        .info-card p {
+            font-size: 14px;
             color: var(--muted);
-            font-size: 11px;
-            line-height: 1.5;
         }
 
-        /* PROPERTY SECTION */
+        /* ACCOMMODATION SECTION */
 
-        .accommodation {
-            background: var(--background);
-            padding: 78px 0 85px;
+        .accommodation-section {
+            padding: 55px 6% 70px;
+            background: var(--light);
         }
 
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 25px;
-            margin-bottom: 35px;
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 35px;
         }
 
-        .section-kicker {
-            display: block;
-            color: var(--gold-dark);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 9px;
-        }
-
-        .section-header h2 {
+        .section-heading h2 {
             color: var(--navy);
-            font-size: clamp(29px, 3.5vw, 39px);
-            line-height: 1.2;
-            letter-spacing: -1px;
+            font-size: clamp(27px, 4vw, 34px);
             margin-bottom: 10px;
         }
 
-        .section-header p {
-            max-width: 580px;
+        .section-heading p {
             color: var(--muted);
-            font-size: 14px;
-        }
-
-        .property-count {
-            flex-shrink: 0;
-            color: var(--navy);
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: bold;
         }
 
         .property-grid {
+            max-width: 1200px;
+            margin: auto;
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
         }
 
         .property-card {
             min-width: 0;
-            overflow: hidden;
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(16, 43, 78, 0.04);
-            transition: transform 0.25s, box-shadow 0.25s;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(18, 52, 91, 0.06);
+            transition: box-shadow 0.2s, transform 0.2s;
         }
 
         .property-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 35px rgba(16, 43, 78, 0.10);
+            box-shadow: 0 8px 24px rgba(18, 52, 91, 0.11);
+            transform: translateY(-2px);
         }
 
-        /* PROPERTY IMAGE AREA */
+        /* PROPERTY PHOTOS */
 
-        .property-gallery {
-            position: relative;
+        .property-photos {
             display: grid;
-            grid-template-columns: 1.35fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 4px;
-            height: 235px;
+            height: 200px;
+            background: #e7ebf0;
             overflow: hidden;
-            background: #e5eaf0;
         }
 
-        .property-gallery a {
+        .property-photos a {
             display: block;
-            height: 235px;
             min-width: 0;
+            height: 200px;
             overflow: hidden;
-            background: #e5eaf0;
+            background: #e7ebf0;
         }
 
-        .property-gallery img {
+        .property-photos img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.4s;
+            transition: transform 0.3s;
         }
 
-        .property-card:hover .property-gallery img {
-            transform: scale(1.025);
+        .property-photos a:hover img {
+            transform: scale(1.04);
         }
 
-        .gallery-label {
-            position: absolute;
-            top: 14px;
-            left: 14px;
-            color: var(--navy);
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 5px;
-            padding: 6px 10px;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.7px;
-        }
+        /* PROPERTY DETAILS */
 
-        /* PROPERTY CONTENT */
-
-        .property-body {
-            padding: 24px;
-        }
-
-        .property-topline {
+        .property-content {
+            padding: 22px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            flex-direction: column;
+            flex: 1;
         }
 
         .property-code {
-            color: var(--gold-dark);
-            background: var(--cream);
-            border: 1px solid #eee2c9;
-            border-radius: 5px;
-            padding: 5px 9px;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.7px;
-        }
-
-        .room-label {
-            color: #3b704a;
-            background: #eaf4ed;
-            border-radius: 5px;
-            padding: 5px 9px;
-            font-size: 10px;
-            font-weight: 700;
-        }
-
-        .property-body h3 {
-            color: var(--navy);
-            font-size: 25px;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
-            margin-bottom: 5px;
-        }
-
-        .property-location {
-            display: flex;
-            align-items: flex-start;
-            gap: 7px;
-            color: var(--muted);
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--gold);
             font-size: 12px;
-            margin-bottom: 19px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 10px;
         }
 
-        .property-location span {
-            color: var(--gold-dark);
+        .property-content h3 {
+            color: var(--navy);
+            font-size: 22px;
+            line-height: 1.35;
+            margin-bottom: 7px;
+        }
+
+        .location {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .property-facts {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .property-facts li {
+            padding: 8px 0;
+            font-size: 14px;
+            border-bottom: 1px solid #edf0f3;
+        }
+
+        .property-facts strong {
+            color: var(--navy);
+        }
+
+        .self-funded {
+            color: var(--gold);
             font-weight: bold;
         }
 
-        .price-panel {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            background: #f7f9fc;
-            border: 1px solid #e8edf3;
-            border-radius: 9px;
-            padding: 13px 14px;
-            margin-bottom: 18px;
-        }
-
-        .price-label {
-            display: block;
-            color: var(--muted);
-            font-size: 10px;
-            margin-bottom: 2px;
-        }
-
-        .price-value {
-            display: block;
-            color: var(--navy);
-            font-size: 18px;
-            font-weight: 800;
-            line-height: 1.35;
-        }
-
-        .price-period {
-            color: var(--muted);
-            font-size: 10px;
-            margin-left: 3px;
-        }
-
-        .funding-label {
-            color: #3b704a;
-            background: #eaf4ed;
-            padding: 6px 9px;
-            border-radius: 6px;
-            font-size: 10px;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-
-        .property-details {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 11px 13px;
-            margin-bottom: 20px;
-        }
-
-        .property-details li {
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        .property-details strong {
-            display: block;
-            color: var(--navy);
-            font-size: 11px;
-            margin-bottom: 2px;
-        }
-
         .amenities {
-            border-top: 1px solid var(--border);
-            padding-top: 17px;
-            margin-bottom: 21px;
+            margin: 10px 0 22px;
         }
 
         .amenities h4 {
             color: var(--navy);
-            font-size: 12px;
-            margin-bottom: 10px;
+            font-size: 15px;
+            margin-bottom: 9px;
         }
 
         .amenity-list {
@@ -693,570 +387,259 @@
         }
 
         .amenity {
-            color: #526176;
-            background: #f5f7fa;
-            border: 1px solid #e5eaf0;
-            border-radius: 5px;
+            background: #f0f3f7;
+            color: #34465b;
+            font-size: 12px;
             padding: 5px 8px;
-            font-size: 10px;
+            border-radius: 4px;
         }
 
         .property-actions {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
             gap: 10px;
         }
 
-        .property-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 45px;
-            padding: 11px 9px;
-            border-radius: 7px;
-            font-size: 11px;
-            font-weight: 800;
-            transition: background 0.2s, border-color 0.2s;
-        }
-
-        .property-btn-photos {
-            color: var(--navy);
-            background: var(--white);
-            border: 1px solid #d9e0e9;
-        }
-
-        .property-btn-photos:hover {
-            background: #f1f4f8;
-            border-color: #b8c5d5;
-        }
-
-        .property-btn-apply {
-            color: var(--white);
-            background: var(--navy);
-            border: 1px solid var(--navy);
-        }
-
-        .property-btn-apply:hover {
-            background: var(--navy-light);
-            border-color: var(--navy-light);
-        }
-
-        /* FUNDING INFORMATION */
-
-        .funding-section {
-            background: var(--white);
-            padding: 58px 0;
-        }
-
-        .funding-inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 45px;
-            background: var(--cream);
-            border: 1px solid #eee2c9;
-            border-radius: 16px;
-            padding: 35px 38px;
-        }
-
-        .funding-inner h2 {
-            color: var(--navy);
-            font-size: 25px;
-            line-height: 1.3;
-            margin-bottom: 10px;
-        }
-
-        .funding-inner p {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .funding-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .funding-item {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            background: var(--white);
-            border: 1px solid #e9e1d1;
-            border-radius: 8px;
-            padding: 13px 11px;
-            color: var(--navy);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .funding-check {
-            display: grid;
-            place-items: center;
-            width: 22px;
-            height: 22px;
-            flex-shrink: 0;
-            border-radius: 50%;
-            color: #39734b;
-            background: #e8f3e9;
-            font-size: 12px;
-        }
-
-        /* FINAL CALL TO ACTION */
-
-        .final-cta {
-            position: relative;
-            overflow: hidden;
-            background: var(--navy);
-            padding: 65px 0;
-            text-align: center;
-        }
-
-        .final-cta::before,
-        .final-cta::after {
-            content: "";
-            position: absolute;
-            width: 220px;
-            height: 220px;
-            border: 1px solid rgba(196, 154, 69, 0.25);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .final-cta::before {
-            top: -125px;
-            left: -70px;
-        }
-
-        .final-cta::after {
-            bottom: -145px;
-            right: -55px;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .cta-kicker {
+        .apply-button {
             display: block;
-            color: #e6c77f;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            background: var(--navy);
+            color: var(--white);
+            padding: 13px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .apply-button:hover {
+            background: var(--navy-light);
+        }
+
+        .photos-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--gold);
+            color: var(--white);
+            padding: 13px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .photos-button:hover {
+            background: #896100;
+        }
+
+        /* APPLY SECTION */
+
+        .apply-section {
+            background: var(--white);
+            padding: 60px 6%;
+            text-align: center;
+        }
+
+        .apply-section h2 {
+            color: var(--navy);
+            font-size: clamp(27px, 4vw, 34px);
             margin-bottom: 12px;
         }
 
-        .final-cta h2 {
-            color: var(--white);
-            font-size: clamp(29px, 4vw, 40px);
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-
-        .final-cta p {
-            color: #d5dfeb;
-            font-size: 14px;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--navy-deep);
-            background: #e2bd6b;
-            padding: 14px 24px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 800;
-            transition: background 0.2s, transform 0.2s;
-        }
-
-        .cta-button:hover {
-            background: #f0d18b;
-            transform: translateY(-2px);
+        .apply-section p {
+            max-width: 650px;
+            margin: 0 auto 24px;
+            color: var(--muted);
         }
 
         /* FOOTER */
 
-        .site-footer {
-            background: var(--navy-deep);
+        footer {
+            background: var(--navy);
             color: var(--white);
-            padding: 43px 0 20px;
+            padding: 38px 6% 25px;
+            text-align: center;
         }
 
-        .footer-main {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 35px;
-            padding-bottom: 30px;
+        .footer-title {
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        .footer-brand {
-            max-width: 350px;
-        }
-
-        .footer-brand h2 {
-            color: var(--white);
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            margin-bottom: 9px;
-        }
-
-        .footer-brand p {
-            color: #bac8d8;
-            font-size: 12px;
-            line-height: 1.8;
-        }
-
-        .footer-links-area {
-            text-align: right;
-        }
-
-        .footer-links-title {
-            color: #e4c47f;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
+        .footer-description {
+            color: #e2e8f0;
+            font-size: 14px;
         }
 
         .footer-links {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 10px;
-        }
-
-        .footer-links a {
-            color: #e2e9f1;
-            font-size: 12px;
-            padding: 7px 9px;
-            border-radius: 5px;
-        }
-
-        .footer-links a:hover {
-            color: #f0d18b;
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 9px;
-            margin-top: 15px;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
-            padding: 10px 13px;
-            border-radius: 6px;
-            color: var(--white);
-            font-size: 11px;
-            font-weight: 800;
-        }
-
-        .whatsapp-link {
-            background: #168b49;
-        }
-
-        .whatsapp-link:hover {
-            background: #116e39;
-        }
-
-        .tiktok-link {
-            background: #202b38;
-            border: 1px solid #3a4654;
-        }
-
-        .tiktok-link:hover {
-            background: #344254;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            padding-top: 18px;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 22px 0;
         }
 
-        .footer-bottom p {
-            color: #aebdd0;
-            font-size: 11px;
+        .footer-button {
+            display: inline-block;
+            padding: 11px 18px;
+            border-radius: 5px;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.2s;
         }
 
-        /* RESPONSIVE DESIGN */
+        .whatsapp-button {
+            background: #25D366;
+        }
+
+        .whatsapp-button:hover {
+            background: #1da851;
+        }
+
+        /* TIKTOK BUTTON */
+
+        .tiktok-button {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .tiktok-button:hover {
+            background: #252525;
+            color: #ffffff;
+        }
+
+        .footer-link {
+            color: var(--white);
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        .footer-link:hover {
+            color: #f2c14e;
+        }
+
+        .copyright {
+            color: #d5dce5;
+            font-size: 12px;
+            margin-top: 18px;
+        }
+
+        /* TABLET */
 
         @media (max-width: 1000px) {
-            .container {
-                width: 90%;
-            }
-
-            .header-inner {
+            .header-content {
                 flex-direction: column;
                 align-items: flex-start;
-                justify-content: center;
-                padding-top: 17px;
-                padding-bottom: 17px;
-                gap: 13px;
             }
 
-            .main-nav {
+            nav {
                 justify-content: flex-start;
-                width: 100%;
             }
 
-            .main-nav .nav-cta {
-                margin-left: 0;
-            }
-
-            .hero-grid {
-                gap: 35px;
-            }
-
-            .hero-visual {
-                min-height: 340px;
-            }
-
-            .hero-main-photo {
-                height: 320px;
-            }
-
-            .property-body {
-                padding: 20px;
-            }
-
-            .funding-inner {
-                gap: 25px;
-                padding: 28px;
+            .property-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-        @media (max-width: 720px) {
-            .container {
-                width: 90%;
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+            header {
+                padding: 19px 5%;
             }
 
-            .announcement {
-                font-size: 10px;
+            .brand {
+                align-items: center;
             }
 
-            .header-inner {
-                gap: 15px;
-            }
-
-            .brand-logo {
-                width: 50px;
-                height: 50px;
+            .logo {
+                width: 48px;
+                height: 48px;
             }
 
             .brand-name {
-                font-size: 14px;
+                font-size: 17px;
             }
 
-            .brand-subtitle {
-                font-size: 11px;
+            .brand-tagline {
+                font-size: 12px;
             }
 
-            .main-nav {
-                gap: 4px;
+            nav {
+                width: 100%;
+                gap: 10px 16px;
             }
 
-            .main-nav a {
-                font-size: 11px;
-                padding: 8px 9px;
+            nav a {
+                font-size: 13px;
             }
 
-            .main-nav .nav-cta {
+            nav .nav-apply {
                 padding: 9px 12px;
             }
 
             .hero {
-                padding: 48px 0 40px;
+                padding: 48px 6%;
             }
 
-            .hero-grid {
+            .hero p {
+                font-size: 15px;
+            }
+
+            .quick-info {
                 grid-template-columns: 1fr;
-                gap: 34px;
+                gap: 12px;
+                padding: 23px 6%;
             }
 
-            .hero h1 {
-                max-width: 560px;
-                font-size: clamp(37px, 9vw, 49px);
-                letter-spacing: -1.4px;
+            .info-card {
+                padding: 18px 14px;
             }
 
-            .hero-description {
-                font-size: 14px;
-                line-height: 1.8;
+            .accommodation-section {
+                padding: 42px 5% 50px;
             }
 
-            .hero-visual {
-                min-height: 300px;
-                padding: 0 0 15px 15px;
-                margin: 0 5px;
-            }
-
-            .hero-main-photo {
-                height: 300px;
-            }
-
-            .floating-note {
-                top: 20px;
-                padding: 10px 12px;
-            }
-
-            .floating-note strong {
-                font-size: 16px;
-            }
-
-            .photo-caption {
-                bottom: 12px;
-                left: 12px;
-                right: 12px;
-                padding: 12px 14px;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                padding-top: 15px;
-                padding-bottom: 15px;
-            }
-
-            .benefit {
-                justify-content: flex-start;
-                padding: 12px 4px;
-            }
-
-            .benefit + .benefit {
-                border-left: none;
-                border-top: 1px solid var(--border);
-            }
-
-            .accommodation {
-                padding: 52px 0 55px;
-            }
-
-            .section-header {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 13px;
+            .section-heading {
                 margin-bottom: 25px;
             }
 
             .property-grid {
                 grid-template-columns: 1fr;
-                gap: 22px;
-                max-width: 500px;
-                margin: 0 auto;
+                gap: 20px;
+                max-width: 430px;
             }
 
-            .property-gallery,
-            .property-gallery a {
-                height: 220px;
+            .property-photos,
+            .property-photos a,
+            .property-photos img {
+                height: 210px;
             }
 
-            .property-gallery img {
-                height: 100%;
-            }
-
-            .property-body {
+            .property-content {
                 padding: 20px;
             }
 
-            .property-body h3 {
-                font-size: 23px;
+            .apply-section {
+                padding: 45px 6%;
             }
 
-            .funding-section {
-                padding: 35px 0;
+            footer {
+                padding: 32px 5% 22px;
             }
 
-            .funding-inner {
-                grid-template-columns: 1fr;
-                gap: 22px;
-                padding: 24px 20px;
-            }
-
-            .funding-inner h2 {
-                font-size: 23px;
-            }
-
-            .funding-list {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .final-cta {
-                padding: 52px 0;
-            }
-
-            .footer-main {
-                flex-direction: column;
-                gap: 27px;
-            }
-
-            .footer-links-area {
-                text-align: left;
-                width: 100%;
-            }
-
-            .footer-links,
-            .social-links {
-                justify-content: flex-start;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: flex-start;
+            .footer-links {
+                gap: 8px;
             }
         }
 
-        @media (max-width: 390px) {
-            .brand-name {
-                font-size: 12px;
-            }
-
-            .main-nav a {
-                font-size: 10px;
-                padding: 7px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .property-gallery,
-            .property-gallery a {
-                height: 180px;
-            }
-
-            .property-details {
-                gap: 10px;
-            }
-
-            .property-actions {
-                grid-template-columns: 1fr;
-            }
-
-            .funding-list {
-                grid-template-columns: 1fr;
-            }
-        }
+        /* REDUCED MOTION */
 
         @media (prefers-reduced-motion: reduce) {
             html {
@@ -1274,34 +657,36 @@
 
 <body>
 
-    <div class="announcement">
-        <span>2027 ACCOMMODATION</span> &nbsp;|&nbsp;
-        Explore your options and apply online
-    </div>
-
     <!-- HEADER -->
 
-    <header class="site-header">
-        <div class="container header-inner">
+    <header>
+        <div class="header-content">
 
-            <a href="/" class="brand" aria-label="Vaal Accommodation Network home">
-                <img
-                    src="/logo.jpg"
-                    alt="Vaal Accommodation Network logo"
-                    class="brand-logo"
-                >
+            <a href="index.html"
+                class="brand"
+                aria-label="Vaal Accommodation Network home">
+
+                <img src="logo.jpg"
+                    alt="Vaal Accommodation Network Logo"
+                    class="logo">
 
                 <span>
-                    <span class="brand-name">VAAL ACCOMMODATION NETWORK</span>
-                    <span class="brand-subtitle">Student Accommodation for 2027</span>
+                    <span class="brand-name">
+                        VAAL ACCOMMODATION NETWORK
+                    </span>
+
+                    <span class="brand-tagline">
+                        Student Accommodation for 2027
+                    </span>
                 </span>
+
             </a>
 
-            <nav class="main-nav" aria-label="Main navigation">
-                <a href="/">Home</a>
-                <a href="/FAQ">FAQ</a>
-                <a href="#accommodation">Properties</a>
-                <a href="/apply" class="nav-cta">Apply Now &rarr;</a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="#accommodation">Accommodation</a>
+                <a href="apply.html" class="nav-apply">Apply Now</a>
             </nav>
 
         </div>
@@ -1312,619 +697,461 @@
         <!-- HERO -->
 
         <section class="hero">
-            <div class="container hero-grid">
+            <div class="hero-content">
 
-                <div class="hero-copy">
+                <span class="hero-label">
+                    YOUR STUDENT HOME FOR 2027
+                </span>
 
-                    <div class="eyebrow">
-                        <span class="eyebrow-dot"></span>
-                        YOUR NEXT CHAPTER STARTS HERE
-                    </div>
-
-                    <h1>
-                        Find a place to call <em>home.</em>
-                    </h1>
-
-                    <p class="hero-description">
-                        Looking for student accommodation around Vaal?
-                        Explore our available properties, compare room
-                        options and find a space that suits your needs
-                        for the 2027 academic year.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#accommodation" class="btn btn-primary">
-                            Explore Properties &rarr;
-                        </a>
-
-                        <a href="/apply" class="btn btn-secondary">
-                            Apply Online
-                        </a>
-                    </div>
-
-                    <div class="hero-note">
-                        <span class="hero-note-mark">&#10003;</span>
-                        <span>Explore options for self-funded, NSFAS and private bursary students.</span>
-                    </div>
-
-                </div>
-
-                <div class="hero-visual">
-
-                    <div class="hero-gold-line"></div>
-
-                    <div class="hero-main-photo">
-                        <img
-                            src="/BW01.jpg"
-                            alt="Student accommodation at Bedworth Park"
-                        >
-
-                        <div class="photo-caption">
-                            <small>Find your student space</small>
-                            <strong>Start your search in Vaal</strong>
-                        </div>
-                    </div>
-
-                    <div class="floating-note">
-                        <strong>2027</strong>
-                        <span>Academic year</span>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- KEY BENEFITS -->
-
-        <section class="benefits" aria-label="Accommodation information">
-            <div class="container benefits-grid">
-
-                <div class="benefit">
-                    <div class="benefit-icon">&#10003;</div>
-                    <div>
-                        <h3>NSFAS Options</h3>
-                        <p>Explore accommodation options for NSFAS students.</p>
-                    </div>
-                </div>
-
-                <div class="benefit">
-                    <div class="benefit-icon">&#9670;</div>
-                    <div>
-                        <h3>Private Bursaries</h3>
-                        <p>Options for privately funded students.</p>
-                    </div>
-                </div>
-
-                <div class="benefit">
-                    <div class="benefit-icon">&#8962;</div>
-                    <div>
-                        <h3>Student Living</h3>
-                        <p>Explore rooms with essential amenities.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- PROPERTIES -->
-
-        <section class="accommodation" id="accommodation">
-            <div class="container">
-
-                <div class="section-header">
-                    <div>
-                        <span class="section-kicker">Explore your options</span>
-                        <h2>Find Your Student Space</h2>
-                        <p>
-                            Discover our accommodation options around Vaal.
-                            Review each property's details, amenities and
-                            pricing before submitting your application.
-                        </p>
-                    </div>
-
-                    <div class="property-count">4 Properties Listed</div>
-                </div>
-
-                <div class="property-grid">
-
-                    <!-- BW-01 -->
-
-                    <article class="property-card">
-
-                        <div class="property-gallery">
-                            <a href="/BW01.jpg" target="_blank" rel="noopener noreferrer"
-                               aria-label="Open BW-01 photo">
-                                <img src="/BW01.jpg"
-                                     alt="Bedworth Park accommodation"
-                                     loading="lazy">
-                            </a>
-
-                            <a href="/BW01-1.jpg" target="_blank" rel="noopener noreferrer"
-                               aria-label="Open another BW-01 photo">
-                                <img src="/BW01-1.jpg"
-                                     alt="Another view of Bedworth Park accommodation"
-                                     loading="lazy">
-                            </a>
-
-                            <span class="gallery-label">BEDWORTH PARK</span>
-                        </div>
-
-                        <div class="property-body">
-
-                            <div class="property-topline">
-                                <span class="property-code">PROPERTY BW-01</span>
-                                <span class="room-label">Single rooms</span>
-                            </div>
-
-                            <h3>Bedworth Park</h3>
-
-                            <p class="property-location">
-                                <span>&#9679;</span>
-                                Approximately 24 minutes' walk to campus · Transport available
-                            </p>
-
-                            <div class="price-panel">
-                                <div>
-                                    <span class="price-label">Self-funded monthly price</span>
-                                    <span class="price-value">R3,500<span class="price-period">/month</span></span>
-                                </div>
-
-                                <span class="funding-label">NSFAS accepted</span>
-                            </div>
-
-                            <ul class="property-details">
-                                <li>
-                                    <strong>Gender</strong>
-                                    Any
-                                </li>
-                                <li>
-                                    <strong>Deposit</strong>
-                                    No deposit
-                                </li>
-                                <li>
-                                    <strong>Private bursary</strong>
-                                    Accepted
-                                </li>
-                                <li>
-                                    <strong>Institution</strong>
-                                    VUT
-                                </li>
-                            </ul>
-
-                            <div class="amenities">
-                                <h4>Property amenities</h4>
-                                <div class="amenity-list">
-                                    <span class="amenity">Wi-Fi</span>
-                                    <span class="amenity">Furnished</span>
-                                    <span class="amenity">Swimming pool</span>
-                                    <span class="amenity">Kitchen</span>
-                                    <span class="amenity">Laundry</span>
-                                    <span class="amenity">Security</span>
-                                    <span class="amenity">Water &amp; electricity</span>
-                                </div>
-                            </div>
-
-                            <div class="property-actions">
-                                <a href="https://ibb.co/album/fGBXTn"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="property-btn property-btn-photos">
-                                    View Photos
-                                </a>
-
-                                <a href="/apply?property=BW-01"
-                                   class="property-btn property-btn-apply">
-                                    Apply for BW-01 &rarr;
-                                </a>
-                            </div>
-
-                        </div>
-                    </article>
-
-                    <!-- SW-01 -->
-
-                    <article class="property-card">
-
-                        <div class="property-gallery">
-                            <a href="/SW01.jpg" target="_blank" rel="noopener noreferrer"
-                               aria-label="Open SW-01 photo">
-                                <img src="/SW01.jpg"
-                                     alt="SW-01 student accommodation"
-                                     loading="lazy">
-                            </a>
-
-                            <a href="/SW01-1.jpg" target="_blank" rel="noopener noreferrer"
-                               aria-label="Open another SW-01 photo">
-                                <img src="/SW01-1.jpg"
-                                     alt="Another view of SW-01 accommodation"
-                                     loading="lazy">
-                            </a>
-
-                            <span class="gallery-label">SE7</span>
-                        </div>
-
-                        <div class="property-body">
-
-                            <div class="property-topline">
-                                <span class="property-code">PROPERTY SW-01</span>
-                                <span class="room-label">Single rooms</span>
-                            </div>
-
-                            <h3>SE7</h3>
-
-                            <p class="property-location">
-                                <span>&#9679;</span>
-                                Approximately 10 minutes' walk to campus
-                            </p>
-
-                            <div class="price-panel">
-                                <div>
-                                    <span class="price-label">Self-funded monthly price</span>
-                                    <span class="price-value">R2,500–R3,000<span class="price-period">/month</span></span>
-                                </div>
-
-                                <span class="funding-label">NSFAS accepted</span>
-                            </div>
-
-                            <ul class="property-details">
-                                <li>
-                                    <strong>Gender</strong>
-                                    Any
-                                </li>
-                                <li>
-                                    <strong>Deposit</strong>
-                                    No deposit
-                                </li>
-                                <li>
-                                    <strong>Private bursary</strong>
-                                    Accepted
-                                </li>
-                                <li>
-                                    <strong>Institution</strong>
-                                    VUT
-                                </li>
-                            </ul>
-
-                            <div class="amenities">
-                                <h4>Property amenities</h4>
-                                <div class="amenity-list">
-                                    <span class="amenity">Wi-Fi</span>
-                                    <span class="amenity">Furnished</span>
-                                    <span class="amenity">Kitchen</span>
-                                    <span class="amenity">Laundry</span>
-                                    <span class="amenity">Security</span>
-                                    <span class="amenity">Water &amp; electricity</span>
-                                </div>
-                            </div>
-
-                            <div class="property-actions">
-                                <a href="https://ibb.co/album/9w8NZ1"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="property-btn property-btn-photos">
-                                    View Photos
-                                </a>
-
-                                <a href="/apply?property=SW-01"
-                                   class="property-btn property-btn-apply">
-                                    Apply for SW-01 &rarr;
-                                </a>
-                            </div>
-
-                        </div>
-                    </article>
-
-                    <!-- SW-02 -->
-
-                    <article class="property-card">
-
-                        <div class="property-gallery">
-                            <a href="/SW02.jpg" target="_blank" rel="noopener noreferrer"
-                               aria-label="Open SW-02 photo">
-                                <img src="/SW02.jpg"
-                                     alt="SW-02 student accommodation"
-                                     loading="lazy">
-                            </a>
-
-                            <a href="/SW02-1.jpg" target="_blank" rel="noopener noreferrer"
-                               aria-label="Open another SW-02 photo">
-                                <img src="/SW02-1.jpg"
-                                     alt="Another view of SW-02 accommodation"
-                                     loading="lazy">
-                            </a>
-
-                            <span class="gallery-label">SE7</span>
-                        </div>
-
-                        <div class="property-body">
-
-                            <div class="property-topline">
-                                <span class="property-code">PROPERTY SW-02</span>
-                                <span class="room-label">Single rooms</span>
-                            </div>
-
-                            <h3>SE7</h3>
-
-                            <p class="property-location">
-                                <span>&#9679;</span>
-                                Approximately 5 minutes' walk to campus
-                            </p>
-
-                            <div class="price-panel">
-                                <div>
-                                    <span class="price-label">Self-funded pricing</span>
-                                    <span class="price-value">Contact us</span>
-                                </div>
-
-                                <span class="funding-label">NSFAS accepted</span>
-                            </div>
-
-                            <ul class="property-details">
-                                <li>
-                                    <strong>Gender</strong>
-                                    Any
-                                </li>
-                                <li>
-                                    <strong>Deposit</strong>
-                                    No deposit
-                                </li>
-                                <li>
-                                    <strong>Private bursary</strong>
-                                    Accepted
-                                </li>
-                                <li>
-                                    <strong>Institution</strong>
-                                    VUT, NWU
-                                </li>
-                            </ul>
-
-                            <div class="amenities">
-                                <h4>Property amenities</h4>
-                                <div class="amenity-list">
-                                    <span class="amenity">Wi-Fi</span>
-                                    <span class="amenity">Furnished</span>
-                                    <span class="amenity">Kitchen</span>
-                                    <span class="amenity">Laundry</span>
-                                    <span class="amenity">Security</span>
-                                    <span class="amenity">Water &amp; electricity</span>
-                                </div>
-                            </div>
-
-                            <div class="property-actions">
-                                <a href="https://ibb.co/album/Fxb83P"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="property-btn property-btn-photos">
-                                    View Photos
-                                </a>
-
-                                <a href="/apply?property=SW-02"
-                                   class="property-btn property-btn-apply">
-                                    Apply for SW-02 &rarr;
-                                </a>
-                            </div>
-
-                        </div>
-                    </article>
-
-                    <!-- SW-03 -->
-
-                    <article class="property-card">
-
-                        <div class="property-gallery">
-                            <a href="/SW03.jpg" target="_blank" rel="noopener noreferrer"
-                               aria-label="Open SW-03 photo">
-                                <img src="/SW03.jpg"
-                                     alt="SW-03 student accommodation"
-                                     loading="lazy">
-                            </a>
-
-                            <a href="/SW03-1.jpg" target="_blank" rel="noopener noreferrer"
-                               aria-label="Open another SW-03 photo">
-                                <img src="/SW03-1.jpg"
-                                     alt="Another view of SW-03 accommodation"
-                                     loading="lazy">
-                            </a>
-
-                            <span class="gallery-label">SE7 · FEMALES ONLY</span>
-                        </div>
-
-                        <div class="property-body">
-
-                            <div class="property-topline">
-                                <span class="property-code">PROPERTY SW-03</span>
-                                <span class="room-label">Females only</span>
-                            </div>
-
-                            <h3>SE7</h3>
-
-                            <p class="property-location">
-                                <span>&#9679;</span>
-                                Approximately 4 minutes' walk to campus
-                            </p>
-
-                            <div class="price-panel">
-                                <div>
-                                    <span class="price-label">Self-funded pricing</span>
-                                    <span class="price-value">Contact us</span>
-                                </div>
-
-                                <span class="funding-label">NSFAS accepted</span>
-                            </div>
-
-                            <ul class="property-details">
-                                <li>
-                                    <strong>Gender</strong>
-                                    Females only
-                                </li>
-                                <li>
-                                    <strong>Deposit</strong>
-                                    R500
-                                </li>
-                                <li>
-                                    <strong>Private bursary</strong>
-                                    Accepted
-                                </li>
-                                <li>
-                                    <strong>Institution</strong>
-                                    VUT
-                                </li>
-                            </ul>
-
-                            <div class="amenities">
-                                <h4>Property amenities</h4>
-                                <div class="amenity-list">
-                                    <span class="amenity">Wi-Fi</span>
-                                    <span class="amenity">Swimming pool</span>
-                                    <span class="amenity">Furnished</span>
-                                    <span class="amenity">Kitchen</span>
-                                    <span class="amenity">Laundry</span>
-                                    <span class="amenity">Security</span>
-                                    <span class="amenity">Water &amp; electricity</span>
-                                </div>
-                            </div>
-
-                            <div class="property-actions">
-                                <a href="https://ibb.co/album/kQqsvC"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="property-btn property-btn-photos">
-                                    View Photos
-                                </a>
-
-                                <a href="/apply?property=SW-03%28Females%20Only%29"
-                                   class="property-btn property-btn-apply">
-                                    Apply for SW-03 &rarr;
-                                </a>
-                            </div>
-
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- FUNDING INFORMATION -->
-
-        <section class="funding-section">
-            <div class="container">
-                <div class="funding-inner">
-
-                    <div>
-                        <span class="section-kicker">Your accommodation search</span>
-
-                        <h2>Explore the option that works for you.</h2>
-
-                        <p>
-                            Review each property for pricing, deposit
-                            requirements, location and funding options.
-                            For properties showing “Contact us”, enquire
-                            for the latest self-funded price.
-                        </p>
-                    </div>
-
-                    <div class="funding-list">
-                        <div class="funding-item">
-                            <span class="funding-check">&#10003;</span>
-                            NSFAS options
-                        </div>
-
-                        <div class="funding-item">
-                            <span class="funding-check">&#10003;</span>
-                            Private bursaries
-                        </div>
-
-                        <div class="funding-item">
-                            <span class="funding-check">&#10003;</span>
-                            Self-funded rooms
-                        </div>
-
-                        <div class="funding-item">
-                            <span class="funding-check">&#10003;</span>
-                            Online applications
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- FINAL CALL TO ACTION -->
-
-        <section class="final-cta">
-            <div class="cta-content">
-
-                <span class="cta-kicker">Take the next step</span>
-
-                <h2>Your next student home could be here.</h2>
+                <h2>Find Your Student Home</h2>
 
                 <p>
-                    Choose a property, review its details and complete
-                    the application form to get started.
+                    Explore student accommodation around
+                    Vaal.Compare room options, prices and
+                    funding arrangements, then apply online.
                 </p>
 
-                <a href="/apply" class="cta-button">
-                    Start Your Application &rarr;
+                <a href="#accommodation" class="button">
+                    VIEW ACCOMMODATION
                 </a>
 
             </div>
+        </section>
+
+        <!-- QUICK INFORMATION -->
+
+        <section class="quick-info" aria-label="Accommodation benefits">
+
+            <div class="info-card">
+                <h3>NSFAS Accepted</h3>
+                <p>Explore accommodation options for NSFAS-funded students.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Private Bursaries</h3>
+                <p>Options available for students funded by private bursaries.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Furnished Rooms</h3>
+                <p>Find rooms with essential student living amenities.</p>
+            </div>
+
+        </section>
+
+        <!-- ACCOMMODATION -->
+
+        <section class="accommodation-section" id="accommodation">
+
+            <div class="section-heading">
+                <h2>Available Accommodation</h2>
+
+                <p>
+                    Compare our properties and choose the accommodation
+                    that best suits your needs for 2027.Read property details
+                    carefully before applying.
+                </p>
+            </div>
+
+            <div class="property-grid">
+
+                <!-- PROPERTY BW-01 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="BW01.jpg" target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View BW-01 photo 1">
+
+                            <img src="BW01.jpg"
+                                alt="BW-01 student accommodation photo 1"
+                                loading="lazy">
+                        </a>
+
+                        <a href="BW01-1.jpg" target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View BW-01 photo 2">
+
+                            <img src="BW01-1.jpg"
+                                alt="BW-01 student accommodation photo 2"
+                                loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY BW-01</span>
+
+                        <h3>Bedworth Park</h3>
+
+                        <p class="location">
+                            Approximately 24 minutes' walk to campus.
+                            Transport available.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Deposit Fee:</strong> None</li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">R3,500/month</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Swimming pool</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/fGBXTn"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=BW-01"
+                                class="apply-button">
+                                APPLY FOR BW-01
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- PROPERTY SW-01 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="SW01.jpg" target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View SW-01 photo 1">
+
+                            <img src="SW01.jpg"
+                                alt="SW-01 student accommodation photo 1"
+                                loading="lazy">
+                        </a>
+
+                        <a href="SW01-1.jpg" target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View SW-01 photo 2">
+
+                            <img src="SW01-1.jpg"
+                                alt="SW-01 student accommodation photo 2"
+                                loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY SW-01</span>
+
+                        <h3>SE7</h3>
+
+                        <p class="location">
+                            Approximately 10 minutes' walk to campus.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Deposit Fee:</strong> None</li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">R2,500–R3,000/month</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/9w8NZ1"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=SW-01"
+                                class="apply-button">
+                                APPLY FOR SW-01
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- PROPERTY SW-02 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="SW02.jpg" target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View SW-02 photo 1">
+
+                            <img src="SW02.jpg"
+                                alt="SW-02 student accommodation photo 1"
+                                loading="lazy">
+                        </a>
+
+                        <a href="SW02-1.jpg" target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View SW-02 photo 2">
+
+                            <img src="SW02-1.jpg"
+                                alt="SW-02 student accommodation photo 2"
+                                loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY SW-02</span>
+
+                        <h3>SE7</h3>
+
+                        <p class="location">
+                            Approximately 5 minutes' walk to campus.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Deposit Fee:</strong> None</li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">Contact us for pricing</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT, NWU</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/Fxb83P"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=SW-02"
+                                class="apply-button">
+                                APPLY FOR SW-02
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- PROPERTY SW-03 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="SW03.jpg" target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View SW-03 photo 1">
+
+                            <img src="SW03.jpg"
+                                alt="SW-03 student accommodation photo 1"
+                                loading="lazy">
+                        </a>
+
+                        <a href="SW03-1.jpg" target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="View SW-03 photo 2">
+
+                            <img src="SW03-1.jpg"
+                                alt="SW-03 student accommodation photo 2"
+                                loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY SW-03</span>
+
+                        <h3>SE7</h3>
+
+                        <p class="location">
+                            Approximately 4 minutes' walk to campus.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Females only</li>
+                            <li><strong>Deposit Fee:</strong> R500</li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">Contact us for pricing</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Swimming pool</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/kQqsvC"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=SW-03(Females Only)"
+                                class="apply-button">
+                                APPLY FOR SW-03
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- APPLY SECTION -->
+
+        <section class="apply-section" id="apply">
+
+            <h2>Ready to Find Your Room?</h2>
+
+            <p>
+                Choose your preferred accommodation and complete
+                the online application form. When applying through
+                a property card, your selected property will be passed
+                to the application page.
+            </p>
+
+            <a href="apply.html" class="button">
+                APPLY NOW
+            </a>
+
         </section>
 
     </main>
 
     <!-- FOOTER -->
 
-    <footer class="site-footer">
-        <div class="container">
+    <footer>
 
-            <div class="footer-main">
+        <p class="footer-title">
+            VAAL ACCOMMODATION NETWORK
+        </p>
 
-                <div class="footer-brand">
-                    <h2>VAAL ACCOMMODATION NETWORK</h2>
+        <p class="footer-description">
+            Helping students find accommodation for 2027.
+        </p>
 
-                    <p>
-                        Helping students explore accommodation options
-                        around Vaal for the 2027 academic year.
-                    </p>
-                </div>
+        <div class="footer-links">
 
-                <div class="footer-links-area">
+            <a href="https://wa.me/message/C3XPVKIU5QH5P1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-button whatsapp-button">
+                WhatsApp Us
+            </a>
 
-                    <p class="footer-links-title">Explore &amp; connect</p>
+            <!-- TIKTOK: REPLACE WITH YOUR REAL USERNAME -->
 
-                    <div class="footer-links">
-                        <a href="/">Home</a>
-                        <a href="#accommodation">Properties</a>
-                        <a href="/FAQ">FAQ</a>
-                        <a href="/terms">Terms &amp; Conditions</a>
-                        <a href="/privacy">Privacy Policy</a>
-                    </div>
+            <a href="http://tiktok.com/@vaal_accommodation"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-button tiktok-button">
+                TikTok
+            </a>
 
-                    <div class="social-links">
-                        <a href="https://wa.me/message/C3XPVKIU5QH5P1"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="social-link whatsapp-link">
-                            WhatsApp Us
-                        </a>
+            <a href="FAQ.html" class="footer-link">
+                FAQ
+            </a>
 
-                        <a href="https://www.tiktok.com/@vaal_accommodation"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="social-link tiktok-link">
-                            Follow on TikTok
-                        </a>
-                    </div>
+            <a href="terms.html" class="footer-link">
+                Terms &amp; Conditions
+            </a>
 
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2027 Vaal Accommodation Network. All rights reserved.</p>
-                <p>Student Accommodation for 2027</p>
-            </div>
+            <a href="privacy.html" class="footer-link">
+                Privacy Policy
+            </a>
 
         </div>
+
+        <p class="copyright">
+            &copy; 2027 Vaal Accommodation Network. All rights reserved.
+        </p>
+
     </footer>
 
 </body>
+
 </html>
