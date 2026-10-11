@@ -1,6 +1,5 @@
-
 https://vaalaccommodationnetwork.pages.dev/
-https://vaalaccommodationnetwork.pages.dev/FAQ.html
-https://vaalaccommodationnetwork.pages.dev/apply.html
-https://vaalaccommodationnetwork.pages.dev/privacy.html
-https://vaalaccommodationnetwork.pages.dev/terms.html
+https://vaalaccommodationnetwork.pages.dev/FAQ
+https://vaalaccommodationnetwork.pages.dev/apply
+https://vaalaccommodationnetwork.pages.dev/privacy
+https://vaalaccommodationnetwork.pages.dev/terms
