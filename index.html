@@ -4,28 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="google-site-verification" content="0VyBU_O677xSD36c2hJqSU4DLvtuL_0a2jcIlVUSP7s">
 
     <title>Vaal Accommodation Network | Student Accommodation 2027</title>
 
     <meta name="description"
         content="Find student accommodation around Vaal. Explore furnished rooms with NSFAS, private bursary and self-funded options for 2027.">
-
     <meta name="theme-color" content="#12345b">
-
     <meta property="og:title" content="Vaal Accommodation Network">
     <meta property="og:description"
         content="Find your student home for 2027. Explore student accommodation options and apply online.">
     <meta property="og:url" content="https://vaalaccommodationnetwork.pages.dev/">
     <meta property="og:type" content="website">
-
-    <!-- Website favicon -->
-    <link rel="icon" type="image/png" href="/logo.jpg">
-
-    <!-- Website identity -->
+    <link rel="icon" type="image/jpeg" href="/logo.jpg">
     <meta name="application-name" content="Vaal Accommodation Network">
-
 
     <style>
         :root {
@@ -150,43 +142,82 @@
             color: var(--white);
         }
 
-        /* HERO */
+        /* BLUE HERO */
 
         .hero {
-            background: var(--light);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(120deg,
+                    #0c2746 0%,
+                    #12345b 55%,
+                    #22527d 100%);
             padding: 72px 6%;
             text-align: center;
-            border-bottom: 1px solid var(--border);
+            color: white;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 500px;
+            height: 500px;
+            right: -150px;
+            top: -290px;
+        }
+
+        .hero::after {
+            width: 300px;
+            height: 300px;
+            right: 130px;
+            top: -175px;
         }
 
         .hero-content {
             max-width: 850px;
             margin: auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-label {
             display: inline-block;
-            background: var(--gold-light);
-            color: var(--gold);
+            color: #eed49a;
             font-size: 12px;
             font-weight: bold;
-            padding: 6px 13px;
-            border-radius: 20px;
+            letter-spacing: 2px;
             margin-bottom: 17px;
         }
 
-        .hero h2 {
-            color: var(--navy);
+        .hero h1 {
+            color: white;
             font-size: clamp(32px, 5vw, 46px);
             line-height: 1.2;
             margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #e8c779;
         }
 
         .hero p {
             max-width: 700px;
             margin: 0 auto 28px;
             font-size: 17px;
-            color: var(--muted);
+            color: #dce7f3;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .button {
@@ -203,6 +234,22 @@
         .button:hover {
             background: #896100;
             transform: translateY(-1px);
+        }
+
+        .button-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .button-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .hero-footer {
+            margin-top: 30px;
+            font-size: 12px !important;
+            color: #cbd9e8 !important;
+            margin-bottom: 0 !important;
         }
 
         /* QUICK INFORMATION */
@@ -236,7 +283,7 @@
             color: var(--muted);
         }
 
-        /* ACCOMMODATION SECTION */
+        /* ACCOMMODATION */
 
         .accommodation-section {
             padding: 55px 6% 70px;
@@ -285,8 +332,6 @@
             transform: translateY(-2px);
         }
 
-        /* PROPERTY PHOTOS */
-
         .property-photos {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -314,8 +359,6 @@
         .property-photos a:hover img {
             transform: scale(1.04);
         }
-
-        /* PROPERTY DETAILS */
 
         .property-content {
             padding: 22px;
@@ -413,6 +456,10 @@
             transition: background 0.2s;
         }
 
+        .apply-button:hover {
+            background: var(--navy-light);
+        }
+
         .fully-booked {
             display: block;
             background: #b42318;
@@ -424,10 +471,6 @@
             margin: 15px 0;
             border-radius: 6px;
             letter-spacing: 1px;
-        }
-
-        .apply-button:hover {
-            background: var(--navy-light);
         }
 
         .photos-button {
@@ -513,8 +556,6 @@
         .whatsapp-button:hover {
             background: #1da851;
         }
-
-        /* TIKTOK BUTTON */
 
         .tiktok-button {
             background: #000000;
@@ -651,8 +692,6 @@
             }
         }
 
-        /* REDUCED MOTION */
-
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
@@ -669,25 +708,19 @@
 
 <body>
 
-    <!-- HEADER -->
-
     <header>
         <div class="header-content">
-
             <a href="index.html" class="brand" aria-label="Vaal Accommodation Network home">
-
                 <img src="logo.jpg" alt="Vaal Accommodation Network Logo" class="logo">
 
                 <span>
                     <span class="brand-name">
                         VAAL ACCOMMODATION NETWORK
                     </span>
-
                     <span class="brand-tagline">
                         Student Accommodation for 2027
                     </span>
                 </span>
-
             </a>
 
             <nav aria-label="Main navigation">
@@ -696,13 +729,12 @@
                 <a href="#accommodation">Accommodation</a>
                 <a href="apply.html" class="nav-apply">Apply Now</a>
             </nav>
-
         </div>
     </header>
 
     <main>
 
-        <!-- HERO -->
+        <!-- UPDATED BLUE HERO -->
 
         <section class="hero">
             <div class="hero-content">
@@ -711,17 +743,25 @@
                     YOUR STUDENT HOME FOR 2027
                 </span>
 
-                <h2>Find Your Student Home</h2>
+                <h1>
+                    Your Student Home<br>
+                    <span>Starts Here.</span>
+                </h1>
 
                 <p>
-                    Explore student accommodation around
-                    Vaal.Compare room options, prices and
-                    funding arrangements, then apply online.
+                    Discover student accommodation around Vaal. Explore available properties,
+                    compare room options and submit your application online.
                 </p>
 
-                <a href="#accommodation" class="button">
-                    VIEW ACCOMMODATION
-                </a>
+                <div class="hero-buttons">
+                    <a href="#accommodation" class="button">
+                        Explore Accommodation
+                    </a>
+
+                    <a href="apply.html" class="button button-outline">
+                        Apply Now
+                    </a>
+                </div>
 
             </div>
         </section>
@@ -753,33 +793,27 @@
 
             <div class="section-heading">
                 <h2>Available Accommodation</h2>
-
                 <p>
                     Compare our properties and choose the accommodation
-                    that best suits your needs for 2027.Read property details
+                    that best suits your needs for 2027. Read property details
                     carefully before applying.
                 </p>
             </div>
 
             <div class="property-grid">
 
-                <!-- PROPERTY BW-01 -->
-
+                <!-- BW-01 -->
 
                 <article class="property-card">
 
                     <div class="property-photos">
-
                         <a href="BW01.jpg" target="_blank" rel="noopener noreferrer" aria-label="View BW-01 photo 1">
-
                             <img src="BW01.jpg" alt="BW-01 student accommodation photo 1" loading="lazy">
                         </a>
 
                         <a href="BW01-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View BW-01 photo 2">
-
                             <img src="BW01-1.jpg" alt="BW-01 student accommodation photo 2" loading="lazy">
                         </a>
-
                     </div>
 
                     <div class="property-content">
@@ -800,11 +834,16 @@
                         <ul class="property-facts">
                             <li><strong>Room type:</strong> Single rooms</li>
                             <li><strong>Gender:</strong> Any</li>
-                            <li><strong>Deposit Fee:</strong> <span class="self-funded">None</span></li>
-                            <li><strong>Self-funded:</strong>
+                            <li><strong>Deposit Fee:</strong>
+                                <span class="self-funded">None</span>
+                            </li>
+                            <li>
+                                <strong>Self-funded:</strong>
                                 <span class="self-funded">R3,500/month</span>
                             </li>
-                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>NSFAS:</strong>
+                                <span class="self-funded">Accepted</span>
+                            </li>
                             <li><strong>Private bursary:</strong> Accepted</li>
                             <li><strong>Institution:</strong> VUT</li>
                         </ul>
@@ -824,34 +863,27 @@
                         </div>
 
                         <div class="property-actions">
-
                             <a href="https://ibb.co/album/fGBXTn" target="_blank" rel="noopener noreferrer"
                                 class="photos-button">
                                 VIEW MORE PHOTOS
                             </a>
-
                         </div>
 
                     </div>
                 </article>
 
-
-                <!-- PROPERTY SW-01 -->
+                <!-- SW-01 -->
 
                 <article class="property-card">
 
                     <div class="property-photos">
-
                         <a href="SW01.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-01 photo 1">
-
                             <img src="SW01.jpg" alt="SW-01 student accommodation photo 1" loading="lazy">
                         </a>
 
                         <a href="SW01-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-01 photo 2">
-
                             <img src="SW01-1.jpg" alt="SW-01 student accommodation photo 2" loading="lazy">
                         </a>
-
                     </div>
 
                     <div class="property-content">
@@ -867,11 +899,16 @@
                         <ul class="property-facts">
                             <li><strong>Room type:</strong> Single rooms</li>
                             <li><strong>Gender:</strong> Any</li>
-                            <li><strong>Deposit Fee:</strong> <span class="self-funded">None</span></li>
-                            <li><strong>Self-funded:</strong>
+                            <li><strong>Deposit Fee:</strong>
+                                <span class="self-funded">None</span>
+                            </li>
+                            <li>
+                                <strong>Self-funded:</strong>
                                 <span class="self-funded">R2,500–R3,000/month</span>
                             </li>
-                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>NSFAS:</strong>
+                                <span class="self-funded">Accepted</span>
+                            </li>
                             <li><strong>Private bursary:</strong> Accepted</li>
                             <li><strong>Institution:</strong> VUT</li>
                         </ul>
@@ -890,7 +927,6 @@
                         </div>
 
                         <div class="property-actions">
-
                             <a href="https://ibb.co/album/9w8NZ1" target="_blank" rel="noopener noreferrer"
                                 class="photos-button">
                                 VIEW MORE PHOTOS
@@ -899,28 +935,23 @@
                             <a href="apply.html?property=SW-01" class="apply-button">
                                 APPLY FOR SW-01
                             </a>
-
                         </div>
 
                     </div>
                 </article>
 
-                <!-- PROPERTY SW-02 -->
+                <!-- SW-02 -->
 
                 <article class="property-card">
 
                     <div class="property-photos">
-
                         <a href="SW02.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-02 photo 1">
-
                             <img src="SW02.jpg" alt="SW-02 student accommodation photo 1" loading="lazy">
                         </a>
 
                         <a href="SW02-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-02 photo 2">
-
                             <img src="SW02-1.jpg" alt="SW-02 student accommodation photo 2" loading="lazy">
                         </a>
-
                     </div>
 
                     <div class="property-content">
@@ -936,11 +967,16 @@
                         <ul class="property-facts">
                             <li><strong>Room type:</strong> Single rooms</li>
                             <li><strong>Gender:</strong> Any</li>
-                            <li><strong>Deposit Fee:</strong> <span class="self-funded">None</span></li>
-                            <li><strong>Self-funded:</strong>
+                            <li><strong>Deposit Fee:</strong>
+                                <span class="self-funded">None</span>
+                            </li>
+                            <li>
+                                <strong>Self-funded:</strong>
                                 <span class="self-funded">Contact us for pricing</span>
                             </li>
-                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>NSFAS:</strong>
+                                <span class="self-funded">Accepted</span>
+                            </li>
                             <li><strong>Private bursary:</strong> Accepted</li>
                             <li><strong>Institution:</strong> VUT, NWU</li>
                         </ul>
@@ -959,7 +995,6 @@
                         </div>
 
                         <div class="property-actions">
-
                             <a href="https://ibb.co/album/Fxb83P" target="_blank" rel="noopener noreferrer"
                                 class="photos-button">
                                 VIEW MORE PHOTOS
@@ -968,28 +1003,23 @@
                             <a href="apply.html?property=SW-02" class="apply-button">
                                 APPLY FOR SW-02
                             </a>
-
                         </div>
 
                     </div>
                 </article>
 
-                <!-- PROPERTY SW-03 -->
+                <!-- SW-03 -->
 
                 <article class="property-card">
 
                     <div class="property-photos">
-
                         <a href="SW03.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 1">
-
                             <img src="SW03.jpg" alt="SW-03 student accommodation photo 1" loading="lazy">
                         </a>
 
                         <a href="SW03-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 2">
-
                             <img src="SW03-1.jpg" alt="SW-03 student accommodation photo 2" loading="lazy">
                         </a>
-
                     </div>
 
                     <div class="property-content">
@@ -1005,11 +1035,16 @@
                         <ul class="property-facts">
                             <li><strong>Room type:</strong> Single rooms</li>
                             <li><strong>Gender:</strong> Females only</li>
-                            <li><strong>Deposit Fee:</strong> <span class="self-funded">R500</span></li>
-                            <li><strong>Self-funded:</strong>
+                            <li><strong>Deposit Fee:</strong>
+                                <span class="self-funded">R500</span>
+                            </li>
+                            <li>
+                                <strong>Self-funded:</strong>
                                 <span class="self-funded">Contact us for pricing</span>
                             </li>
-                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>NSFAS:</strong>
+                                <span class="self-funded">Accepted</span>
+                            </li>
                             <li><strong>Private bursary:</strong> Accepted</li>
                             <li><strong>Institution:</strong> VUT</li>
                         </ul>
@@ -1029,7 +1064,6 @@
                         </div>
 
                         <div class="property-actions">
-
                             <a href="https://ibb.co/album/kQqsvC" target="_blank" rel="noopener noreferrer"
                                 class="photos-button">
                                 VIEW MORE PHOTOS
@@ -1038,10 +1072,10 @@
                             <a href="apply.html?property=SW-03(Females Only)" class="apply-button">
                                 APPLY FOR SW-03
                             </a>
-
                         </div>
 
                     </div>
+                </article>
                 </article>
                 <!-- NEW PROPERTY: CHANGE THE DETAILS BELOW -->
 
@@ -1050,9 +1084,9 @@
                     <!-- PROPERTY PHOTOS -->
                     <div class="property-photos">
 
-                        <a href="BW-02.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 1">
+                        <a href="BW02.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 1">
 
-                            <img src="BW-02.jpg" alt="SW-03 student accommodation photo 1" loading="lazy">
+                            <img src="BW02.jpg" alt="SW-03 student accommodation photo 1" loading="lazy">
                         </a>
 
                         <a href="BW02-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 2">
@@ -1117,13 +1151,13 @@
                     </div>
 
                 </article>
+
             </div>
         </section>
 
         <!-- APPLY SECTION -->
 
         <section class="apply-section" id="apply">
-
             <h2>Ready to Find Your Room?</h2>
 
             <p>
@@ -1136,7 +1170,6 @@
             <a href="apply.html" class="button">
                 APPLY NOW
             </a>
-
         </section>
 
     </main>
@@ -1144,13 +1177,12 @@
     <!-- FOOTER -->
 
     <footer>
-
         <p class="footer-title">
             VAAL ACCOMMODATION NETWORK
         </p>
 
         <p class="footer-description">
-            Helping students find accommodation for 2027.
+            Your Student Home Starts Here.
         </p>
 
         <div class="footer-links">
@@ -1160,9 +1192,7 @@
                 WhatsApp Us
             </a>
 
-            <!-- TIKTOK: REPLACE WITH YOUR REAL USERNAME -->
-
-            <a href="http://tiktok.com/@vaal_accommodation" target="_blank" rel="noopener noreferrer"
+            <a href="https://tiktok.com/@vaal_accommodation" target="_blank" rel="noopener noreferrer"
                 class="footer-button tiktok-button">
                 TikTok
             </a>
@@ -1184,7 +1214,6 @@
         <p class="copyright">
             &copy; 2026 Vaal Accommodation Network. All rights reserved.
         </p>
-
     </footer>
 
 </body>
