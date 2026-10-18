@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="google-site-verification" content="0VyBU_O677xSD36c2hJqSU4DLvtuL_0a2jcIlVUSP7s">
 
     <title>Vaal Accommodation Network | Student Accommodation 2027</title>
 
     <meta name="description"
-          content="Find student accommodation around Vaal. Explore furnished rooms with NSFAS, private bursary and self-funded options for 2027.">
+        content="Find student accommodation around Vaal. Explore furnished rooms with NSFAS, private bursary and self-funded options for 2027.">
+
     <meta name="theme-color" content="#12345b">
+
     <meta property="og:title" content="Vaal Accommodation Network">
     <meta property="og:description"
-          content="Find your student home for 2027. Explore student accommodation options and apply online.">
+        content="Find your student home for 2027. Explore student accommodation options and apply online.">
     <meta property="og:url" content="https://vaalaccommodationnetwork.pages.dev/">
     <meta property="og:type" content="website">
-    <link rel="icon" type="image/jpeg" href="/logo.jpg">
+
+    <!-- Website favicon -->
+    <link rel="icon" type="image/png" href="/logo.jpg">
+
+    <!-- Website identity -->
     <meta name="application-name" content="Vaal Accommodation Network">
+
 
     <style>
         :root {
@@ -49,8 +58,14 @@
             line-height: 1.6;
         }
 
-        a { text-decoration: none; }
-        img { display: block; max-width: 100%; }
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
 
         a:focus-visible {
             outline: 3px solid #f2c14e;
@@ -120,7 +135,9 @@
             transition: color 0.2s;
         }
 
-        nav a:hover { color: #f2c14e; }
+        nav a:hover {
+            color: #f2c14e;
+        }
 
         nav .nav-apply {
             background: var(--gold);
@@ -133,82 +150,43 @@
             color: var(--white);
         }
 
-        /* BLUE HERO */
+        /* HERO */
 
         .hero {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(
-                120deg,
-                #0c2746 0%,
-                #12345b 55%,
-                #22527d 100%
-            );
+            background: var(--light);
             padding: 72px 6%;
             text-align: center;
-            color: white;
-        }
-
-        .hero::before,
-        .hero::after {
-            content: "";
-            position: absolute;
-            border: 1px solid rgba(255,255,255,0.09);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero::before {
-            width: 500px;
-            height: 500px;
-            right: -150px;
-            top: -290px;
-        }
-
-        .hero::after {
-            width: 300px;
-            height: 300px;
-            right: 130px;
-            top: -175px;
+            border-bottom: 1px solid var(--border);
         }
 
         .hero-content {
             max-width: 850px;
             margin: auto;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-label {
             display: inline-block;
-            color: #eed49a;
+            background: var(--gold-light);
+            color: var(--gold);
             font-size: 12px;
             font-weight: bold;
-            letter-spacing: 2px;
+            padding: 6px 13px;
+            border-radius: 20px;
             margin-bottom: 17px;
         }
 
-        .hero h1 {
-            color: white;
+        .hero h2 {
+            color: var(--navy);
             font-size: clamp(32px, 5vw, 46px);
             line-height: 1.2;
             margin-bottom: 18px;
         }
 
-        .hero h1 span { color: #e8c779; }
-
         .hero p {
             max-width: 700px;
             margin: 0 auto 28px;
             font-size: 17px;
-            color: #dce7f3;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
+            color: var(--muted);
         }
 
         .button {
@@ -225,22 +203,6 @@
         .button:hover {
             background: #896100;
             transform: translateY(-1px);
-        }
-
-        .button-outline {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.5);
-        }
-
-        .button-outline:hover {
-            background: rgba(255,255,255,0.12);
-        }
-
-        .hero-footer {
-            margin-top: 30px;
-            font-size: 12px !important;
-            color: #cbd9e8 !important;
-            margin-bottom: 0 !important;
         }
 
         /* QUICK INFORMATION */
@@ -274,7 +236,7 @@
             color: var(--muted);
         }
 
-        /* ACCOMMODATION */
+        /* ACCOMMODATION SECTION */
 
         .accommodation-section {
             padding: 55px 6% 70px;
@@ -293,7 +255,9 @@
             margin-bottom: 10px;
         }
 
-        .section-heading p { color: var(--muted); }
+        .section-heading p {
+            color: var(--muted);
+        }
 
         .property-grid {
             max-width: 1200px;
@@ -312,14 +276,16 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 4px 15px rgba(18,52,91,0.06);
+            box-shadow: 0 4px 15px rgba(18, 52, 91, 0.06);
             transition: box-shadow 0.2s, transform 0.2s;
         }
 
         .property-card:hover {
-            box-shadow: 0 8px 24px rgba(18,52,91,0.11);
+            box-shadow: 0 8px 24px rgba(18, 52, 91, 0.11);
             transform: translateY(-2px);
         }
+
+        /* PROPERTY PHOTOS */
 
         .property-photos {
             display: grid;
@@ -348,6 +314,8 @@
         .property-photos a:hover img {
             transform: scale(1.04);
         }
+
+        /* PROPERTY DETAILS */
 
         .property-content {
             padding: 22px;
@@ -392,14 +360,18 @@
             border-bottom: 1px solid #edf0f3;
         }
 
-        .property-facts strong { color: var(--navy); }
+        .property-facts strong {
+            color: var(--navy);
+        }
 
         .self-funded {
             color: var(--gold);
             font-weight: bold;
         }
 
-        .amenities { margin: 10px 0 22px; }
+        .amenities {
+            margin: 10px 0 22px;
+        }
 
         .amenities h4 {
             color: var(--navy);
@@ -441,8 +413,6 @@
             transition: background 0.2s;
         }
 
-        .apply-button:hover { background: var(--navy-light); }
-
         .fully-booked {
             display: block;
             background: #b42318;
@@ -454,6 +424,10 @@
             margin: 15px 0;
             border-radius: 6px;
             letter-spacing: 1px;
+        }
+
+        .apply-button:hover {
+            background: var(--navy-light);
         }
 
         .photos-button {
@@ -469,7 +443,9 @@
             transition: background 0.2s;
         }
 
-        .photos-button:hover { background: #896100; }
+        .photos-button:hover {
+            background: #896100;
+        }
 
         /* APPLY SECTION */
 
@@ -530,8 +506,15 @@
             transition: background 0.2s;
         }
 
-        .whatsapp-button { background: #25D366; }
-        .whatsapp-button:hover { background: #1da851; }
+        .whatsapp-button {
+            background: #25D366;
+        }
+
+        .whatsapp-button:hover {
+            background: #1da851;
+        }
+
+        /* TIKTOK BUTTON */
 
         .tiktok-button {
             background: #000000;
@@ -549,7 +532,9 @@
             padding: 8px;
         }
 
-        .footer-link:hover { color: #f2c14e; }
+        .footer-link:hover {
+            color: #f2c14e;
+        }
 
         .copyright {
             color: #d5dce5;
@@ -565,7 +550,9 @@
                 align-items: flex-start;
             }
 
-            nav { justify-content: flex-start; }
+            nav {
+                justify-content: flex-start;
+            }
 
             .property-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -575,22 +562,47 @@
         /* MOBILE */
 
         @media (max-width: 650px) {
-            header { padding: 19px 5%; }
-            .brand { align-items: center; }
-            .logo { width: 48px; height: 48px; }
-            .brand-name { font-size: 17px; }
-            .brand-tagline { font-size: 12px; }
+            header {
+                padding: 19px 5%;
+            }
+
+            .brand {
+                align-items: center;
+            }
+
+            .logo {
+                width: 48px;
+                height: 48px;
+            }
+
+            .brand-name {
+                font-size: 17px;
+            }
+
+            .brand-tagline {
+                font-size: 12px;
+            }
 
             nav {
                 width: 100%;
                 gap: 10px 16px;
             }
 
-            nav a { font-size: 13px; }
-            nav .nav-apply { padding: 9px 12px; }
+            nav a {
+                font-size: 13px;
+            }
 
-            .hero { padding: 48px 6%; }
-            .hero p { font-size: 15px; }
+            nav .nav-apply {
+                padding: 9px 12px;
+            }
+
+            .hero {
+                padding: 48px 6%;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
 
             .quick-info {
                 grid-template-columns: 1fr;
@@ -598,13 +610,17 @@
                 padding: 23px 6%;
             }
 
-            .info-card { padding: 18px 14px; }
+            .info-card {
+                padding: 18px 14px;
+            }
 
             .accommodation-section {
                 padding: 42px 5% 50px;
             }
 
-            .section-heading { margin-bottom: 25px; }
+            .section-heading {
+                margin-bottom: 25px;
+            }
 
             .property-grid {
                 grid-template-columns: 1fr;
@@ -618,14 +634,29 @@
                 height: 210px;
             }
 
-            .property-content { padding: 20px; }
-            .apply-section { padding: 45px 6%; }
-            footer { padding: 32px 5% 22px; }
-            .footer-links { gap: 8px; }
+            .property-content {
+                padding: 20px;
+            }
+
+            .apply-section {
+                padding: 45px 6%;
+            }
+
+            footer {
+                padding: 32px 5% 22px;
+            }
+
+            .footer-links {
+                gap: 8px;
+            }
         }
 
+        /* REDUCED MOTION */
+
         @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
+            html {
+                scroll-behavior: auto;
+            }
 
             *,
             *::before,
@@ -638,488 +669,524 @@
 
 <body>
 
-<header>
-    <div class="header-content">
-        <a href="index.html" class="brand"
-           aria-label="Vaal Accommodation Network home">
-            <img src="logo.jpg"
-                 alt="Vaal Accommodation Network Logo"
-                 class="logo">
+    <!-- HEADER -->
 
-            <span>
-                <span class="brand-name">
-                    VAAL ACCOMMODATION NETWORK
+    <header>
+        <div class="header-content">
+
+            <a href="index.html" class="brand" aria-label="Vaal Accommodation Network home">
+
+                <img src="logo.jpg" alt="Vaal Accommodation Network Logo" class="logo">
+
+                <span>
+                    <span class="brand-name">
+                        VAAL ACCOMMODATION NETWORK
+                    </span>
+
+                    <span class="brand-tagline">
+                        Student Accommodation for 2027
+                    </span>
                 </span>
-                <span class="brand-tagline">
-                    Student Accommodation for 2027
+
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="#accommodation">Accommodation</a>
+                <a href="apply.html" class="nav-apply">Apply Now</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    YOUR STUDENT HOME FOR 2027
                 </span>
-            </span>
-        </a>
 
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="FAQ.html">FAQ</a>
-            <a href="#accommodation">Accommodation</a>
-            <a href="apply.html" class="nav-apply">Apply Now</a>
-        </nav>
-    </div>
-</header>
+                <h2>Find Your Student Home</h2>
 
-<main>
+                <p>
+                    Explore student accommodation around
+                    Vaal.Compare room options, prices and
+                    funding arrangements, then apply online.
+                </p>
 
-    <!-- UPDATED BLUE HERO -->
-
-    <section class="hero">
-        <div class="hero-content">
-
-            <span class="hero-label">
-                YOUR STUDENT HOME FOR 2027
-            </span>
-
-            <h1>
-                Your Student Home<br>
-                <span>Starts Here.</span>
-            </h1>
-
-            <p>
-                Discover student accommodation around Vaal. Explore available properties,
-                compare room options and submit your application online.
-            </p>
-
-            <div class="hero-buttons">
                 <a href="#accommodation" class="button">
-                    Explore Accommodation
+                    VIEW ACCOMMODATION
                 </a>
 
-                <a href="apply.html" class="button button-outline">
-                    Apply Now
-                </a>
+            </div>
+        </section>
+
+        <!-- QUICK INFORMATION -->
+
+        <section class="quick-info" aria-label="Accommodation benefits">
+
+            <div class="info-card">
+                <h3>NSFAS Accepted</h3>
+                <p>Explore accommodation options for NSFAS-funded students.</p>
             </div>
 
-        </div>
-    </section>
+            <div class="info-card">
+                <h3>Private Bursaries</h3>
+                <p>Options available for students funded by private bursaries.</p>
+            </div>
 
-    <!-- QUICK INFORMATION -->
+            <div class="info-card">
+                <h3>Furnished Rooms</h3>
+                <p>Find rooms with essential student living amenities.</p>
+            </div>
 
-    <section class="quick-info" aria-label="Accommodation benefits">
+        </section>
 
-        <div class="info-card">
-            <h3>NSFAS Accepted</h3>
-            <p>Explore accommodation options for NSFAS-funded students.</p>
-        </div>
+        <!-- ACCOMMODATION -->
 
-        <div class="info-card">
-            <h3>Private Bursaries</h3>
-            <p>Options available for students funded by private bursaries.</p>
-        </div>
+        <section class="accommodation-section" id="accommodation">
 
-        <div class="info-card">
-            <h3>Furnished Rooms</h3>
-            <p>Find rooms with essential student living amenities.</p>
-        </div>
+            <div class="section-heading">
+                <h2>Available Accommodation</h2>
 
-    </section>
+                <p>
+                    Compare our properties and choose the accommodation
+                    that best suits your needs for 2027.Read property details
+                    carefully before applying.
+                </p>
+            </div>
 
-    <!-- ACCOMMODATION -->
+            <div class="property-grid">
 
-    <section class="accommodation-section" id="accommodation">
+                <!-- PROPERTY BW-01 -->
 
-        <div class="section-heading">
-            <h2>Available Accommodation</h2>
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="BW01.jpg" target="_blank" rel="noopener noreferrer" aria-label="View BW-01 photo 1">
+
+                            <img src="BW01.jpg" alt="BW-01 student accommodation photo 1" loading="lazy">
+                        </a>
+
+                        <a href="BW01-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View BW-01 photo 2">
+
+                            <img src="BW01-1.jpg" alt="BW-01 student accommodation photo 2" loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY BW-01</span>
+
+                        <h3>Bedworth Park</h3>
+
+                        <div class="fully-booked">
+                            FULLY BOOKED
+                        </div>
+
+                        <p class="location">
+                            Approximately 24 minutes' walk to campus.
+                            Transport available.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Deposit Fee:</strong> <span class="self-funded">None</span></li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">R3,500/month</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Swimming pool</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/fGBXTn" target="_blank" rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- PROPERTY SW-01 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="SW01.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-01 photo 1">
+
+                            <img src="SW01.jpg" alt="SW-01 student accommodation photo 1" loading="lazy">
+                        </a>
+
+                        <a href="SW01-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-01 photo 2">
+
+                            <img src="SW01-1.jpg" alt="SW-01 student accommodation photo 2" loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY SW-01</span>
+
+                        <h3>SE7</h3>
+
+                        <p class="location">
+                            Approximately 10 minutes' walk to campus.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Deposit Fee:</strong> <span class="self-funded">None</span></li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">R2,500–R3,000/month</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/9w8NZ1" target="_blank" rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=SW-01" class="apply-button">
+                                APPLY FOR SW-01
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- PROPERTY SW-02 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="SW02.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-02 photo 1">
+
+                            <img src="SW02.jpg" alt="SW-02 student accommodation photo 1" loading="lazy">
+                        </a>
+
+                        <a href="SW02-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-02 photo 2">
+
+                            <img src="SW02-1.jpg" alt="SW-02 student accommodation photo 2" loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY SW-02</span>
+
+                        <h3>SE7</h3>
+
+                        <p class="location">
+                            Approximately 5 minutes' walk to campus.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Any</li>
+                            <li><strong>Deposit Fee:</strong> <span class="self-funded">None</span></li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">Contact us for pricing</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT, NWU</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/Fxb83P" target="_blank" rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=SW-02" class="apply-button">
+                                APPLY FOR SW-02
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- PROPERTY SW-03 -->
+
+                <article class="property-card">
+
+                    <div class="property-photos">
+
+                        <a href="SW03.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 1">
+
+                            <img src="SW03.jpg" alt="SW-03 student accommodation photo 1" loading="lazy">
+                        </a>
+
+                        <a href="SW03-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 2">
+
+                            <img src="SW03-1.jpg" alt="SW-03 student accommodation photo 2" loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY SW-03</span>
+
+                        <h3>SE7</h3>
+
+                        <p class="location">
+                            Approximately 4 minutes' walk to campus.
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong> Females only</li>
+                            <li><strong>Deposit Fee:</strong> <span class="self-funded">R500</span></li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">Contact us for pricing</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> <span class="self-funded">Accepted</span></li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT</li>
+                        </ul>
+
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Swimming pool</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/kQqsvC" target="_blank" rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=SW-03(Females Only)" class="apply-button">
+                                APPLY FOR SW-03
+                            </a>
+
+                        </div>
+
+                    </div>
+                </article>
+                <!-- NEW PROPERTY: CHANGE THE DETAILS BELOW -->
+
+                <article class="property-card">
+
+                    <!-- PROPERTY PHOTOS -->
+                    <div class="property-photos">
+
+                        <a href="BW-02.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 1">
+
+                            <img src="BW-02.jpg" alt="SW-03 student accommodation photo 1" loading="lazy">
+                        </a>
+
+                        <a href="BW02-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="View SW-03 photo 2">
+
+                            <img src="BW02-1.jpg" alt="SW-03 student accommodation photo 2" loading="lazy">
+                        </a>
+
+                    </div>
+
+                    <!-- PROPERTY DETAILS -->
+                    <div class="property-content">
+
+                        <span class="property-code">PROPERTY BW-02</span>
+
+                        <h3>Bedworth Park</h3>
+
+                        <p class="location">
+                            12 minutes walk to VUT campus
+                        </p>
+
+                        <ul class="property-facts">
+                            <li><strong>Room type:</strong> Single rooms</li>
+                            <li><strong>Gender:</strong>Any</li>
+                            <li><strong>Deposit Fee:</strong>None</li>
+                            <li><strong>Self-funded:</strong>
+                                <span class="self-funded">Contact us for pricing</span>
+                            </li>
+                            <li><strong>NSFAS:</strong> Accepted</li>
+                            <li><strong>Private bursary:</strong> Accepted</li>
+                            <li><strong>Institution:</strong> VUT,NWU</li>
+                        </ul>
+
+                        <!-- AMENITIES -->
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+
+                            <div class="amenity-list">
+                                <span class="amenity">Wi-Fi</span>
+                                <span class="amenity">Swimming Pool</span>
+                                <span class="amenity">Furnished rooms</span>
+                                <span class="amenity">Kitchen</span>
+                                <span class="amenity">Laundry</span>
+                                <span class="amenity">Security</span>
+                                <span class="amenity">Water &amp; electricity</span>
+                            </div>
+                        </div>
+
+                        <!-- BUTTONS -->
+                        <div class="property-actions">
+
+                            <a href="https://ibb.co/album/CsQWjv" target="_blank" rel="noopener noreferrer"
+                                class="photos-button">
+                                VIEW MORE PHOTOS
+                            </a>
+
+                            <a href="apply.html?property=BW-02" class="apply-button">
+                                APPLY FOR BW-02
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+            </div>
+        </section>
+
+        <!-- APPLY SECTION -->
+
+        <section class="apply-section" id="apply">
+
+            <h2>Ready to Find Your Room?</h2>
+
             <p>
-                Compare our properties and choose the accommodation
-                that best suits your needs for 2027. Read property details
-                carefully before applying.
+                Choose your preferred accommodation and complete
+                the online application form. When applying through
+                a property card, your selected property will be passed
+                to the application page.
             </p>
-        </div>
 
-        <div class="property-grid">
+            <a href="apply.html" class="button">
+                APPLY NOW
+            </a>
 
-            <!-- BW-01 -->
+        </section>
 
-            <article class="property-card">
+    </main>
 
-                <div class="property-photos">
-                    <a href="BW01.jpg" target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View BW-01 photo 1">
-                        <img src="BW01.jpg"
-                             alt="BW-01 student accommodation photo 1"
-                             loading="lazy">
-                    </a>
+    <!-- FOOTER -->
 
-                    <a href="BW01-1.jpg" target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View BW-01 photo 2">
-                        <img src="BW01-1.jpg"
-                             alt="BW-01 student accommodation photo 2"
-                             loading="lazy">
-                    </a>
-                </div>
+    <footer>
 
-                <div class="property-content">
-
-                    <span class="property-code">PROPERTY BW-01</span>
-
-                    <h3>Bedworth Park</h3>
-
-                    <div class="fully-booked">
-                        FULLY BOOKED
-                    </div>
-
-                    <p class="location">
-                        Approximately 24 minutes' walk to campus.
-                        Transport available.
-                    </p>
-
-                    <ul class="property-facts">
-                        <li><strong>Room type:</strong> Single rooms</li>
-                        <li><strong>Gender:</strong> Any</li>
-                        <li><strong>Deposit Fee:</strong>
-                            <span class="self-funded">None</span>
-                        </li>
-                        <li>
-                            <strong>Self-funded:</strong>
-                            <span class="self-funded">R3,500/month</span>
-                        </li>
-                        <li><strong>NSFAS:</strong>
-                            <span class="self-funded">Accepted</span>
-                        </li>
-                        <li><strong>Private bursary:</strong> Accepted</li>
-                        <li><strong>Institution:</strong> VUT</li>
-                    </ul>
-
-                    <div class="amenities">
-                        <h4>Amenities</h4>
-
-                        <div class="amenity-list">
-                            <span class="amenity">Wi-Fi</span>
-                            <span class="amenity">Furnished rooms</span>
-                            <span class="amenity">Swimming pool</span>
-                            <span class="amenity">Kitchen</span>
-                            <span class="amenity">Laundry</span>
-                            <span class="amenity">Security</span>
-                            <span class="amenity">Water &amp; electricity</span>
-                        </div>
-                    </div>
-
-                    <div class="property-actions">
-                        <a href="https://ibb.co/album/fGBXTn"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="photos-button">
-                            VIEW MORE PHOTOS
-                        </a>
-                    </div>
-
-                </div>
-            </article>
-
-            <!-- SW-01 -->
-
-            <article class="property-card">
-
-                <div class="property-photos">
-                    <a href="SW01.jpg" target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View SW-01 photo 1">
-                        <img src="SW01.jpg"
-                             alt="SW-01 student accommodation photo 1"
-                             loading="lazy">
-                    </a>
-
-                    <a href="SW01-1.jpg" target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View SW-01 photo 2">
-                        <img src="SW01-1.jpg"
-                             alt="SW-01 student accommodation photo 2"
-                             loading="lazy">
-                    </a>
-                </div>
-
-                <div class="property-content">
-
-                    <span class="property-code">PROPERTY SW-01</span>
-
-                    <h3>SE7</h3>
-
-                    <p class="location">
-                        Approximately 10 minutes' walk to campus.
-                    </p>
-
-                    <ul class="property-facts">
-                        <li><strong>Room type:</strong> Single rooms</li>
-                        <li><strong>Gender:</strong> Any</li>
-                        <li><strong>Deposit Fee:</strong>
-                            <span class="self-funded">None</span>
-                        </li>
-                        <li>
-                            <strong>Self-funded:</strong>
-                            <span class="self-funded">R2,500–R3,000/month</span>
-                        </li>
-                        <li><strong>NSFAS:</strong>
-                            <span class="self-funded">Accepted</span>
-                        </li>
-                        <li><strong>Private bursary:</strong> Accepted</li>
-                        <li><strong>Institution:</strong> VUT</li>
-                    </ul>
-
-                    <div class="amenities">
-                        <h4>Amenities</h4>
-
-                        <div class="amenity-list">
-                            <span class="amenity">Wi-Fi</span>
-                            <span class="amenity">Furnished rooms</span>
-                            <span class="amenity">Kitchen</span>
-                            <span class="amenity">Laundry</span>
-                            <span class="amenity">Security</span>
-                            <span class="amenity">Water &amp; electricity</span>
-                        </div>
-                    </div>
-
-                    <div class="property-actions">
-                        <a href="https://ibb.co/album/9w8NZ1"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="photos-button">
-                            VIEW MORE PHOTOS
-                        </a>
-
-                        <a href="apply.html?property=SW-01"
-                           class="apply-button">
-                            APPLY FOR SW-01
-                        </a>
-                    </div>
-
-                </div>
-            </article>
-
-            <!-- SW-02 -->
-
-            <article class="property-card">
-
-                <div class="property-photos">
-                    <a href="SW02.jpg" target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View SW-02 photo 1">
-                        <img src="SW02.jpg"
-                             alt="SW-02 student accommodation photo 1"
-                             loading="lazy">
-                    </a>
-
-                    <a href="SW02-1.jpg" target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View SW-02 photo 2">
-                        <img src="SW02-1.jpg"
-                             alt="SW-02 student accommodation photo 2"
-                             loading="lazy">
-                    </a>
-                </div>
-
-                <div class="property-content">
-
-                    <span class="property-code">PROPERTY SW-02</span>
-
-                    <h3>SE7</h3>
-
-                    <p class="location">
-                        Approximately 5 minutes' walk to campus.
-                    </p>
-
-                    <ul class="property-facts">
-                        <li><strong>Room type:</strong> Single rooms</li>
-                        <li><strong>Gender:</strong> Any</li>
-                        <li><strong>Deposit Fee:</strong>
-                            <span class="self-funded">None</span>
-                        </li>
-                        <li>
-                            <strong>Self-funded:</strong>
-                            <span class="self-funded">Contact us for pricing</span>
-                        </li>
-                        <li><strong>NSFAS:</strong>
-                            <span class="self-funded">Accepted</span>
-                        </li>
-                        <li><strong>Private bursary:</strong> Accepted</li>
-                        <li><strong>Institution:</strong> VUT, NWU</li>
-                    </ul>
-
-                    <div class="amenities">
-                        <h4>Amenities</h4>
-
-                        <div class="amenity-list">
-                            <span class="amenity">Wi-Fi</span>
-                            <span class="amenity">Furnished rooms</span>
-                            <span class="amenity">Kitchen</span>
-                            <span class="amenity">Laundry</span>
-                            <span class="amenity">Security</span>
-                            <span class="amenity">Water &amp; electricity</span>
-                        </div>
-                    </div>
-
-                    <div class="property-actions">
-                        <a href="https://ibb.co/album/Fxb83P"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="photos-button">
-                            VIEW MORE PHOTOS
-                        </a>
-
-                        <a href="apply.html?property=SW-02"
-                           class="apply-button">
-                            APPLY FOR SW-02
-                        </a>
-                    </div>
-
-                </div>
-            </article>
-
-            <!-- SW-03 -->
-
-            <article class="property-card">
-
-                <div class="property-photos">
-                    <a href="SW03.jpg" target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View SW-03 photo 1">
-                        <img src="SW03.jpg"
-                             alt="SW-03 student accommodation photo 1"
-                             loading="lazy">
-                    </a>
-
-                    <a href="SW03-1.jpg" target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="View SW-03 photo 2">
-                        <img src="SW03-1.jpg"
-                             alt="SW-03 student accommodation photo 2"
-                             loading="lazy">
-                    </a>
-                </div>
-
-                <div class="property-content">
-
-                    <span class="property-code">PROPERTY SW-03</span>
-
-                    <h3>SE7</h3>
-
-                    <p class="location">
-                        Approximately 4 minutes' walk to campus.
-                    </p>
-
-                    <ul class="property-facts">
-                        <li><strong>Room type:</strong> Single rooms</li>
-                        <li><strong>Gender:</strong> Females only</li>
-                        <li><strong>Deposit Fee:</strong>
-                            <span class="self-funded">R500</span>
-                        </li>
-                        <li>
-                            <strong>Self-funded:</strong>
-                            <span class="self-funded">Contact us for pricing</span>
-                        </li>
-                        <li><strong>NSFAS:</strong>
-                            <span class="self-funded">Accepted</span>
-                        </li>
-                        <li><strong>Private bursary:</strong> Accepted</li>
-                        <li><strong>Institution:</strong> VUT</li>
-                    </ul>
-
-                    <div class="amenities">
-                        <h4>Amenities</h4>
-
-                        <div class="amenity-list">
-                            <span class="amenity">Wi-Fi</span>
-                            <span class="amenity">Swimming pool</span>
-                            <span class="amenity">Furnished rooms</span>
-                            <span class="amenity">Kitchen</span>
-                            <span class="amenity">Laundry</span>
-                            <span class="amenity">Security</span>
-                            <span class="amenity">Water &amp; electricity</span>
-                        </div>
-                    </div>
-
-                    <div class="property-actions">
-                        <a href="https://ibb.co/album/kQqsvC"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="photos-button">
-                            VIEW MORE PHOTOS
-                        </a>
-
-                        <a href="apply.html?property=SW-03(Females Only)"
-                           class="apply-button">
-                            APPLY FOR SW-03
-                        </a>
-                    </div>
-
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- APPLY SECTION -->
-
-    <section class="apply-section" id="apply">
-        <h2>Ready to Find Your Room?</h2>
-
-        <p>
-            Choose your preferred accommodation and complete
-            the online application form. When applying through
-            a property card, your selected property will be passed
-            to the application page.
+        <p class="footer-title">
+            VAAL ACCOMMODATION NETWORK
         </p>
 
-        <a href="apply.html" class="button">
-            APPLY NOW
-        </a>
-    </section>
+        <p class="footer-description">
+            Helping students find accommodation for 2027.
+        </p>
 
-</main>
+        <div class="footer-links">
 
-<!-- FOOTER -->
+            <a href="https://wa.me/message/C3XPVKIU5QH5P1" target="_blank" rel="noopener noreferrer"
+                class="footer-button whatsapp-button">
+                WhatsApp Us
+            </a>
 
-<footer>
-    <p class="footer-title">
-        VAAL ACCOMMODATION NETWORK
-    </p>
+            <!-- TIKTOK: REPLACE WITH YOUR REAL USERNAME -->
 
-    <p class="footer-description">
-        Your Student Home Starts Here.
-    </p>
+            <a href="http://tiktok.com/@vaal_accommodation" target="_blank" rel="noopener noreferrer"
+                class="footer-button tiktok-button">
+                TikTok
+            </a>
 
-    <div class="footer-links">
+            <a href="FAQ.html" class="footer-link">
+                FAQ
+            </a>
 
-        <a href="https://wa.me/message/C3XPVKIU5QH5P1"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="footer-button whatsapp-button">
-            WhatsApp Us
-        </a>
+            <a href="terms.html" class="footer-link">
+                Terms &amp; Conditions
+            </a>
 
-        <a href="https://tiktok.com/@vaal_accommodation"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="footer-button tiktok-button">
-            TikTok
-        </a>
+            <a href="privacy.html" class="footer-link">
+                Privacy Policy
+            </a>
 
-        <a href="FAQ.html" class="footer-link">
-            FAQ
-        </a>
+        </div>
 
-        <a href="terms.html" class="footer-link">
-            Terms &amp; Conditions
-        </a>
+        <p class="copyright">
+            &copy; 2026 Vaal Accommodation Network. All rights reserved.
+        </p>
 
-        <a href="privacy.html" class="footer-link">
-            Privacy Policy
-        </a>
-
-    </div>
-
-    <p class="copyright">
-        &copy; 2026 Vaal Accommodation Network. All rights reserved.
-    </p>
-</footer>
+    </footer>
 
 </body>
+
 </html>
