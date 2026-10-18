@@ -877,83 +877,115 @@
     <p>© 2026 Vaal Accommodation Network. All rights reserved.</p>
   </footer>
 
-  <script>
-    // TEST API only. Do not replace with the production API during design testing.
-    const WORKER_URL = "https://vaal-accommodation-api.rivaldochiburre.workers.dev";
+  
+<script>
+  const WORKER_URL =
+    "https://vaal-accommodation-api.rivaldochiburre.workers.dev";
 
-    const form = document.getElementById("applicationForm");
-    const submitButton = document.getElementById("submitButton");
-    const successMessage = document.getElementById("successMessage");
-    const errorMessage = document.getElementById("errorMessage");
+  const form = document.getElementById("applicationForm");
+  const submitButton = document.getElementById("submitButton");
+  const successMessage = document.getElementById("successMessage");
+  const errorMessage = document.getElementById("errorMessage");
 
-    let submissionInProgress = false;
-    let submittedSuccessfully = false;
+  let submissionInProgress = false;
+  let submittedSuccessfully = false;
 
-    // Supports property links such as apply.html?property=BW-01.
-    const requestedProperty =
-      new URLSearchParams(window.location.search).get("property");
+  // =====================================
+  // PROPERTY SELECTION FROM URL
+  // =====================================
 
-    if (requestedProperty) {
-      const accommodationSelect =
-        document.getElementById("accommodation");
+  const requestedProperty =
+    new URLSearchParams(window.location.search).get("property");
 
-      const matchedOption = Array.from(
-        accommodationSelect.options
-      ).find(option => option.value === requestedProperty);
+  if (requestedProperty) {
+    const accommodationSelect =
+      document.getElementById("accommodation");
 
-      if (matchedOption) {
-        accommodationSelect.value = matchedOption.value;
-      }
+    const matchedOption = Array.from(
+      accommodationSelect.options
+    ).find(function(option) {
+      return option.value === requestedProperty;
+    });
+
+    if (matchedOption) {
+      accommodationSelect.value = matchedOption.value;
+    }
+  }
+
+  // =====================================
+  // ERROR MESSAGES
+  // =====================================
+
+  function showError(message) {
+    errorMessage.textContent = message;
+    errorMessage.hidden = false;
+  }
+
+  function clearMessages() {
+    successMessage.replaceChildren();
+    successMessage.hidden = true;
+
+    errorMessage.textContent = "";
+    errorMessage.hidden = true;
+  }
+
+  // =====================================
+  // SUBMIT STUDENT APPLICATION
+  // =====================================
+
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    if (submissionInProgress || submittedSuccessfully) {
+      return;
     }
 
-    function showError(message) {
-      errorMessage.textContent = message;
-      errorMessage.hidden = false;
-    }
+    clearMessages();
 
-    function clearMessages() {
-      successMessage.replaceChildren();
-      successMessage.hidden = true;
+    const name =
+      document.getElementById("name").value.trim();
 
-      errorMessage.textContent = "";
-      errorMessage.hidden = true;
-    }
+    const phone =
+      document.getElementById("phone").value.trim();
 
-    form.addEventListener("submit", async function (event) {
-      event.preventDefault();
+    const accommodation =
+      document.getElementById("accommodation").value;
 
-      if (submissionInProgress || submittedSuccessfully) {
-        return;
-      }
+    const funding =
+      document.getElementById("funding").value;
 
-      clearMessages();
+    const gender =
+      document.getElementById("gender").value;
 
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const accommodation = document.getElementById("accommodation").value;
-      const funding = document.getElementById("funding").value;
-      const gender = document.getElementById("gender").value;
-      const year = document.getElementById("year").value;
+    const year =
+      document.getElementById("year").value;
 
-      const tokenElement = document.querySelector(
-        '[name="cf-turnstile-response"]'
+    const tokenElement = document.querySelector(
+      '[name="cf-turnstile-response"]'
+    );
+
+    const token = tokenElement ? tokenElement.value : "";
+
+    if (!token) {
+      showError(
+        "Please complete the security verification and try again."
       );
+      return;
+    }
 
-      const token = tokenElement ? tokenElement.value : "";
+    submissionInProgress = true;
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
 
-      if (!token) {
-        showError(
-          "Please complete the security verification and try again."
-        );
-        return;
-      }
+    try {
 
-      submissionInProgress = true;
-      submitButton.disabled = true;
-      submitButton.textContent = "Submitting...";
+      // =================================
+      // SEND APPLICATION TO WORKER
+      // =================================
 
-      try {
-        const response = await fetch(WORKER_URL + "/submit", {
+      const response = await fetch(
+        WORKER_URL + "/submit",
+        {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -965,89 +997,132 @@
             funding,
             gender,
             year,
-            token: token
+            token
           })
-        });
-
-        const result = await response.json();
-
-        if (!response.ok || result.success !== true) {
-          throw new Error(
-            result.message ||
-            "Your application could not be submitted."
-          );
         }
+      );
 
-        if (
-          typeof result.trackingToken !== "string" ||
-          !result.whatsappUrl
-        ) {
-          throw new Error(
-            "The server did not return the confirmation details. " +
-            "Please contact us before trying to submit again."
-          );
-        }
+      const result = await response.json();
 
-        submittedSuccessfully = true;
-        successMessage.hidden = false;
-
-        const successText = document.createElement("strong");
-        successText.textContent = "Application submitted successfully!";
-
-        const explanation = document.createElement("p");
-        explanation.textContent =
-          "Your application has been saved. Click below to open " +
-          "WhatsApp and send the prepared message.";
-        explanation.style.margin = "8px 0 0";
-
-        const whatsappButton = document.createElement("button");
-        whatsappButton.type = "button";
-        whatsappButton.id = "whatsappConfirmButton";
-        whatsappButton.className = "whatsapp-button";
-        whatsappButton.textContent = "Confirm via WhatsApp ↗";
-
-        const instructions = document.createElement("p");
-        instructions.textContent =
-          "WhatsApp will open with a prepared message. " +
-          "You must press Send in WhatsApp to complete confirmation.";
-        instructions.style.marginBottom = "0";
-        instructions.style.fontSize = "12px";
-
-        successMessage.append(
-          successText,
-          explanation,
-          whatsappButton,
-          instructions
+      if (!response.ok || result.success !== true) {
+        throw new Error(
+          result.message ||
+          "Your application could not be submitted."
         );
+      }
 
-        successMessage.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest"
-        });
+      if (
+        typeof result.trackingToken !== "string" ||
+        typeof result.whatsappUrl !== "string" ||
+        !result.whatsappUrl.startsWith("https://wa.me/")
+      ) {
+        throw new Error(
+          "Your application may have been saved, but the " +
+          "WhatsApp confirmation details are unavailable. " +
+          "Please contact us before submitting again."
+        );
+      }
 
-        whatsappButton.addEventListener("click", async function () {
+      submittedSuccessfully = true;
+      successMessage.hidden = false;
+
+      // =================================
+      // SUCCESS MESSAGE
+      // =================================
+
+      const successText = document.createElement("strong");
+
+      successText.textContent =
+        "Application submitted successfully!";
+
+      const explanation = document.createElement("p");
+
+      explanation.textContent =
+        "Your application has been saved. " +
+        "Click below to open WhatsApp and send " +
+        "the prepared message.";
+
+      explanation.style.margin = "8px 0 0";
+
+      // =================================
+      // WHATSAPP BUTTON
+      // =================================
+
+      const whatsappButton =
+        document.createElement("button");
+
+      whatsappButton.type = "button";
+      whatsappButton.id = "whatsappConfirmButton";
+      whatsappButton.className = "whatsapp-button";
+
+      whatsappButton.textContent =
+        "Confirm via WhatsApp ↗";
+
+      const instructions = document.createElement("p");
+
+      instructions.textContent =
+        "WhatsApp will open with a prepared message. " +
+        "You must press Send in WhatsApp to complete confirmation.";
+
+      instructions.style.marginBottom = "0";
+      instructions.style.fontSize = "12px";
+
+      successMessage.append(
+        successText,
+        explanation,
+        whatsappButton,
+        instructions
+      );
+
+      successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
+      // =================================
+      // WHATSAPP CLICK TRACKING
+      // =================================
+
+      whatsappButton.addEventListener(
+        "click",
+        async function() {
+
           if (whatsappButton.disabled) {
             return;
           }
 
-          // Open WhatsApp immediately, then record the click.
+          whatsappButton.disabled = true;
+
+          whatsappButton.textContent =
+            "Connecting to WhatsApp...";
+
+          // Open a blank tab immediately within
+          // the user's click to reduce popup blocking.
           const whatsappWindow = window.open(
-            result.whatsappUrl,
+            "about:blank",
             "_blank"
           );
 
           if (!whatsappWindow) {
+            whatsappButton.disabled = false;
+
+            whatsappButton.textContent =
+              "Confirm via WhatsApp ↗";
+
             showError(
               "Your browser blocked the WhatsApp window. " +
-              "Allow pop-ups for this site and try again."
+              "Please allow pop-ups and try again."
             );
+
             return;
           }
 
-          whatsappButton.disabled = true;
-          whatsappButton.textContent = "Recording Click...";
-
           try {
+
+            // =============================
+            // RECORD CLICK FIRST
+            // =============================
+
             const trackingResponse = await fetch(
               WORKER_URL + "/track-click",
               {
@@ -1061,72 +1136,115 @@
               }
             );
 
-            const trackingResult = await trackingResponse.json();
+            const trackingResult =
+              await trackingResponse.json();
 
             if (
               !trackingResponse.ok ||
               trackingResult.success !== true
             ) {
-              showError(
-                "WhatsApp opened, but the click could not be recorded. " +
-                "Please contact us if you need help."
-              );
+              whatsappWindow.close();
 
               whatsappButton.disabled = false;
-              whatsappButton.textContent = "Try Confirmation Again";
+
+              whatsappButton.textContent =
+                "Try Confirmation Again";
+
+              showError(
+                "Your application was saved, but WhatsApp " +
+                "confirmation could not be recorded. " +
+                "Please try again."
+              );
+
               return;
             }
 
-            whatsappButton.textContent = "WhatsApp Opened";
+            // =============================
+            // TRACKING SUCCESSFUL
+            // =============================
 
-            const clickNotice = document.createElement("p");
+            errorMessage.textContent = "";
+            errorMessage.hidden = true;
+
+            // Open the ORIGINAL WhatsApp URL
+            // returned by the Cloudflare Worker.
+            // Do not rebuild or append a message.
+            whatsappWindow.location.replace(
+              result.whatsappUrl
+            );
+
+            whatsappButton.textContent =
+              "WhatsApp Opened";
+
+            const clickNotice =
+              document.createElement("p");
+
             clickNotice.textContent =
-              "Your click has been recorded. Your application " +
-              "is not confirmed until you send the message " +
-              "and we verify that it arrived.";
+              "Your click has been recorded. " +
+              "Your application is not confirmed " +
+              "until you send the message and " +
+              "we verify that it arrived.";
+
             clickNotice.style.fontWeight = "700";
             clickNotice.style.marginBottom = "0";
 
             successMessage.appendChild(clickNotice);
 
           } catch (error) {
-            showError(
-              "WhatsApp opened, but the click could not be recorded. " +
-              "Please contact us if needed."
-            );
+
+            // =============================
+            // TRACKING FAILED
+            // =============================
+
+            whatsappWindow.close();
 
             whatsappButton.disabled = false;
-            whatsappButton.textContent = "Try Confirmation Again";
+
+            whatsappButton.textContent =
+              "Try Confirmation Again";
+
+            showError(
+              "Your application was saved, but we could " +
+              "not record your WhatsApp confirmation. " +
+              "Please try again."
+            );
           }
-        });
-
-        submitButton.textContent = "Application Submitted";
-
-        if (window.turnstile) {
-          window.turnstile.reset();
         }
+      );
 
-      } catch (error) {
-        showError(
-          error.message ||
-          "Something went wrong. Please try again."
-        );
+      // =================================
+      // APPLICATION COMPLETED
+      // =================================
 
-        if (window.turnstile) {
-          window.turnstile.reset();
-        }
+      submitButton.textContent =
+        "Application Submitted";
 
-      } finally {
-        submissionInProgress = false;
-
-        if (!submittedSuccessfully) {
-          submitButton.disabled = false;
-          submitButton.textContent = "Submit Application →";
-        }
+      if (window.turnstile) {
+        window.turnstile.reset();
       }
-    });
-  </script>
 
-</body>
+    } catch (error) {
 
-</html>
+      showError(
+        error.message ||
+        "Something went wrong. Please try again."
+      );
+
+      if (window.turnstile) {
+        window.turnstile.reset();
+      }
+
+    } finally {
+
+      submissionInProgress = false;
+
+      if (!submittedSuccessfully) {
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+          "Submit Application →";
+      }
+    }
+  });
+
+</script>
