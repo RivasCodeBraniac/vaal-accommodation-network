@@ -1,1250 +1,305 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Apply for student accommodation for the 2027 academic year through Vaal Accommodation Network.">
-  <meta name="theme-color" content="#12345b">
-  <title>Apply Now | Vaal Accommodation Network</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <style>
-    :root {
-      --navy: #12345b;
-      --deep: #0c2746;
-      --navy-light: #1b4777;
-      --gold: #a87800;
-      --gold-dark: #896200;
-      --cream: #f7f0df;
-      --page: #f4f6fa;
-      --ink: #203248;
-      --muted: #64748b;
-      --line: #e1e7ef;
-      --white: #fff;
-      --red: #b42318;
-      --green: #167245;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--page);
-      color: var(--ink);
-      font: 15px/1.6 'DM Sans', Arial, sans-serif;
-    }
-
-    button,
-    input,
-    select {
-      font: inherit;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .shell {
-      width: min(1140px, calc(100% - 40px));
-      margin: auto;
-    }
-
-    .site-header {
-      background: var(--deep);
-      color: white;
-      border-bottom: 1px solid rgba(255, 255, 255, .12);
-    }
-
-    .header-inner {
-      min-height: 92px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      text-decoration: none;
-      min-width: 0;
-    }
-
-    .brand img {
-      width: 57px;
-      height: 57px;
-      object-fit: contain;
-      background: white;
-      border-radius: 12px;
-      padding: 4px;
-    }
-
-    .brand-name {
-      font-family: Manrope, Arial, sans-serif;
-      font-weight: 800;
-      letter-spacing: -.4px;
-      font-size: 16px;
-      line-height: 1.35;
-    }
-
-    .brand-tagline {
-      font-size: 12px;
-      color: #cad7e5;
-      margin-top: 3px;
-    }
-
-    .home-link {
-      border: 1px solid rgba(255, 255, 255, .32);
-      border-radius: 10px;
-      padding: 10px 16px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      white-space: nowrap;
-      transition: .2s;
-    }
-
-    .home-link:hover,
-    .home-link:focus-visible {
-      background: rgba(255, 255, 255, .1);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(120deg,
-          #0c2746 0%,
-          #12345b 55%,
-          #22527d 100%);
-      color: white;
-      padding: 61px 0 104px;
-    }
-
-    .hero:before,
-    .hero:after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(255, 255, 255, .10);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .hero:before {
-      width: 470px;
-      height: 470px;
-      right: -130px;
-      top: -260px;
-    }
-
-    .hero:after {
-      width: 320px;
-      height: 320px;
-      right: 80px;
-      top: -165px;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 790px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: #f0d89d;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow:before {
-      content: "";
-      width: 23px;
-      height: 2px;
-      background: #d9ad50;
-    }
-
-    .hero h1 {
-      font: 800 clamp(30px, 5vw, 48px)/1.18 Manrope, Arial, sans-serif;
-      letter-spacing: -1.5px;
-      margin: 17px 0 13px;
-    }
-
-    .hero p {
-      color: #dce7f3;
-      max-width: 610px;
-      margin: 0 auto;
-      font-size: 15px;
-    }
-
-    .page-main {
-      width: min(1040px, calc(100% - 40px));
-      margin: -65px auto 65px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .application-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
-      align-items: start;
-      gap: 24px;
-    }
-
-    .form-card,
-    .aside-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 17px;
-      box-shadow: 0 12px 35px rgba(12, 39, 70, .07);
-    }
-
-    .form-card {
-      padding: 34px 36px 38px;
-    }
-
-    .section-kicker {
-      color: var(--gold);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-    }
-
-    .form-card h2 {
-      font: 800 25px/1.3 Manrope, Arial, sans-serif;
-      letter-spacing: -.7px;
-      color: var(--navy);
-      margin: 7px 0;
-    }
-
-    .intro {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .rule {
-      height: 1px;
-      background: var(--line);
-      margin: 24px 0;
-    }
-
-    .notice {
-      display: flex;
-      gap: 12px;
-      background: #fbf6ea;
-      border: 1px solid #efe1bd;
-      border-left: 4px solid var(--gold);
-      padding: 15px;
-      border-radius: 9px;
-      font-size: 13px;
-      line-height: 1.6;
-      margin-bottom: 26px;
-    }
-
-    .notice-mark {
-      flex: 0 0 24px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #f1e1b8;
-      color: #805a00;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .notice strong {
-      color: var(--navy);
-    }
-
-    .group-title {
-      font: 800 14px Manrope, Arial, sans-serif;
-      color: var(--navy);
-      margin: 0 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .group-title span {
-      width: 27px;
-      height: 27px;
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      background: #edf2f8;
-      color: var(--navy-light);
-      font-size: 12px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px 18px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      min-width: 0;
-    }
-
-    .full {
-      grid-column: 1/-1;
-    }
-
-    label {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--navy);
-    }
-
-    .required {
-      color: var(--gold);
-      margin-left: 3px;
-    }
-
-    input,
-    select {
-      width: 100%;
-      min-height: 49px;
-      border: 1px solid #d5dee9;
-      border-radius: 9px;
-      padding: 12px 13px;
-      background: #fff;
-      color: var(--ink);
-      font-size: 14px;
-      transition: border-color .2s, box-shadow .2s;
-    }
-
-    input::placeholder {
-      color: #96a3b3;
-    }
-
-    input:focus,
-    select:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(168, 120, 0, .12);
-    }
-
-    select {
-      cursor: pointer;
-    }
-
-    .field-help {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .security-area {
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: 11px;
-      padding: 18px;
-      margin-top: 27px;
-    }
-
-    .security-area label {
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .turnstile-wrap {
-      max-width: 100%;
-      overflow-x: auto;
-    }
-
-    .submit-button {
-      width: 100%;
-      margin-top: 23px;
-      min-height: 53px;
-      background: var(--gold);
-      color: white;
-      border: 0;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(168, 120, 0, .17);
-      transition: background .2s, transform .2s;
-    }
-
-    .submit-button:hover:not(:disabled) {
-      background: var(--gold-dark);
-      transform: translateY(-1px);
-    }
-
-    .submit-button:disabled {
-      opacity: .65;
-      cursor: not-allowed;
-    }
-
-    .after-submit {
-      margin: 13px 0 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .status-message {
-      margin-top: 20px;
-      padding: 17px;
-      border-radius: 10px;
-      font-size: 13px;
-      overflow-wrap: anywhere;
-    }
-
-    #successMessage {
-      background: #edf9f0;
-      border: 1px solid #b8e1c6;
-      color: #14532d;
-    }
-
-    #errorMessage {
-      background: #fff0ef;
-      border: 1px solid #f4c4c0;
-      color: var(--red);
-    }
-
-    [hidden] {
-      display: none !important;
-    }
-
-    .whatsapp-button {
-      display: inline-block;
-      background: #198b4d;
-      color: white;
-      border: 0;
-      border-radius: 9px;
-      padding: 12px 18px;
-      font-size: 13px;
-      font-weight: 800;
-      cursor: pointer;
-      margin-top: 13px;
-    }
-
-    .whatsapp-button:hover:not(:disabled) {
-      background: #13703d;
-    }
-
-    .whatsapp-button:disabled {
-      opacity: .65;
-      cursor: not-allowed;
-    }
-
-    .aside {
-      display: grid;
-      gap: 17px;
-    }
-
-    .aside-card {
-      padding: 24px;
-    }
-
-    .aside-title {
-      font: 800 16px Manrope, Arial, sans-serif;
-      color: var(--navy);
-      margin: 0 0 17px;
-    }
-
-    .step {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-
-    .step:last-child {
-      margin-bottom: 0;
-    }
-
-    .step-number {
-      flex: 0 0 29px;
-      height: 29px;
-      border-radius: 9px;
-      background: var(--cream);
-      color: var(--gold-dark);
-      display: grid;
-      place-items: center;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .step strong {
-      display: block;
-      font-size: 12px;
-      color: var(--navy);
-      margin-bottom: 3px;
-    }
-
-    .step p {
-      font-size: 12px;
-      line-height: 1.55;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .support-card {
-      background: var(--deep);
-      color: white;
-      border-radius: 16px;
-      padding: 24px;
-    }
-
-    .support-card h3 {
-      font: 800 16px Manrope, Arial, sans-serif;
-      margin: 0 0 9px;
-    }
-
-    .support-card p {
-      color: #cdd9e7;
-      font-size: 12px;
-      margin: 0 0 17px;
-    }
-
-    .support-link {
-      display: inline-flex;
-      text-decoration: none;
-      background: white;
-      color: var(--navy);
-      border-radius: 8px;
-      padding: 10px 14px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .privacy-note {
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.7;
-      padding: 0 3px;
-    }
-
-    .site-footer {
-      background: var(--deep);
-      color: white;
-      padding: 33px 20px;
-      text-align: center;
-    }
-
-    .footer-name {
-      font: 800 15px Manrope, Arial, sans-serif;
-      margin: 0 0 5px;
-    }
-
-    .site-footer p {
-      font-size: 12px;
-      color: #c8d5e4;
-      margin: 5px 0;
-    }
-
-    @media(max-width:850px) {
-      .application-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .aside {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .privacy-note {
-        grid-column: 1/-1;
-      }
-    }
-
-    @media(max-width:600px) {
-
-      .shell,
-      .page-main {
-        width: calc(100% - 26px);
-      }
-
-      .header-inner {
-        min-height: 79px;
-      }
-
-      .brand img {
-        width: 45px;
-        height: 45px;
-      }
-
-      .brand-name {
-        font-size: 13px;
-      }
-
-      .brand-tagline {
-        font-size: 10px;
-      }
-
-      .home-link {
-        padding: 9px 11px;
-        font-size: 12px;
-      }
-
-      .hero {
-        padding: 45px 0 91px;
-      }
-
-      .hero h1 {
-        letter-spacing: -.9px;
-      }
-
-      .form-card {
-        padding: 25px 19px;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .full {
-        grid-column: auto;
-      }
-
-      .aside {
-        grid-template-columns: 1fr;
-      }
-
-      .privacy-note {
-        grid-column: auto;
-      }
-
-      .page-main {
-        margin-top: -58px;
-      }
-
-      .notice {
-        font-size: 12px;
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-
-      *,
-      *:before,
-      *:after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
-
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vaal Accommodation Network | Scheduled Maintenance</title>
+
+    <meta name="description" content="Vaal Accommodation Network is temporarily under maintenance. Student accommodation applications for 2027 will resume Thursday at 1:00 PM.">
+
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --navy: #12345b;
+            --navy-light: #1b4777;
+            --gold: #a87800;
+            --gold-light: #f5edda;
+            --light: #f5f7fa;
+            --white: #ffffff;
+            --text: #263445;
+            --muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 22px 6%;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 4px;
+        }
+
+        .brand h1 {
+            font-size: 21px;
+            line-height: 1.4;
+        }
+
+        .brand p {
+            color: #e0e8f2;
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 55px 20px;
+        }
+
+        .maintenance-card {
+            background: var(--white);
+            width: 100%;
+            max-width: 720px;
+            padding: 48px 35px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(18, 52, 91, 0.09);
+            border-top: 5px solid var(--gold);
+        }
+
+        .icon-circle {
+            width: 82px;
+            height: 82px;
+            margin: 0 auto 25px;
+            background: var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+        }
+
+        .status {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--gold);
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--navy);
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 18px;
+        }
+
+        .intro {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 540px;
+            margin: 0 auto 28px;
+        }
+
+        .resume-box {
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 25px 15px;
+            margin: 0 auto 25px;
+        }
+
+        .resume-box p {
+            font-size: 13px;
+            color: #e0e8f2;
+            margin-bottom: 9px;
+        }
+
+        .resume-box h3 {
+            font-size: 25px;
+            color: #f5d58a;
+            line-height: 1.4;
+        }
+
+        .resume-box span {
+            display: block;
+            font-size: 14px;
+            color: var(--white);
+            margin-top: 6px;
+        }
+
+        .notice {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 7px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+
+        .contact-button:hover {
+            background: #896200;
+        }
+
+        footer {
+            background: var(--navy);
+            color: #e0e8f2;
+            text-align: center;
+            padding: 24px 15px;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        footer strong {
+            color: var(--white);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            .logo {
+                width: 48px;
+                height: 48px;
+            }
+
+            .brand h1 {
+                font-size: 17px;
+            }
+
+            .brand p {
+                font-size: 12px;
+            }
+
+            main {
+                padding: 35px 15px;
+            }
+
+            .maintenance-card {
+                padding: 35px 22px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            .intro {
+                font-size: 14px;
+            }
+
+            .resume-box h3 {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="index.html" aria-label="Vaal Accommodation Network home">
-        <img src="logo.jpg" alt="Vaal Accommodation Network logo">
-        <div>
-          <div class="brand-name">Vaal Accommodation Network</div>
-          <div class="brand-tagline">Student Accommodation for 2027</div>
+    <header>
+        <div class="header-content">
+
+            <!-- Replace logo.jpg with your logo filename if necessary -->
+            <img
+                src="logo.jpg"
+                alt="Vaal Accommodation Network Logo"
+                class="logo"
+            >
+
+            <div class="brand">
+                <h1>Vaal Accommodation Network</h1>
+                <p>Student Accommodation for 2027</p>
+            </div>
+
         </div>
-      </a>
+    </header>
 
-      <a class="home-link" href="index.html">← Back to Home</a>
-    </div>
-  </header>
+    <main>
+        <section class="maintenance-card">
 
-  <section class="hero">
-    <div class="shell hero-inner">
-      <span class="eyebrow">2027 Student Applications</span>
-      <h1>Find your place.<br>Start your application.</h1>
-      <p>
-        Take the next step towards student accommodation around Vaal. Complete the form below to submit your application.
-      </p>
-    </div>
-  </section>
+            <div class="icon-circle">🔧</div>
 
-  <main class="page-main">
-    <div class="application-layout">
+            <div class="status">SCHEDULED MAINTENANCE</div>
 
-      <section class="form-card" aria-labelledby="formTitle">
-        <span class="section-kicker">Accommodation Application</span>
-        <h2 id="formTitle">Apply for 2027</h2>
-        <p class="intro">Fill in your details carefully. Fields marked * are required.</p>
+            <h2>We'll Be Back Soon!</h2>
 
-        <div class="rule"></div>
+            <p class="intro">
+                Our website is temporarily under maintenance as we make
+                improvements to provide you with a better student
+                accommodation application experience.
+                We apologise for any inconvenience.
+            </p>
 
-        <div class="notice">
-          <span class="notice-mark" aria-hidden="true">i</span>
-          <div>
-            <strong>Before you apply</strong><br>
-            Submitting an application does not reserve or guarantee a room.
-            After successful submission, open WhatsApp and send the prepared
-            confirmation message.
-          </div>
-        </div>
-
-        <form id="applicationForm">
-
-          <h3 class="group-title"><span>01</span> Personal details</h3>
-
-          <div class="form-grid">
-            <div class="field full">
-              <label for="name">
-                Initials and Surname<span class="required">*</span>
-              </label>
-              <input type="text" id="name" name="name" maxlength="80" autocomplete="name" placeholder="e.g. T. Mokoena"
-                required>
+            <div class="resume-box">
+                <p>APPLICATIONS WILL RESUME</p>
+                <h3>22 October 2025,Thursday at 12:00 PM</h3>
+                <span>Student Accommodation 2027</span>
             </div>
 
-            <div class="field full">
-              <label for="phone">
-                WhatsApp Number<span class="required">*</span>
-              </label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="e.g. 0721234567"
-                required>
-              <span class="field-help">
-                Enter a valid South African mobile number so we can contact you.
-              </span>
-            </div>
-          </div>
+            <p class="notice">
+                Please return when applications reopen.
+                Thank you for your patience and interest in
+                Vaal Accommodation Network.
+            </p>
 
-          <div class="rule"></div>
+            <a
+                href="https://wa.me/message/C3XPVKIU5QH5P1"
+                class="contact-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Contact Us on WhatsApp
+            </a>
 
-          <h3 class="group-title"><span>02</span> Accommodation preferences</h3>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="accommodation">
-                Select Accommodation<span class="required">*</span>
-              </label>
-              <select id="accommodation" name="accommodation" required>
-                <option value="" disabled selected>Choose a property</option>
-                <option value="BW-02">BW-02</option>
-                <option value="SW-01">SW-01</option>
-                <option value="SW-02">SW-02</option>
-                <option value="SW-03(Females Only)">SW-03 (Females Only)</option>
-               
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="funding">
-                Funding Type<span class="required">*</span>
-              </label>
-              <select id="funding" name="funding" required>
-                <option value="" disabled selected>Choose funding</option>
-                <option value="NSFAS">NSFAS</option>
-                <option value="Bursary">Private Bursary</option>
-                <option value="Self-funded">Self-funded</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="gender">
-                Gender<span class="required">*</span>
-              </label>
-              <select id="gender" name="gender" required>
-                <option value="" disabled selected>Select gender</option>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="year">
-                Year of Study in 2027<span class="required">*</span>
-              </label>
-              <select id="year" name="year" required>
-                <option value="" disabled selected>Select year of study</option>
-                <option value="6 months">6 Months</option>
-                <option value="1st Year(Full Year)">1st Year</option>
-                <option value="2nd Year(Full Year)">2nd Year</option>
-                <option value="3rd Year(Full Year)">3rd Year</option>
-                <option value="4th Year(Full Year)">4th Year</option>
-                <option value="5th Year(Full Year)">5th Year</option>
-                <option value="Postgraduate">Postgraduate</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="security-area">
-            <label>
-              Security Verification<span class="required">*</span>
-            </label>
-            <div class="turnstile-wrap">
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAAFTChwJJxZQQB0QP">
-              </div>
-            </div>
-          </div>
-
-          <button type="submit" id="submitButton" class="submit-button">
-            Submit Application →
-          </button>
-
-          <p class="after-submit">
-            After submitting, use the WhatsApp button to send your confirmation.
-          </p>
-
-          <div id="successMessage" class="status-message" role="status" aria-live="polite" hidden>
-          </div>
-
-          <div id="errorMessage" class="status-message" role="alert" aria-live="assertive" hidden>
-          </div>
-        </form>
-      </section>
-
-      <aside class="aside" aria-label="Application guidance">
-        <section class="aside-card">
-          <h3 class="aside-title">How it works</h3>
-
-          <div class="step">
-            <span class="step-number">1</span>
-            <div>
-              <strong>Choose a property</strong>
-              <p>Select the accommodation you are interested in.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <span class="step-number">2</span>
-            <div>
-              <strong>Submit your details</strong>
-              <p>Complete the form and pass the security check.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <span class="step-number">3</span>
-            <div>
-              <strong>Send WhatsApp confirmation</strong>
-              <p>Open the prepared message and press Send in WhatsApp.</p>
-            </div>
-          </div>
-
-          <div class="step">
-            <span class="step-number">4</span>
-            <div>
-              <strong>Await a response</strong>
-              <p>
-                Your application will be reviewd and you will be advised
-                of the next steps.
-              </p>
-            </div>
-          </div>
         </section>
-
-        <section class="support-card">
-          <h3>Need assistance?</h3>
-          <p>
-            Have a question about accommodation or your application?
-            Contact our team directly.
-          </p>
-          <a class="support-link" href="https://wa.me/27726643609" target="_blank" rel="noopener noreferrer">
-            Contact on WhatsApp ↗
-          </a>
-        </section>
-
-        <p class="privacy-note">
-          Your details are used to process your accommodation application
-          and communicate with you about it. Only submit information you
-          are comfortable sharing for this purpose.
-        </p>
-      </aside>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <p class="footer-name">Vaal Accommodation Network</p>
-    <p>Student Accommodation for 2027</p>
-    <p>Helping students find accommodation near Vaal University of Technology.</p>
-    <p>© 2026 Vaal Accommodation Network. All rights reserved.</p>
-  </footer>
-
-  
-<script>
-  const WORKER_URL =
-    "https://vaal-accommodation-api.rivaldochiburre.workers.dev";
-
-  const form = document.getElementById("applicationForm");
-  const submitButton = document.getElementById("submitButton");
-  const successMessage = document.getElementById("successMessage");
-  const errorMessage = document.getElementById("errorMessage");
-
-  let submissionInProgress = false;
-  let submittedSuccessfully = false;
-
-  // =====================================
-  // PROPERTY SELECTION FROM URL
-  // =====================================
-
-  const requestedProperty =
-    new URLSearchParams(window.location.search).get("property");
-
-  if (requestedProperty) {
-    const accommodationSelect =
-      document.getElementById("accommodation");
-
-    const matchedOption = Array.from(
-      accommodationSelect.options
-    ).find(function(option) {
-      return option.value === requestedProperty;
-    });
-
-    if (matchedOption) {
-      accommodationSelect.value = matchedOption.value;
-    }
-  }
-
-  // =====================================
-  // ERROR MESSAGES
-  // =====================================
-
-  function showError(message) {
-    errorMessage.textContent = message;
-    errorMessage.hidden = false;
-  }
-
-  function clearMessages() {
-    successMessage.replaceChildren();
-    successMessage.hidden = true;
-
-    errorMessage.textContent = "";
-    errorMessage.hidden = true;
-  }
-
-  // =====================================
-  // SUBMIT STUDENT APPLICATION
-  // =====================================
-
-  form.addEventListener("submit", async function(event) {
-    event.preventDefault();
-
-    if (submissionInProgress || submittedSuccessfully) {
-      return;
-    }
-
-    clearMessages();
-
-    const name =
-      document.getElementById("name").value.trim();
-
-    const phone =
-      document.getElementById("phone").value.trim();
-
-    const accommodation =
-      document.getElementById("accommodation").value;
-
-    const funding =
-      document.getElementById("funding").value;
-
-    const gender =
-      document.getElementById("gender").value;
-
-    const year =
-      document.getElementById("year").value;
-
-    const tokenElement = document.querySelector(
-      '[name="cf-turnstile-response"]'
-    );
-
-    const token = tokenElement ? tokenElement.value : "";
-
-    if (!token) {
-      showError(
-        "Please complete the security verification and try again."
-      );
-      return;
-    }
-
-    submissionInProgress = true;
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
-
-    try {
-
-      // =================================
-      // SEND APPLICATION TO WORKER
-      // =================================
-
-      const response = await fetch(
-        WORKER_URL + "/submit",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            name,
-            phone,
-            accommodation,
-            funding,
-            gender,
-            year,
-            token
-          })
-        }
-      );
-
-      const result = await response.json();
-
-      if (!response.ok || result.success !== true) {
-        throw new Error(
-          result.message ||
-          "Your application could not be submitted."
-        );
-      }
-
-      if (
-        typeof result.trackingToken !== "string" ||
-        typeof result.whatsappUrl !== "string" ||
-        !result.whatsappUrl.startsWith("https://wa.me/")
-      ) {
-        throw new Error(
-          "Your application may have been saved, but the " +
-          "WhatsApp confirmation details are unavailable. " +
-          "Please contact us before submitting again."
-        );
-      }
-
-      submittedSuccessfully = true;
-      successMessage.hidden = false;
-
-      // =================================
-      // SUCCESS MESSAGE
-      // =================================
-
-      const successText = document.createElement("strong");
-
-      successText.textContent =
-        "Application submitted successfully!";
-
-      const explanation = document.createElement("p");
-
-      explanation.textContent =
-        "Your application has been saved. " +
-        "Click below to open WhatsApp and send " +
-        "the prepared message.";
-
-      explanation.style.margin = "8px 0 0";
-
-      // =================================
-      // WHATSAPP BUTTON
-      // =================================
-
-      const whatsappButton =
-        document.createElement("button");
-
-      whatsappButton.type = "button";
-      whatsappButton.id = "whatsappConfirmButton";
-      whatsappButton.className = "whatsapp-button";
-
-      whatsappButton.textContent =
-        "Confirm via WhatsApp ↗";
-
-      const instructions = document.createElement("p");
-
-      instructions.textContent =
-        "WhatsApp will open with a prepared message. " +
-        "You must press Send in WhatsApp to complete confirmation.";
-
-      instructions.style.marginBottom = "0";
-      instructions.style.fontSize = "12px";
-
-      successMessage.append(
-        successText,
-        explanation,
-        whatsappButton,
-        instructions
-      );
-
-      successMessage.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
-
-      // =================================
-      // WHATSAPP CLICK TRACKING
-      // =================================
-
-      whatsappButton.addEventListener(
-        "click",
-        async function() {
-
-          if (whatsappButton.disabled) {
-            return;
-          }
-
-          whatsappButton.disabled = true;
-
-          whatsappButton.textContent =
-            "Connecting to WhatsApp...";
-
-          // Open a blank tab immediately within
-          // the user's click to reduce popup blocking.
-          const whatsappWindow = window.open(
-            "about:blank",
-            "_blank"
-          );
-
-          if (!whatsappWindow) {
-            whatsappButton.disabled = false;
-
-            whatsappButton.textContent =
-              "Confirm via WhatsApp ↗";
-
-            showError(
-              "Your browser blocked the WhatsApp window. " +
-              "Please allow pop-ups and try again."
-            );
-
-            return;
-          }
-
-          try {
-
-            // =============================
-            // RECORD CLICK FIRST
-            // =============================
-
-            const trackingResponse = await fetch(
-              WORKER_URL + "/track-click",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                  trackingToken: result.trackingToken
-                })
-              }
-            );
-
-            const trackingResult =
-              await trackingResponse.json();
-
-            if (
-              !trackingResponse.ok ||
-              trackingResult.success !== true
-            ) {
-              whatsappWindow.close();
-
-              whatsappButton.disabled = false;
-
-              whatsappButton.textContent =
-                "Try Confirmation Again";
-
-              showError(
-                "Your application was saved, but WhatsApp " +
-                "confirmation could not be recorded. " +
-                "Please try again."
-              );
-
-              return;
-            }
-
-            // =============================
-            // TRACKING SUCCESSFUL
-            // =============================
-
-            errorMessage.textContent = "";
-            errorMessage.hidden = true;
-
-            // Open the ORIGINAL WhatsApp URL
-            // returned by the Cloudflare Worker.
-            // Do not rebuild or append a message.
-            whatsappWindow.location.replace(
-              result.whatsappUrl
-            );
-
-            whatsappButton.textContent =
-              "WhatsApp Opened";
-
-            const clickNotice =
-              document.createElement("p");
-
-            clickNotice.textContent =
-              "Your click has been recorded. " +
-              "Your application is not confirmed " +
-              "until you send the message and " +
-              "we verify that it arrived.";
-
-            clickNotice.style.fontWeight = "700";
-            clickNotice.style.marginBottom = "0";
-
-            successMessage.appendChild(clickNotice);
-
-          } catch (error) {
-
-            // =============================
-            // TRACKING FAILED
-            // =============================
-
-            whatsappWindow.close();
-
-            whatsappButton.disabled = false;
-
-            whatsappButton.textContent =
-              "Try Confirmation Again";
-
-            showError(
-              "Your application was saved, but we could " +
-              "not record your WhatsApp confirmation. " +
-              "Please try again."
-            );
-          }
-        }
-      );
-
-      // =================================
-      // APPLICATION COMPLETED
-      // =================================
-
-      submitButton.textContent =
-        "Application Submitted";
-
-      if (window.turnstile) {
-        window.turnstile.reset();
-      }
-
-    } catch (error) {
-
-      showError(
-        error.message ||
-        "Something went wrong. Please try again."
-      );
-
-      if (window.turnstile) {
-        window.turnstile.reset();
-      }
-
-    } finally {
-
-      submissionInProgress = false;
-
-      if (!submittedSuccessfully) {
-        submitButton.disabled = false;
-
-        submitButton.textContent =
-          "Submit Application →";
-      }
-    }
-  });
-
-</script>
+    </main>
+
+    <footer>
+        <strong>Vaal Accommodation Network</strong>
+        <p>Connecting students with accommodation near Vaal University of Technology.</p>
+        <p>&copy; 2026 Vaal Accommodation Network. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
