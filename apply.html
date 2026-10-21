@@ -1,49 +1,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-    content="Apply for student accommodation for the 2027 academic year through Vaal Accommodation Network. Serving VUT and NWU Vanderbijlpark students.">
+        content="Apply for student accommodation for the 2027 academic year through Vaal Accommodation Network. Serving VUT and NWU Vanderbijlpark students.">
 
   <meta name="theme-color" content="#12345b">
-
   <title>Apply Now | Vaal Accommodation Network</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async defer>
+  </script>
 
   <style>
     :root {
       --navy: #12345b;
       --deep: #0c2746;
-      --navy-light: #1b4777;
       --gold: #a87800;
       --gold-dark: #896200;
-      --cream: #f7f0df;
       --page: #f4f6fa;
       --ink: #203248;
       --muted: #64748b;
       --line: #e1e7ef;
-      --white: #fff;
       --red: #b42318;
-      --green: #167245;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -52,15 +45,8 @@
       font: 15px/1.6 'DM Sans', Arial, sans-serif;
     }
 
-    button,
-    input,
-    select {
-      font: inherit;
-    }
-
-    a {
-      color: inherit;
-    }
+    button, input, select { font: inherit; }
+    a { color: inherit; }
 
     .shell {
       width: min(1140px, calc(100% - 40px));
@@ -101,7 +87,6 @@
     .brand-name {
       font-family: Manrope, Arial, sans-serif;
       font-weight: 800;
-      letter-spacing: -.4px;
       font-size: 16px;
       line-height: 1.35;
     }
@@ -120,11 +105,9 @@
       font-size: 13px;
       font-weight: 700;
       white-space: nowrap;
-      transition: .2s;
     }
 
-    .home-link:hover,
-    .home-link:focus-visible {
+    .home-link:hover {
       background: rgba(255,255,255,.1);
     }
 
@@ -133,60 +116,26 @@
       overflow: hidden;
       background: linear-gradient(
         120deg,
-        #0c2746 0%,
+        #0c2746,
         #12345b 55%,
-        #22527d 100%
+        #22527d
       );
       color: white;
       padding: 61px 0 104px;
     }
 
-    .hero:before,
-    .hero:after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .hero:before {
-      width: 470px;
-      height: 470px;
-      right: -130px;
-      top: -260px;
-    }
-
-    .hero:after {
-      width: 320px;
-      height: 320px;
-      right: 80px;
-      top: -165px;
-    }
-
     .hero-inner {
       position: relative;
-      z-index: 1;
       max-width: 790px;
       text-align: center;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
       color: #f0d89d;
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: 2.2px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-    }
-
-    .eyebrow:before {
-      content: "";
-      width: 23px;
-      height: 2px;
-      background: #d9ad50;
     }
 
     .hero h1 {
@@ -199,8 +148,7 @@
     .hero p {
       color: #dce7f3;
       max-width: 610px;
-      margin: 0 auto;
-      font-size: 15px;
+      margin: auto;
     }
 
     .page-main {
@@ -217,8 +165,7 @@
       gap: 24px;
     }
 
-    .form-card,
-    .aside-card {
+    .form-card, .aside-card {
       background: white;
       border: 1px solid var(--line);
       border-radius: 17px;
@@ -239,7 +186,6 @@
 
     .form-card h2 {
       font: 800 25px/1.3 Manrope, Arial, sans-serif;
-      letter-spacing: -.7px;
       color: var(--navy);
       margin: 7px 0;
     }
@@ -265,7 +211,6 @@
       padding: 15px;
       border-radius: 9px;
       font-size: 13px;
-      line-height: 1.6;
       margin-bottom: 26px;
     }
 
@@ -279,12 +224,9 @@
       background: #f1e1b8;
       color: #805a00;
       font-weight: 800;
-      font-size: 14px;
     }
 
-    .notice strong {
-      color: var(--navy);
-    }
+    .notice strong { color: var(--navy); }
 
     .group-title {
       font: 800 14px Manrope, Arial, sans-serif;
@@ -302,7 +244,7 @@
       display: grid;
       place-items: center;
       background: #edf2f8;
-      color: var(--navy-light);
+      color: #1b4777;
       font-size: 12px;
     }
 
@@ -319,9 +261,7 @@
       min-width: 0;
     }
 
-    .full {
-      grid-column: 1 / -1;
-    }
+    .full { grid-column: 1 / -1; }
 
     label {
       font-size: 12px;
@@ -334,33 +274,26 @@
       margin-left: 3px;
     }
 
-    input,
-    select {
+    input, select {
       width: 100%;
       min-height: 49px;
       border: 1px solid #d5dee9;
       border-radius: 9px;
       padding: 12px 13px;
-      background: #fff;
+      background: white;
       color: var(--ink);
       font-size: 14px;
-      transition: border-color .2s, box-shadow .2s;
     }
 
-    input::placeholder {
-      color: #96a3b3;
-    }
+    input::placeholder { color: #96a3b3; }
 
-    input:focus,
-    select:focus {
+    input:focus, select:focus {
       outline: none;
       border-color: var(--gold);
       box-shadow: 0 0 0 3px rgba(168,120,0,.12);
     }
 
-    select {
-      cursor: pointer;
-    }
+    select { cursor: pointer; }
 
     select:disabled {
       background: #f1f4f8;
@@ -379,7 +312,6 @@
       padding: 14px;
       font-size: 12px;
       color: var(--navy);
-      line-height: 1.6;
     }
 
     .institution-info strong {
@@ -417,12 +349,10 @@
       font-weight: 800;
       cursor: pointer;
       box-shadow: 0 5px 15px rgba(168,120,0,.17);
-      transition: background .2s, transform .2s;
     }
 
     .submit-button:hover:not(:disabled) {
       background: var(--gold-dark);
-      transform: translateY(-1px);
     }
 
     .submit-button:disabled {
@@ -457,9 +387,7 @@
       color: var(--red);
     }
 
-    [hidden] {
-      display: none !important;
-    }
+    [hidden] { display: none !important; }
 
     .whatsapp-button {
       display: inline-block;
@@ -474,23 +402,14 @@
       margin-top: 13px;
     }
 
-    .whatsapp-button:hover:not(:disabled) {
-      background: #13703d;
-    }
-
-    .whatsapp-button:disabled {
-      opacity: .65;
-      cursor: not-allowed;
-    }
+    .whatsapp-button:disabled { opacity: .65; }
 
     .aside {
       display: grid;
       gap: 17px;
     }
 
-    .aside-card {
-      padding: 24px;
-    }
+    .aside-card { padding: 24px; }
 
     .aside-title {
       font: 800 16px Manrope, Arial, sans-serif;
@@ -505,15 +424,13 @@
       margin-bottom: 20px;
     }
 
-    .step:last-child {
-      margin-bottom: 0;
-    }
+    .step:last-child { margin-bottom: 0; }
 
     .step-number {
       flex: 0 0 29px;
       height: 29px;
       border-radius: 9px;
-      background: var(--cream);
+      background: #f7f0df;
       color: var(--gold-dark);
       display: grid;
       place-items: center;
@@ -530,7 +447,6 @@
 
     .step p {
       font-size: 12px;
-      line-height: 1.55;
       color: var(--muted);
       margin: 0;
     }
@@ -580,7 +496,6 @@
 
     .footer-name {
       font: 800 15px Manrope, Arial, sans-serif;
-      margin: 0 0 5px;
     }
 
     .site-footer p {
@@ -604,108 +519,56 @@
     }
 
     @media(max-width:600px) {
-      .shell,
-      .page-main {
+      .shell, .page-main {
         width: calc(100% - 26px);
       }
 
-      .header-inner {
-        min-height: 79px;
-      }
+      .header-inner { min-height: 79px; }
 
       .brand img {
         width: 45px;
         height: 45px;
       }
 
-      .brand-name {
-        font-size: 13px;
-      }
-
-      .brand-tagline {
-        font-size: 10px;
-      }
+      .brand-name { font-size: 13px; }
+      .brand-tagline { font-size: 10px; }
 
       .home-link {
         padding: 9px 11px;
         font-size: 12px;
       }
 
-      .hero {
-        padding: 45px 0 91px;
-      }
+      .hero { padding: 45px 0 91px; }
 
-      .hero h1 {
-        letter-spacing: -.9px;
-      }
+      .form-card { padding: 25px 19px; }
 
-      .form-card {
-        padding: 25px 19px;
-      }
-
-      .form-grid {
+      .form-grid, .aside {
         grid-template-columns: 1fr;
       }
 
-      .full {
+      .full, .privacy-note {
         grid-column: auto;
       }
 
-      .aside {
-        grid-template-columns: 1fr;
-      }
-
-      .privacy-note {
-        grid-column: auto;
-      }
-
-      .page-main {
-        margin-top: -58px;
-      }
-
-      .notice {
-        font-size: 12px;
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-      *,
-      *:before,
-      *:after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
+      .page-main { margin-top: -58px; }
     }
   </style>
-
-  <script
-    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-    async
-    defer>
-  </script>
 </head>
 
 <body>
 
   <!-- HEADER -->
-
   <header class="site-header">
     <div class="shell header-inner">
 
-      <a
-        class="brand"
-        href="index.html"
-        aria-label="Vaal Accommodation Network home">
-
-        <img
-          src="logo.jpg"
-          alt="Vaal Accommodation Network logo">
+      <a class="brand" href="index.html">
+        <img src="logo.jpg"
+             alt="Vaal Accommodation Network logo">
 
         <div>
           <div class="brand-name">
             Vaal Accommodation Network
           </div>
-
           <div class="brand-tagline">
             Student Accommodation for 2027
           </div>
@@ -720,7 +583,6 @@
   </header>
 
   <!-- HERO -->
-
   <section class="hero">
     <div class="shell hero-inner">
 
@@ -743,22 +605,17 @@
   </section>
 
   <!-- APPLICATION -->
-
   <main class="page-main">
 
     <div class="application-layout">
 
-      <section
-        class="form-card"
-        aria-labelledby="formTitle">
+      <section class="form-card">
 
         <span class="section-kicker">
           Accommodation Application
         </span>
 
-        <h2 id="formTitle">
-          Apply for 2027
-        </h2>
+        <h2>Apply for 2027</h2>
 
         <p class="intro">
           Complete your details carefully.
@@ -767,19 +624,11 @@
 
         <div class="rule"></div>
 
-        <!-- NOTICE -->
-
         <div class="notice">
-
-          <span
-            class="notice-mark"
-            aria-hidden="true">
-            i
-          </span>
+          <span class="notice-mark">i</span>
 
           <div>
             <strong>Before you apply</strong><br>
-
             Submitting an application does not
             reserve or guarantee a room.
 
@@ -787,13 +636,11 @@
             WhatsApp and send the prepared
             confirmation message.
           </div>
-
         </div>
 
         <form id="applicationForm">
 
           <!-- PERSONAL DETAILS -->
-
           <h3 class="group-title">
             <span>01</span>
             Personal details
@@ -802,7 +649,6 @@
           <div class="form-grid">
 
             <div class="field full">
-
               <label for="name">
                 Full Names
                 <span class="required">*</span>
@@ -821,11 +667,9 @@
                 Enter your full first name(s)
                 and surname.
               </span>
-
             </div>
 
             <div class="field full">
-
               <label for="phone">
                 WhatsApp Number
                 <span class="required">*</span>
@@ -841,10 +685,8 @@
                 required>
 
               <span class="field-help">
-                Enter a valid South African mobile number
-                so we can contact you.
+                Enter a valid South African mobile number.
               </span>
-
             </div>
 
           </div>
@@ -852,7 +694,6 @@
           <div class="rule"></div>
 
           <!-- INSTITUTION -->
-
           <h3 class="group-title">
             <span>02</span>
             Institution
@@ -872,11 +713,7 @@
                 name="institution"
                 required>
 
-                <option value="" disabled>
-                  Choose your institution
-                </option>
-
-                <option value="VUT" selected>
+                <option value="VUT">
                   Vaal University of Technology (VUT)
                 </option>
 
@@ -885,33 +722,22 @@
                 </option>
 
               </select>
-
             </div>
 
             <div class="field full">
-
               <div
                 id="institutionInfo"
                 class="institution-info"
                 role="status"
                 aria-live="polite">
-
-                <strong>
-                  Vaal University of Technology
-                </strong>
-
-                Select your preferred accommodation.
-
               </div>
-
             </div>
 
           </div>
 
           <div class="rule"></div>
 
-          <!-- ACCOMMODATION PREFERENCES -->
-
+          <!-- ACCOMMODATION -->
           <h3 class="group-title">
             <span>03</span>
             Accommodation preferences
@@ -929,10 +755,11 @@
               <select
                 id="accommodation"
                 name="accommodation"
-                required>
+                required
+                disabled>
 
-                <option value="" disabled selected>
-                  Choose a property
+                <option value="">
+                  Loading accommodations...
                 </option>
 
               </select>
@@ -940,9 +767,7 @@
               <span
                 class="field-help"
                 id="propertyHelp">
-
-                Choose your preferred accommodation.
-
+                Loading available accommodations...
               </span>
 
             </div>
@@ -954,27 +779,17 @@
                 <span class="required">*</span>
               </label>
 
-              <select
-                id="funding"
-                name="funding"
-                required>
-
+              <select id="funding" name="funding" required>
                 <option value="" disabled selected>
                   Choose funding
                 </option>
-
-                <option value="NSFAS">
-                  NSFAS
-                </option>
-
+                <option value="NSFAS">NSFAS</option>
                 <option value="Bursary">
                   Private Bursary
                 </option>
-
                 <option value="Self-funded">
                   Self-funded
                 </option>
-
               </select>
 
             </div>
@@ -986,23 +801,12 @@
                 <span class="required">*</span>
               </label>
 
-              <select
-                id="gender"
-                name="gender"
-                required>
-
+              <select id="gender" name="gender" required>
                 <option value="" disabled selected>
                   Select gender
                 </option>
-
-                <option value="Female">
-                  Female
-                </option>
-
-                <option value="Male">
-                  Male
-                </option>
-
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
               </select>
 
             </div>
@@ -1014,10 +818,7 @@
                 <span class="required">*</span>
               </label>
 
-              <select
-                id="year"
-                name="year"
-                required>
+              <select id="year" name="year" required>
 
                 <option value="" disabled selected>
                   Select year of study
@@ -1057,8 +858,7 @@
 
           </div>
 
-          <!-- SECURITY VERIFICATION -->
-
+          <!-- TURNSTILE -->
           <div class="security-area">
 
             <label>
@@ -1068,38 +868,29 @@
 
             <div class="turnstile-wrap">
 
-              <!--
-                Insert your existing production
-                Cloudflare Turnstile site key.
-              -->
-
+              <!-- Use existing public site key -->
               <div
                 class="cf-turnstile"
                 data-sitekey="0x4AAAAAAFTChwJJxZQQB0QP">
               </div>
 
             </div>
-
           </div>
 
           <!-- SUBMIT -->
-
           <button
             type="submit"
             id="submitButton"
-            class="submit-button">
+            class="submit-button"
+            disabled>
 
-            Submit Application →
+            Loading accommodations...
 
           </button>
 
-          <p
-            class="after-submit"
-            id="submitHelp">
-
+          <p class="after-submit" id="submitHelp">
             After submitting, use the WhatsApp
             button to send your confirmation.
-
           </p>
 
           <div
@@ -1119,14 +910,10 @@
           </div>
 
         </form>
-
       </section>
 
-      <!-- APPLICATION GUIDANCE -->
-
-      <aside
-        class="aside"
-        aria-label="Application guidance">
+      <!-- GUIDANCE -->
+      <aside class="aside">
 
         <section class="aside-card">
 
@@ -1138,9 +925,7 @@
             <span class="step-number">1</span>
             <div>
               <strong>Select your institution</strong>
-              <p>
-                Choose VUT or NWU Vanderbijlpark.
-              </p>
+              <p>Choose VUT or NWU Vanderbijlpark.</p>
             </div>
           </div>
 
@@ -1148,9 +933,7 @@
             <span class="step-number">2</span>
             <div>
               <strong>Choose accommodation</strong>
-              <p>
-                Select your preferred property.
-              </p>
+              <p>Select your preferred property.</p>
             </div>
           </div>
 
@@ -1159,8 +942,8 @@
             <div>
               <strong>Complete your application</strong>
               <p>
-                Enter your full names, contact information
-                and accommodation preferences.
+                Enter your full names, contact
+                information and preferences.
               </p>
             </div>
           </div>
@@ -1170,8 +953,8 @@
             <div>
               <strong>Confirm via WhatsApp</strong>
               <p>
-                Open the prepared message and
-                press Send in WhatsApp.
+                Open the prepared message
+                and press Send in WhatsApp.
               </p>
             </div>
           </div>
@@ -1190,15 +973,13 @@
         </section>
 
         <!-- SUPPORT -->
-
         <section class="support-card">
 
           <h3>Need assistance?</h3>
 
           <p>
             Have a question about student accommodation
-            or your application?
-            Contact our team directly.
+            or your application? Contact our team directly.
           </p>
 
           <a
@@ -1210,7 +991,6 @@
             Contact on WhatsApp ↗
 
           </a>
-
         </section>
 
         <p class="privacy-note">
@@ -1221,21 +1001,17 @@
         </p>
 
       </aside>
-
     </div>
   </main>
 
   <!-- FOOTER -->
-
   <footer class="site-footer">
 
     <p class="footer-name">
       Vaal Accommodation Network
     </p>
 
-    <p>
-      Student Accommodation for 2027
-    </p>
+    <p>Student Accommodation for 2027</p>
 
     <p>
       Accommodation for VUT and
@@ -1250,7 +1026,6 @@
   </footer>
 
   <!-- JAVASCRIPT -->
-
   <script>
     "use strict";
 
@@ -1261,12 +1036,6 @@
     const WORKER_URL =
       "https://vaal-accommodation-api.rivaldochiburre.workers.dev";
 
-    // Set this to true ONLY after the
-    // Worker and Google Sheets are updated
-    // to validate and store institutions.
-
-    const INSTITUTION_BACKEND_READY = true;
-
     // =====================================
     // FORM ELEMENTS
     // =====================================
@@ -1276,12 +1045,6 @@
 
     const submitButton =
       document.getElementById("submitButton");
-
-    const successMessage =
-      document.getElementById("successMessage");
-
-    const errorMessage =
-      document.getElementById("errorMessage");
 
     const institutionSelect =
       document.getElementById("institution");
@@ -1295,117 +1058,80 @@
     const propertyHelp =
       document.getElementById("propertyHelp");
 
-    const submitHelp =
-      document.getElementById("submitHelp");
+    const successMessage =
+      document.getElementById("successMessage");
+
+    const errorMessage =
+      document.getElementById("errorMessage");
 
     let submissionInProgress = false;
     let submittedSuccessfully = false;
+    let propertiesLoaded = false;
 
     // =====================================
-    // ALL ACCOMMODATION PROPERTIES
+    // DYNAMIC PROPERTIES
     // =====================================
 
-    const PROPERTIES = {
+    // No hardcoded accommodation codes.
 
-      VUT: [
-
-        {
-          value: "BW-02",
-          label: "BW-02"
-        },
-
-        {
-          value: "SW-01",
-          label: "SW-01"
-        },
-
-        {
-          value: "SW-02",
-          label: "SW-02"
-        },
-
-        {
-          value: "SW-03(Females Only)",
-          label: "SW-03 (Females Only)"
-        }
-
-      ],
-
-      NWU: [
-
-        {
-          value: "NWU-01",
-          label: "NWU-01"
-        }
-
-      ]
-
+    let PROPERTIES = {
+      VUT: [],
+      NWU: []
     };
 
     // =====================================
-    // PROPERTY URL PARAMETERS
+    // URL PARAMETERS
     // =====================================
 
-    const urlParams =
+    const params =
       new URLSearchParams(window.location.search);
 
     const requestedProperty =
-      urlParams.get("property");
+      params.get("property") || "";
 
     const requestedInstitution =
-      urlParams.get("institution");
+      params.get("institution") || "";
+
+    // =====================================
+    // MESSAGES
+    // =====================================
+
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorMessage.hidden = false;
+    }
+
+    function clearMessages() {
+      errorMessage.textContent = "";
+      errorMessage.hidden = true;
+
+      successMessage.replaceChildren();
+      successMessage.hidden = true;
+    }
 
     // =====================================
     // FIND PROPERTY INSTITUTION
     // =====================================
 
-    function getPropertyInstitution(propertyCode) {
+    function getPropertyInstitution(code) {
 
-      for (
-        const institution of Object.keys(PROPERTIES)
-      ) {
+      for (const institution of ["VUT", "NWU"]) {
 
         const found =
           PROPERTIES[institution].some(
-            function(property) {
-
-              return property.value === propertyCode;
-
-            }
+            property => property.value === code
           );
 
         if (found) {
           return institution;
         }
-
       }
 
       return "";
     }
 
     // =====================================
-    // FORM MESSAGES
-    // =====================================
-
-    function showError(message) {
-
-      errorMessage.textContent = message;
-      errorMessage.hidden = false;
-
-    }
-
-    function clearMessages() {
-
-      successMessage.replaceChildren();
-      successMessage.hidden = true;
-
-      errorMessage.textContent = "";
-      errorMessage.hidden = true;
-
-    }
-
-    // =====================================
-    // UPDATE PROPERTY SELECTION
+    // UPDATE ACCOMMODATION OPTIONS
     // =====================================
 
     function updateAccommodationOptions(
@@ -1415,7 +1141,7 @@
       const institution =
         institutionSelect.value;
 
-      const properties =
+      const available =
         PROPERTIES[institution] || [];
 
       accommodationSelect.replaceChildren();
@@ -1424,12 +1150,12 @@
         document.createElement("option");
 
       placeholder.value = "";
-      placeholder.disabled = true;
       placeholder.textContent = "Choose a property";
+      placeholder.disabled = true;
 
       accommodationSelect.appendChild(placeholder);
 
-      properties.forEach(function(property) {
+      available.forEach(function(property) {
 
         const option =
           document.createElement("option");
@@ -1438,41 +1164,27 @@
         option.textContent = property.label;
 
         accommodationSelect.appendChild(option);
-
       });
 
       accommodationSelect.value = "";
 
-      // Automatically select a property when
-      // the visitor uses an Apply Now link.
+      // Preselect from homepage Apply button.
 
-      const hasMatchingProperty =
-        properties.some(function(property) {
-
-          return property.value === preferredProperty;
-
-        });
-
-      if (hasMatchingProperty) {
-
-        accommodationSelect.value =
-          preferredProperty;
-
+      if (
+        available.some(
+          property => property.value === preferredProperty
+        )
+      ) {
+        accommodationSelect.value = preferredProperty;
       }
 
       accommodationSelect.disabled =
+        !propertiesLoaded ||
+        available.length === 0 ||
         submissionInProgress ||
-        submittedSuccessfully ||
-        properties.length === 0;
+        submittedSuccessfully;
 
-      // =================================
-      // SIMPLE INSTITUTION INFORMATION
-      // =================================
-
-      institutionInfo.className =
-        "institution-info";
-
-      institutionInfo.replaceChildren();
+      // Institution information.
 
       const heading =
         document.createElement("strong");
@@ -1480,46 +1192,28 @@
       const description =
         document.createElement("span");
 
-      if (institution === "NWU") {
+      heading.textContent =
+        institution === "NWU"
+          ? "North-West University — Vanderbijlpark"
+          : "Vaal University of Technology";
 
-        heading.textContent =
-          "North-West University — Vanderbijlpark";
-
+      if (!propertiesLoaded) {
         description.textContent =
-          "Accommodation: NWU-01";
-
+          "Accommodation options are temporarily unavailable.";
+      } else if (available.length === 0) {
+        description.textContent =
+          "No accommodations currently available.";
       } else {
-
-        heading.textContent =
-          "Vaal University of Technology";
-
         description.textContent =
           "Select your preferred accommodation.";
-
       }
 
-      institutionInfo.append(
+      institutionInfo.replaceChildren(
         heading,
         description
       );
 
-      propertyHelp.textContent =
-        "Choose your preferred accommodation.";
-
-      submitHelp.textContent =
-        "After submitting, use the WhatsApp button " +
-        "to send your confirmation.";
-
-      // =================================
-      // SUBMISSION AVAILABILITY
-      // =================================
-
-      const canSubmit =
-        properties.length > 0 &&
-        (
-          institution !== "NWU" ||
-          INSTITUTION_BACKEND_READY
-        );
+      // Submit availability.
 
       if (submittedSuccessfully) {
 
@@ -1530,14 +1224,160 @@
       } else if (submissionInProgress) {
 
         submitButton.disabled = true;
-        submitButton.textContent = "Submitting...";
+        submitButton.textContent =
+          "Submitting...";
 
       } else {
 
-        submitButton.disabled = !canSubmit;
+        submitButton.disabled =
+          !propertiesLoaded ||
+          available.length === 0;
+
         submitButton.textContent =
           "Submit Application →";
+      }
+    }
 
+    // =====================================
+    // LOAD ACTIVE PROPERTIES
+    // =====================================
+
+    async function loadActiveProperties() {
+
+      propertiesLoaded = false;
+
+      institutionSelect.disabled = true;
+      accommodationSelect.disabled = true;
+      submitButton.disabled = true;
+
+      submitButton.textContent =
+        "Loading accommodations...";
+
+      try {
+
+        const response = await fetch(
+          WORKER_URL + "/properties",
+          {
+            method: "GET",
+            cache: "no-store"
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Property service unavailable.");
+        }
+
+        const result = await response.json();
+
+        if (
+          result.success !== true ||
+          !Array.isArray(result.properties)
+        ) {
+          throw new Error("Invalid property response.");
+        }
+
+        const next = {
+          VUT: [],
+          NWU: []
+        };
+
+        const seen = new Set();
+
+        result.properties.forEach(function(item) {
+
+          if (
+            !item ||
+            typeof item.code !== "string" ||
+            !["VUT", "NWU"].includes(item.institution)
+          ) {
+            throw new Error("Invalid property data.");
+          }
+
+          const code = item.code.trim();
+
+          if (!code || seen.has(code)) {
+            throw new Error("Duplicate or empty property.");
+          }
+
+          seen.add(code);
+
+          next[item.institution].push({
+            value: code,
+            label: code.replace(/\(/g, " (")
+          });
+        });
+
+        // Update available properties.
+
+        PROPERTIES = next;
+        propertiesLoaded = true;
+
+        // Automatically select correct institution
+        // when arriving from a property card.
+
+        const propertyInstitution =
+          getPropertyInstitution(requestedProperty);
+
+        if (propertyInstitution) {
+
+          institutionSelect.value =
+            propertyInstitution;
+
+        } else if (
+          requestedInstitution === "VUT" ||
+          requestedInstitution === "NWU"
+        ) {
+
+          institutionSelect.value =
+            requestedInstitution;
+
+        } else {
+
+          institutionSelect.value = "VUT";
+        }
+
+        institutionSelect.disabled = false;
+
+        updateAccommodationOptions(
+          requestedProperty
+        );
+
+        if (
+          requestedProperty &&
+          !propertyInstitution
+        ) {
+          showError(
+            "This accommodation is currently unavailable. " +
+            "Please select another property."
+          );
+        }
+
+        propertyHelp.textContent =
+          "Choose your preferred accommodation.";
+
+      } catch (error) {
+
+        // Never use outdated hardcoded properties
+        // if the live service fails.
+
+        PROPERTIES = {
+          VUT: [],
+          NWU: []
+        };
+
+        propertiesLoaded = false;
+
+        institutionSelect.disabled = false;
+
+        updateAccommodationOptions();
+
+        propertyHelp.textContent =
+          "Accommodation options could not be loaded.";
+
+        showError(
+          "Accommodation options are temporarily unavailable. " +
+          "Please try again later."
+        );
       }
     }
 
@@ -1557,48 +1397,9 @@
         }
 
         clearMessages();
-
         updateAccommodationOptions();
-
       }
     );
-
-    // =====================================
-    // INITIALIZE INSTITUTION AND PROPERTY
-    // =====================================
-
-    function initializeApplicationForm() {
-
-      const propertyInstitution =
-        getPropertyInstitution(
-          requestedProperty
-        );
-
-      if (propertyInstitution) {
-
-        institutionSelect.value =
-          propertyInstitution;
-
-      } else if (
-        requestedInstitution === "VUT" ||
-        requestedInstitution === "NWU"
-      ) {
-
-        institutionSelect.value =
-          requestedInstitution;
-
-      } else {
-
-        institutionSelect.value = "VUT";
-
-      }
-
-      updateAccommodationOptions(
-        requestedProperty || ""
-      );
-    }
-
-    initializeApplicationForm();
 
     // =====================================
     // FORM SUBMISSION
@@ -1619,9 +1420,8 @@
 
         clearMessages();
 
-        // =================================
-        // INSTITUTION AND PROPERTY
-        // =================================
+        // Verify selected property belongs
+        // to the selected institution.
 
         const institution =
           institutionSelect.value;
@@ -1630,37 +1430,22 @@
           accommodationSelect.value;
 
         const validProperty =
+          propertiesLoaded &&
           (PROPERTIES[institution] || []).some(
-            function(property) {
-
-              return property.value === accommodation;
-
-            }
+            property => property.value === accommodation
           );
 
         if (!validProperty) {
 
           showError(
-            "Please select a valid accommodation."
+            "Please select a valid available accommodation."
           );
 
           return;
         }
 
-        // Prevent unsupported NWU submissions
-        // until backend integration is complete.
-        // No development information is shown
-        // in the institution information box.
-
-        if (
-          institution === "NWU" &&
-          !INSTITUTION_BACKEND_READY
-        ) {
-          return;
-        }
-
         // =================================
-        // FULL NAMES
+        // APPLICATION DETAILS
         // =================================
 
         const name =
@@ -1671,37 +1456,29 @@
 
         const phone =
           document.getElementById("phone")
-            .value
-            .trim();
+            .value.trim();
 
         const funding =
-          document.getElementById("funding")
-            .value;
+          document.getElementById("funding").value;
 
         const gender =
-          document.getElementById("gender")
-            .value;
+          document.getElementById("gender").value;
 
         const year =
-          document.getElementById("year")
-            .value;
+          document.getElementById("year").value;
 
         if (!form.reportValidity()) {
           return;
         }
 
-        // Require a first name and surname.
-        // Keep the backend field name "name"
-        // for compatibility.
+        // Require first name and surname.
 
         const nameParts =
           name.split(/\s+/);
 
         if (
           nameParts.length < 2 ||
-          nameParts.some(function(part) {
-            return part.length < 2;
-          })
+          nameParts.some(part => part.length < 2)
         ) {
 
           showError(
@@ -1709,14 +1486,13 @@
             "and surname instead of initials."
           );
 
-          document.getElementById("name")
-            .focus();
+          document.getElementById("name").focus();
 
           return;
         }
 
         // =================================
-        // SECURITY VERIFICATION
+        // TURNSTILE
         // =================================
 
         const tokenElement =
@@ -1724,9 +1500,8 @@
             '[name="cf-turnstile-response"]'
           );
 
-        const token = tokenElement
-          ? tokenElement.value
-          : "";
+        const token =
+          tokenElement ? tokenElement.value : "";
 
         if (!token) {
 
@@ -1741,9 +1516,7 @@
         submissionInProgress = true;
 
         submitButton.disabled = true;
-
         institutionSelect.disabled = true;
-
         accommodationSelect.disabled = true;
 
         submitButton.textContent =
@@ -1753,31 +1526,16 @@
         // BACKEND PAYLOAD
         // =================================
 
-        // Existing VUT fields remain
-        // fully compatible with the
-        // current production Worker.
-
         const payload = {
-
           name,
           phone,
+          institution,
           accommodation,
           funding,
           gender,
           year,
           token
-
         };
-
-        // Only send the additional field
-        // after backend support is ready.
-
-        if (INSTITUTION_BACKEND_READY) {
-
-          payload.institution =
-            institution;
-
-        }
 
         try {
 
@@ -1789,11 +1547,9 @@
             WORKER_URL + "/submit",
             {
               method: "POST",
-
               headers: {
                 "Content-Type": "application/json"
               },
-
               body: JSON.stringify(payload)
             }
           );
@@ -1810,11 +1566,10 @@
               result.message ||
               "Your application could not be submitted."
             );
-
           }
 
           // =================================
-          // CHECK CONFIRMATION RESPONSE
+          // CHECK WHATSAPP RESPONSE
           // =================================
 
           if (
@@ -1828,20 +1583,19 @@
             submittedSuccessfully = true;
 
             throw new Error(
-              "Your application was saved, but " +
-              "WhatsApp confirmation details are " +
-              "unavailable. Please contact our team " +
-              "before submitting again."
+              "Your application was saved, but WhatsApp " +
+              "confirmation details are unavailable. " +
+              "Please contact our team before submitting again."
             );
           }
 
           submittedSuccessfully = true;
 
-          successMessage.hidden = false;
-
           // =================================
           // SUCCESS MESSAGE
           // =================================
+
+          successMessage.hidden = false;
 
           const successText =
             document.createElement("strong");
@@ -1860,7 +1614,7 @@
           explanation.style.margin = "8px 0 0";
 
           // =================================
-          // WHATSAPP BUTTON
+          // WHATSAPP CONFIRMATION BUTTON
           // =================================
 
           const whatsappButton =
@@ -1885,8 +1639,8 @@
             "message. You must press Send in " +
             "WhatsApp to complete confirmation.";
 
-          instructions.style.marginBottom = "0";
           instructions.style.fontSize = "12px";
+          instructions.style.marginBottom = "0";
 
           successMessage.append(
             successText,
@@ -1901,7 +1655,7 @@
           });
 
           // =================================
-          // WHATSAPP CLICK TRACKING
+          // TRACK WHATSAPP CLICK
           // =================================
 
           whatsappButton.addEventListener(
@@ -1917,8 +1671,8 @@
               whatsappButton.textContent =
                 "Connecting to WhatsApp...";
 
-              // Open a tab during the click
-              // to reduce popup blocking.
+              // Open tab immediately during click
+              // to avoid browser popup blocking.
 
               const whatsappWindow =
                 window.open(
@@ -1934,9 +1688,8 @@
                   "Confirm via WhatsApp ↗";
 
                 showError(
-                  "Your browser blocked the WhatsApp " +
-                  "window. Please allow pop-ups " +
-                  "and try again."
+                  "Your browser blocked the WhatsApp window. " +
+                  "Please allow pop-ups and try again."
                 );
 
                 return;
@@ -1944,27 +1697,18 @@
 
               try {
 
-                // =========================
-                // RECORD WHATSAPP CLICK
-                // =========================
-
-                const trackingResponse =
-                  await fetch(
-                    WORKER_URL + "/track-click",
-                    {
-                      method: "POST",
-
-                      headers: {
-                        "Content-Type":
-                          "application/json"
-                      },
-
-                      body: JSON.stringify({
-                        trackingToken:
-                          result.trackingToken
-                      })
-                    }
-                  );
+                const trackingResponse = await fetch(
+                  WORKER_URL + "/track-click",
+                  {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                      trackingToken: result.trackingToken
+                    })
+                  }
+                );
 
                 const trackingResult =
                   await trackingResponse.json();
@@ -1982,17 +1726,16 @@
                     "Try Confirmation Again";
 
                   showError(
-                    "Your application was saved, " +
-                    "but WhatsApp confirmation could " +
-                    "not be recorded. Please try again."
+                    "Your application was saved, but " +
+                    "WhatsApp confirmation could not be " +
+                    "recorded. Please try again."
                   );
 
                   return;
                 }
 
-                // =========================
-                // OPEN ORIGINAL WHATSAPP URL
-                // =========================
+                // Open the original URL
+                // returned by Cloudflare Worker.
 
                 errorMessage.textContent = "";
                 errorMessage.hidden = true;
@@ -2013,11 +1756,8 @@
                   "until you send the message and " +
                   "we verify that it arrived.";
 
-                clickNotice.style.fontWeight =
-                  "700";
-
-                clickNotice.style.marginBottom =
-                  "0";
+                clickNotice.style.fontWeight = "700";
+                clickNotice.style.marginBottom = "0";
 
                 successMessage.appendChild(
                   clickNotice
@@ -2033,26 +1773,16 @@
                   "Try Confirmation Again";
 
                 showError(
-                  "Your application was saved, " +
-                  "but we could not record your " +
-                  "WhatsApp confirmation. " +
-                  "Please try again."
+                  "Your application was saved, but we " +
+                  "could not record your WhatsApp " +
+                  "confirmation. Please try again."
                 );
-
               }
             }
           );
 
-          // =================================
-          // SUBMISSION COMPLETED
-          // =================================
-
           submitButton.textContent =
             "Application Submitted";
-
-          if (window.turnstile) {
-            window.turnstile.reset();
-          }
 
         } catch (error) {
 
@@ -2061,11 +1791,11 @@
             "Something went wrong. Please try again."
           );
 
+        } finally {
+
           if (window.turnstile) {
             window.turnstile.reset();
           }
-
-        } finally {
 
           submissionInProgress = false;
 
@@ -2080,17 +1810,24 @@
           } else {
 
             submitButton.disabled = true;
-
             institutionSelect.disabled = true;
             accommodationSelect.disabled = true;
 
             submitButton.textContent =
               "Application Submitted";
-
           }
         }
       }
     );
+
+    // =====================================
+    // INITIAL LOAD
+    // =====================================
+
+    // Application submission stays disabled
+    // until active properties are loaded.
+
+    loadActiveProperties();
 
   </script>
 
