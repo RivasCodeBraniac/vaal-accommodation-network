@@ -1,305 +1,2098 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vaal Accommodation Network | Scheduled Maintenance</title>
+  <meta name="description"
+    content="Apply for student accommodation for the 2027 academic year through Vaal Accommodation Network. Serving VUT and NWU Vanderbijlpark students.">
 
-    <meta name="description" content="Vaal Accommodation Network is temporarily under maintenance. Student accommodation applications for 2027 will resume Thursday at 1:00 PM.">
+  <meta name="theme-color" content="#12345b">
 
-    <meta name="robots" content="index, follow">
+  <title>Apply Now | Vaal Accommodation Network</title>
 
-    <style>
-        :root {
-            --navy: #12345b;
-            --navy-light: #1b4777;
-            --gold: #a87800;
-            --gold-light: #f5edda;
-            --light: #f5f7fa;
-            --white: #ffffff;
-            --text: #263445;
-            --muted: #64748b;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--light);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+  <style>
+    :root {
+      --navy: #12345b;
+      --deep: #0c2746;
+      --navy-light: #1b4777;
+      --gold: #a87800;
+      --gold-dark: #896200;
+      --cream: #f7f0df;
+      --page: #f4f6fa;
+      --ink: #203248;
+      --muted: #64748b;
+      --line: #e1e7ef;
+      --white: #fff;
+      --red: #b42318;
+      --green: #167245;
+    }
 
-        header {
-            background: var(--navy);
-            color: var(--white);
-            padding: 22px 6%;
-            border-bottom: 4px solid var(--gold);
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .header-content {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .logo {
-            width: 58px;
-            height: 58px;
-            object-fit: contain;
-            background: var(--white);
-            border-radius: 10px;
-            padding: 4px;
-        }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 15px/1.6 'DM Sans', Arial, sans-serif;
+    }
 
-        .brand h1 {
-            font-size: 21px;
-            line-height: 1.4;
-        }
+    button,
+    input,
+    select {
+      font: inherit;
+    }
 
-        .brand p {
-            color: #e0e8f2;
-            font-size: 13px;
-            margin-top: 3px;
-        }
+    a {
+      color: inherit;
+    }
 
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 55px 20px;
-        }
+    .shell {
+      width: min(1140px, calc(100% - 40px));
+      margin: auto;
+    }
 
-        .maintenance-card {
-            background: var(--white);
-            width: 100%;
-            max-width: 720px;
-            padding: 48px 35px;
-            text-align: center;
-            border-radius: 18px;
-            box-shadow: 0 10px 35px rgba(18, 52, 91, 0.09);
-            border-top: 5px solid var(--gold);
-        }
+    .site-header {
+      background: var(--deep);
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
 
-        .icon-circle {
-            width: 82px;
-            height: 82px;
-            margin: 0 auto 25px;
-            background: var(--gold-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 38px;
-        }
+    .header-inner {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .status {
-            display: inline-block;
-            background: var(--gold-light);
-            color: var(--gold);
-            padding: 9px 16px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      min-width: 0;
+    }
 
-        h2 {
-            color: var(--navy);
-            font-size: 34px;
-            line-height: 1.3;
-            margin-bottom: 18px;
-        }
+    .brand img {
+      width: 57px;
+      height: 57px;
+      object-fit: contain;
+      background: white;
+      border-radius: 12px;
+      padding: 4px;
+    }
 
-        .intro {
-            color: var(--muted);
-            font-size: 16px;
-            line-height: 1.8;
-            max-width: 540px;
-            margin: 0 auto 28px;
-        }
+    .brand-name {
+      font-family: Manrope, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -.4px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
 
-        .resume-box {
-            background: var(--navy);
-            color: var(--white);
-            border-radius: 12px;
-            padding: 25px 15px;
-            margin: 0 auto 25px;
-        }
+    .brand-tagline {
+      font-size: 12px;
+      color: #cad7e5;
+      margin-top: 3px;
+    }
 
-        .resume-box p {
-            font-size: 13px;
-            color: #e0e8f2;
-            margin-bottom: 9px;
-        }
+    .home-link {
+      border: 1px solid rgba(255,255,255,.32);
+      border-radius: 10px;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: .2s;
+    }
 
-        .resume-box h3 {
-            font-size: 25px;
-            color: #f5d58a;
-            line-height: 1.4;
-        }
+    .home-link:hover,
+    .home-link:focus-visible {
+      background: rgba(255,255,255,.1);
+    }
 
-        .resume-box span {
-            display: block;
-            font-size: 14px;
-            color: var(--white);
-            margin-top: 6px;
-        }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(
+        120deg,
+        #0c2746 0%,
+        #12345b 55%,
+        #22527d 100%
+      );
+      color: white;
+      padding: 61px 0 104px;
+    }
 
-        .notice {
-            font-size: 14px;
-            color: var(--muted);
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
+    .hero:before,
+    .hero:after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-        .contact-button {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--white);
-            text-decoration: none;
-            padding: 14px 25px;
-            border-radius: 7px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: background 0.2s ease;
-        }
+    .hero:before {
+      width: 470px;
+      height: 470px;
+      right: -130px;
+      top: -260px;
+    }
 
-        .contact-button:hover {
-            background: #896200;
-        }
+    .hero:after {
+      width: 320px;
+      height: 320px;
+      right: 80px;
+      top: -165px;
+    }
 
-        footer {
-            background: var(--navy);
-            color: #e0e8f2;
-            text-align: center;
-            padding: 24px 15px;
-            font-size: 12px;
-            line-height: 1.8;
-        }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 790px;
+      text-align: center;
+    }
 
-        footer strong {
-            color: var(--white);
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #f0d89d;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
 
-        @media (max-width: 600px) {
-            header {
-                padding: 18px 5%;
-            }
+    .eyebrow:before {
+      content: "";
+      width: 23px;
+      height: 2px;
+      background: #d9ad50;
+    }
 
-            .logo {
-                width: 48px;
-                height: 48px;
-            }
+    .hero h1 {
+      font: 800 clamp(30px,5vw,48px)/1.18
+        Manrope, Arial, sans-serif;
+      letter-spacing: -1.5px;
+      margin: 17px 0 13px;
+    }
 
-            .brand h1 {
-                font-size: 17px;
-            }
+    .hero p {
+      color: #dce7f3;
+      max-width: 610px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
 
-            .brand p {
-                font-size: 12px;
-            }
+    .page-main {
+      width: min(1040px, calc(100% - 40px));
+      margin: -65px auto 65px;
+      position: relative;
+      z-index: 2;
+    }
 
-            main {
-                padding: 35px 15px;
-            }
+    .application-layout {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 280px;
+      align-items: start;
+      gap: 24px;
+    }
 
-            .maintenance-card {
-                padding: 35px 22px;
-            }
+    .form-card,
+    .aside-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      box-shadow: 0 12px 35px rgba(12,39,70,.07);
+    }
 
-            h2 {
-                font-size: 27px;
-            }
+    .form-card {
+      padding: 34px 36px 38px;
+    }
 
-            .intro {
-                font-size: 14px;
-            }
+    .section-kicker {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
 
-            .resume-box h3 {
-                font-size: 22px;
-            }
-        }
-    </style>
+    .form-card h2 {
+      font: 800 25px/1.3 Manrope, Arial, sans-serif;
+      letter-spacing: -.7px;
+      color: var(--navy);
+      margin: 7px 0;
+    }
+
+    .intro {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .rule {
+      height: 1px;
+      background: var(--line);
+      margin: 24px 0;
+    }
+
+    .notice {
+      display: flex;
+      gap: 12px;
+      background: #fbf6ea;
+      border: 1px solid #efe1bd;
+      border-left: 4px solid var(--gold);
+      padding: 15px;
+      border-radius: 9px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 26px;
+    }
+
+    .notice-mark {
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #f1e1b8;
+      color: #805a00;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .notice strong {
+      color: var(--navy);
+    }
+
+    .group-title {
+      font: 800 14px Manrope, Arial, sans-serif;
+      color: var(--navy);
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .group-title span {
+      width: 27px;
+      height: 27px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #edf2f8;
+      color: var(--navy-light);
+      font-size: 12px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 20px 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .required {
+      color: var(--gold);
+      margin-left: 3px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 49px;
+      border: 1px solid #d5dee9;
+      border-radius: 9px;
+      padding: 12px 13px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 14px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    input::placeholder {
+      color: #96a3b3;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(168,120,0,.12);
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    select:disabled {
+      background: #f1f4f8;
+      cursor: not-allowed;
+    }
+
+    .field-help {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .institution-info {
+      background: #edf3fa;
+      border: 1px solid #d5e4f3;
+      border-radius: 9px;
+      padding: 14px;
+      font-size: 12px;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    .institution-info strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .security-area {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      padding: 18px;
+      margin-top: 27px;
+    }
+
+    .security-area label {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .turnstile-wrap {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .submit-button {
+      width: 100%;
+      margin-top: 23px;
+      min-height: 53px;
+      background: var(--gold);
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(168,120,0,.17);
+      transition: background .2s, transform .2s;
+    }
+
+    .submit-button:hover:not(:disabled) {
+      background: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
+    .submit-button:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    .after-submit {
+      margin: 13px 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .status-message {
+      margin-top: 20px;
+      padding: 17px;
+      border-radius: 10px;
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    #successMessage {
+      background: #edf9f0;
+      border: 1px solid #b8e1c6;
+      color: #14532d;
+    }
+
+    #errorMessage {
+      background: #fff0ef;
+      border: 1px solid #f4c4c0;
+      color: var(--red);
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      background: #198b4d;
+      color: white;
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 13px;
+    }
+
+    .whatsapp-button:hover:not(:disabled) {
+      background: #13703d;
+    }
+
+    .whatsapp-button:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    .aside {
+      display: grid;
+      gap: 17px;
+    }
+
+    .aside-card {
+      padding: 24px;
+    }
+
+    .aside-title {
+      font: 800 16px Manrope, Arial, sans-serif;
+      color: var(--navy);
+      margin: 0 0 17px;
+    }
+
+    .step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-number {
+      flex: 0 0 29px;
+      height: 29px;
+      border-radius: 9px;
+      background: var(--cream);
+      color: var(--gold-dark);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 12px;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .step p {
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .support-card {
+      background: var(--deep);
+      color: white;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .support-card h3 {
+      font: 800 16px Manrope, Arial, sans-serif;
+      margin: 0 0 9px;
+    }
+
+    .support-card p {
+      color: #cdd9e7;
+      font-size: 12px;
+      margin: 0 0 17px;
+    }
+
+    .support-link {
+      display: inline-flex;
+      text-decoration: none;
+      background: white;
+      color: var(--navy);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .privacy-note {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 0 3px;
+    }
+
+    .site-footer {
+      background: var(--deep);
+      color: white;
+      padding: 33px 20px;
+      text-align: center;
+    }
+
+    .footer-name {
+      font: 800 15px Manrope, Arial, sans-serif;
+      margin: 0 0 5px;
+    }
+
+    .site-footer p {
+      font-size: 12px;
+      color: #c8d5e4;
+      margin: 5px 0;
+    }
+
+    @media(max-width:850px) {
+      .application-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .aside {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .privacy-note {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media(max-width:600px) {
+      .shell,
+      .page-main {
+        width: calc(100% - 26px);
+      }
+
+      .header-inner {
+        min-height: 79px;
+      }
+
+      .brand img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .brand-name {
+        font-size: 13px;
+      }
+
+      .brand-tagline {
+        font-size: 10px;
+      }
+
+      .home-link {
+        padding: 9px 11px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 45px 0 91px;
+      }
+
+      .hero h1 {
+        letter-spacing: -.9px;
+      }
+
+      .form-card {
+        padding: 25px 19px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: auto;
+      }
+
+      .aside {
+        grid-template-columns: 1fr;
+      }
+
+      .privacy-note {
+        grid-column: auto;
+      }
+
+      .page-main {
+        margin-top: -58px;
+      }
+
+      .notice {
+        font-size: 12px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *,
+      *:before,
+      *:after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer>
+  </script>
 </head>
 
 <body>
 
-    <header>
-        <div class="header-content">
+  <!-- HEADER -->
 
-            <!-- Replace logo.jpg with your logo filename if necessary -->
-            <img
-                src="logo.jpg"
-                alt="Vaal Accommodation Network Logo"
-                class="logo"
-            >
+  <header class="site-header">
+    <div class="shell header-inner">
 
-            <div class="brand">
-                <h1>Vaal Accommodation Network</h1>
-                <p>Student Accommodation for 2027</p>
-            </div>
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Vaal Accommodation Network home">
+
+        <img
+          src="logo.jpg"
+          alt="Vaal Accommodation Network logo">
+
+        <div>
+          <div class="brand-name">
+            Vaal Accommodation Network
+          </div>
+
+          <div class="brand-tagline">
+            Student Accommodation for 2027
+          </div>
+        </div>
+      </a>
+
+      <a class="home-link" href="index.html">
+        ← Back to Home
+      </a>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="shell hero-inner">
+
+      <span class="eyebrow">
+        2027 Student Applications
+      </span>
+
+      <h1>
+        Find your place.<br>
+        Start your application.
+      </h1>
+
+      <p>
+        Find student accommodation in the Vaal area.
+        Select your institution, choose your preferred
+        property and complete your application.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- APPLICATION -->
+
+  <main class="page-main">
+
+    <div class="application-layout">
+
+      <section
+        class="form-card"
+        aria-labelledby="formTitle">
+
+        <span class="section-kicker">
+          Accommodation Application
+        </span>
+
+        <h2 id="formTitle">
+          Apply for 2027
+        </h2>
+
+        <p class="intro">
+          Complete your details carefully.
+          Fields marked * are required.
+        </p>
+
+        <div class="rule"></div>
+
+        <!-- NOTICE -->
+
+        <div class="notice">
+
+          <span
+            class="notice-mark"
+            aria-hidden="true">
+            i
+          </span>
+
+          <div>
+            <strong>Before you apply</strong><br>
+
+            Submitting an application does not
+            reserve or guarantee a room.
+
+            After successful submission, open
+            WhatsApp and send the prepared
+            confirmation message.
+          </div>
 
         </div>
-    </header>
 
-    <main>
-        <section class="maintenance-card">
+        <form id="applicationForm">
 
-            <div class="icon-circle">🔧</div>
+          <!-- PERSONAL DETAILS -->
 
-            <div class="status">SCHEDULED MAINTENANCE</div>
+          <h3 class="group-title">
+            <span>01</span>
+            Personal details
+          </h3>
 
-            <h2>We'll Be Back Soon!</h2>
+          <div class="form-grid">
 
-            <p class="intro">
-                Our website is temporarily under maintenance as we make
-                improvements to provide you with a better student
-                accommodation application experience.
-                We apologise for any inconvenience.
-            </p>
+            <div class="field full">
 
-            <div class="resume-box">
-                <p>APPLICATIONS WILL RESUME</p>
-                <h3>25 October 2026,Sunday at 12:00 PM</h3>
-                <span>Student Accommodation 2027</span>
+              <label for="name">
+                Full Names
+                <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                maxlength="120"
+                autocomplete="name"
+                placeholder="e.g. Thabo Mokoena"
+                required>
+
+              <span class="field-help">
+                Enter your full first name(s)
+                and surname.
+              </span>
+
             </div>
 
-            <p class="notice">
-                Please return when applications reopen.
-                Thank you for your patience and interest in
-                Vaal Accommodation Network.
-            </p>
+            <div class="field full">
 
-            <a
-                href="https://wa.me/message/C3XPVKIU5QH5P1"
-                class="contact-button"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Contact Us on WhatsApp
-            </a>
+              <label for="phone">
+                WhatsApp Number
+                <span class="required">*</span>
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                inputmode="tel"
+                placeholder="e.g. 0721234567"
+                required>
+
+              <span class="field-help">
+                Enter a valid South African mobile number
+                so we can contact you.
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="rule"></div>
+
+          <!-- INSTITUTION -->
+
+          <h3 class="group-title">
+            <span>02</span>
+            Institution
+          </h3>
+
+          <div class="form-grid">
+
+            <div class="field full">
+
+              <label for="institution">
+                Select Institution
+                <span class="required">*</span>
+              </label>
+
+              <select
+                id="institution"
+                name="institution"
+                required>
+
+                <option value="" disabled>
+                  Choose your institution
+                </option>
+
+                <option value="VUT" selected>
+                  Vaal University of Technology (VUT)
+                </option>
+
+                <option value="NWU">
+                  North-West University (NWU Vanderbijlpark)
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="field full">
+
+              <div
+                id="institutionInfo"
+                class="institution-info"
+                role="status"
+                aria-live="polite">
+
+                <strong>
+                  Vaal University of Technology
+                </strong>
+
+                Select your preferred accommodation.
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="rule"></div>
+
+          <!-- ACCOMMODATION PREFERENCES -->
+
+          <h3 class="group-title">
+            <span>03</span>
+            Accommodation preferences
+          </h3>
+
+          <div class="form-grid">
+
+            <div class="field">
+
+              <label for="accommodation">
+                Select Accommodation
+                <span class="required">*</span>
+              </label>
+
+              <select
+                id="accommodation"
+                name="accommodation"
+                required>
+
+                <option value="" disabled selected>
+                  Choose a property
+                </option>
+
+              </select>
+
+              <span
+                class="field-help"
+                id="propertyHelp">
+
+                Choose your preferred accommodation.
+
+              </span>
+
+            </div>
+
+            <div class="field">
+
+              <label for="funding">
+                Funding Type
+                <span class="required">*</span>
+              </label>
+
+              <select
+                id="funding"
+                name="funding"
+                required>
+
+                <option value="" disabled selected>
+                  Choose funding
+                </option>
+
+                <option value="NSFAS">
+                  NSFAS
+                </option>
+
+                <option value="Bursary">
+                  Private Bursary
+                </option>
+
+                <option value="Self-funded">
+                  Self-funded
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="field">
+
+              <label for="gender">
+                Gender
+                <span class="required">*</span>
+              </label>
+
+              <select
+                id="gender"
+                name="gender"
+                required>
+
+                <option value="" disabled selected>
+                  Select gender
+                </option>
+
+                <option value="Female">
+                  Female
+                </option>
+
+                <option value="Male">
+                  Male
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="field">
+
+              <label for="year">
+                Year of Study in 2027
+                <span class="required">*</span>
+              </label>
+
+              <select
+                id="year"
+                name="year"
+                required>
+
+                <option value="" disabled selected>
+                  Select year of study
+                </option>
+
+                <option value="6 months">
+                  6 Months
+                </option>
+
+                <option value="1st Year(Full Year)">
+                  1st Year
+                </option>
+
+                <option value="2nd Year(Full Year)">
+                  2nd Year
+                </option>
+
+                <option value="3rd Year(Full Year)">
+                  3rd Year
+                </option>
+
+                <option value="4th Year(Full Year)">
+                  4th Year
+                </option>
+
+                <option value="5th Year(Full Year)">
+                  5th Year
+                </option>
+
+                <option value="Postgraduate">
+                  Postgraduate
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <!-- SECURITY VERIFICATION -->
+
+          <div class="security-area">
+
+            <label>
+              Security Verification
+              <span class="required">*</span>
+            </label>
+
+            <div class="turnstile-wrap">
+
+              <!--
+                Insert your existing production
+                Cloudflare Turnstile site key.
+              -->
+
+              <div
+                class="cf-turnstile"
+                data-sitekey="">
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            id="submitButton"
+            class="submit-button">
+
+            Submit Application →
+
+          </button>
+
+          <p
+            class="after-submit"
+            id="submitHelp">
+
+            After submitting, use the WhatsApp
+            button to send your confirmation.
+
+          </p>
+
+          <div
+            id="successMessage"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+            hidden>
+          </div>
+
+          <div
+            id="errorMessage"
+            class="status-message"
+            role="alert"
+            aria-live="assertive"
+            hidden>
+          </div>
+
+        </form>
+
+      </section>
+
+      <!-- APPLICATION GUIDANCE -->
+
+      <aside
+        class="aside"
+        aria-label="Application guidance">
+
+        <section class="aside-card">
+
+          <h3 class="aside-title">
+            How it works
+          </h3>
+
+          <div class="step">
+            <span class="step-number">1</span>
+            <div>
+              <strong>Select your institution</strong>
+              <p>
+                Choose VUT or NWU Vanderbijlpark.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-number">2</span>
+            <div>
+              <strong>Choose accommodation</strong>
+              <p>
+                Select your preferred property.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-number">3</span>
+            <div>
+              <strong>Complete your application</strong>
+              <p>
+                Enter your full names, contact information
+                and accommodation preferences.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-number">4</span>
+            <div>
+              <strong>Confirm via WhatsApp</strong>
+              <p>
+                Open the prepared message and
+                press Send in WhatsApp.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-number">5</span>
+            <div>
+              <strong>Await a response</strong>
+              <p>
+                Your application will be reviewed
+                and you will be advised of the next steps.
+              </p>
+            </div>
+          </div>
 
         </section>
-    </main>
 
-    <footer>
-        <strong>Vaal Accommodation Network</strong>
-        <p>Connecting students with accommodation near Vaal University of Technology.</p>
-        <p>&copy; 2026 Vaal Accommodation Network. All rights reserved.</p>
-    </footer>
+        <!-- SUPPORT -->
+
+        <section class="support-card">
+
+          <h3>Need assistance?</h3>
+
+          <p>
+            Have a question about student accommodation
+            or your application?
+            Contact our team directly.
+          </p>
+
+          <a
+            class="support-link"
+            href="https://wa.me/27726643609"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Contact on WhatsApp ↗
+
+          </a>
+
+        </section>
+
+        <p class="privacy-note">
+          Your details are used to process your
+          accommodation application and communicate
+          with you about it. Only submit information
+          you are comfortable sharing for this purpose.
+        </p>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <p class="footer-name">
+      Vaal Accommodation Network
+    </p>
+
+    <p>
+      Student Accommodation for 2027
+    </p>
+
+    <p>
+      Accommodation for VUT and
+      NWU Vanderbijlpark students.
+    </p>
+
+    <p>
+      © 2026 Vaal Accommodation Network.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    "use strict";
+
+    // =====================================
+    // BACKEND CONFIGURATION
+    // =====================================
+
+    const WORKER_URL =
+      "https://vaal-accommodation-api.rivaldochiburre.workers.dev";
+
+    // Set this to true ONLY after the
+    // Worker and Google Sheets are updated
+    // to validate and store institutions.
+
+    const INSTITUTION_BACKEND_READY = true;
+
+    // =====================================
+    // FORM ELEMENTS
+    // =====================================
+
+    const form =
+      document.getElementById("applicationForm");
+
+    const submitButton =
+      document.getElementById("submitButton");
+
+    const successMessage =
+      document.getElementById("successMessage");
+
+    const errorMessage =
+      document.getElementById("errorMessage");
+
+    const institutionSelect =
+      document.getElementById("institution");
+
+    const accommodationSelect =
+      document.getElementById("accommodation");
+
+    const institutionInfo =
+      document.getElementById("institutionInfo");
+
+    const propertyHelp =
+      document.getElementById("propertyHelp");
+
+    const submitHelp =
+      document.getElementById("submitHelp");
+
+    let submissionInProgress = false;
+    let submittedSuccessfully = false;
+
+    // =====================================
+    // ALL ACCOMMODATION PROPERTIES
+    // =====================================
+
+    const PROPERTIES = {
+
+      VUT: [
+
+        {
+          value: "BW-02",
+          label: "BW-02"
+        },
+
+        {
+          value: "SW-01",
+          label: "SW-01"
+        },
+
+        {
+          value: "SW-02",
+          label: "SW-02"
+        },
+
+        {
+          value: "SW-03(Females Only)",
+          label: "SW-03 (Females Only)"
+        }
+
+      ],
+
+      NWU: [
+
+        {
+          value: "NWU-01",
+          label: "NWU-01"
+        }
+
+      ]
+
+    };
+
+    // =====================================
+    // PROPERTY URL PARAMETERS
+    // =====================================
+
+    const urlParams =
+      new URLSearchParams(window.location.search);
+
+    const requestedProperty =
+      urlParams.get("property");
+
+    const requestedInstitution =
+      urlParams.get("institution");
+
+    // =====================================
+    // FIND PROPERTY INSTITUTION
+    // =====================================
+
+    function getPropertyInstitution(propertyCode) {
+
+      for (
+        const institution of Object.keys(PROPERTIES)
+      ) {
+
+        const found =
+          PROPERTIES[institution].some(
+            function(property) {
+
+              return property.value === propertyCode;
+
+            }
+          );
+
+        if (found) {
+          return institution;
+        }
+
+      }
+
+      return "";
+    }
+
+    // =====================================
+    // FORM MESSAGES
+    // =====================================
+
+    function showError(message) {
+
+      errorMessage.textContent = message;
+      errorMessage.hidden = false;
+
+    }
+
+    function clearMessages() {
+
+      successMessage.replaceChildren();
+      successMessage.hidden = true;
+
+      errorMessage.textContent = "";
+      errorMessage.hidden = true;
+
+    }
+
+    // =====================================
+    // UPDATE PROPERTY SELECTION
+    // =====================================
+
+    function updateAccommodationOptions(
+      preferredProperty = ""
+    ) {
+
+      const institution =
+        institutionSelect.value;
+
+      const properties =
+        PROPERTIES[institution] || [];
+
+      accommodationSelect.replaceChildren();
+
+      const placeholder =
+        document.createElement("option");
+
+      placeholder.value = "";
+      placeholder.disabled = true;
+      placeholder.textContent = "Choose a property";
+
+      accommodationSelect.appendChild(placeholder);
+
+      properties.forEach(function(property) {
+
+        const option =
+          document.createElement("option");
+
+        option.value = property.value;
+        option.textContent = property.label;
+
+        accommodationSelect.appendChild(option);
+
+      });
+
+      accommodationSelect.value = "";
+
+      // Automatically select a property when
+      // the visitor uses an Apply Now link.
+
+      const hasMatchingProperty =
+        properties.some(function(property) {
+
+          return property.value === preferredProperty;
+
+        });
+
+      if (hasMatchingProperty) {
+
+        accommodationSelect.value =
+          preferredProperty;
+
+      }
+
+      accommodationSelect.disabled =
+        submissionInProgress ||
+        submittedSuccessfully ||
+        properties.length === 0;
+
+      // =================================
+      // SIMPLE INSTITUTION INFORMATION
+      // =================================
+
+      institutionInfo.className =
+        "institution-info";
+
+      institutionInfo.replaceChildren();
+
+      const heading =
+        document.createElement("strong");
+
+      const description =
+        document.createElement("span");
+
+      if (institution === "NWU") {
+
+        heading.textContent =
+          "North-West University — Vanderbijlpark";
+
+        description.textContent =
+          "Accommodation: NWU-01";
+
+      } else {
+
+        heading.textContent =
+          "Vaal University of Technology";
+
+        description.textContent =
+          "Select your preferred accommodation.";
+
+      }
+
+      institutionInfo.append(
+        heading,
+        description
+      );
+
+      propertyHelp.textContent =
+        "Choose your preferred accommodation.";
+
+      submitHelp.textContent =
+        "After submitting, use the WhatsApp button " +
+        "to send your confirmation.";
+
+      // =================================
+      // SUBMISSION AVAILABILITY
+      // =================================
+
+      const canSubmit =
+        properties.length > 0 &&
+        (
+          institution !== "NWU" ||
+          INSTITUTION_BACKEND_READY
+        );
+
+      if (submittedSuccessfully) {
+
+        submitButton.disabled = true;
+        submitButton.textContent =
+          "Application Submitted";
+
+      } else if (submissionInProgress) {
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+
+      } else {
+
+        submitButton.disabled = !canSubmit;
+        submitButton.textContent =
+          "Submit Application →";
+
+      }
+    }
+
+    // =====================================
+    // INSTITUTION CHANGE
+    // =====================================
+
+    institutionSelect.addEventListener(
+      "change",
+      function() {
+
+        if (
+          submissionInProgress ||
+          submittedSuccessfully
+        ) {
+          return;
+        }
+
+        clearMessages();
+
+        updateAccommodationOptions();
+
+      }
+    );
+
+    // =====================================
+    // INITIALIZE INSTITUTION AND PROPERTY
+    // =====================================
+
+    function initializeApplicationForm() {
+
+      const propertyInstitution =
+        getPropertyInstitution(
+          requestedProperty
+        );
+
+      if (propertyInstitution) {
+
+        institutionSelect.value =
+          propertyInstitution;
+
+      } else if (
+        requestedInstitution === "VUT" ||
+        requestedInstitution === "NWU"
+      ) {
+
+        institutionSelect.value =
+          requestedInstitution;
+
+      } else {
+
+        institutionSelect.value = "VUT";
+
+      }
+
+      updateAccommodationOptions(
+        requestedProperty || ""
+      );
+    }
+
+    initializeApplicationForm();
+
+    // =====================================
+    // FORM SUBMISSION
+    // =====================================
+
+    form.addEventListener(
+      "submit",
+      async function(event) {
+
+        event.preventDefault();
+
+        if (
+          submissionInProgress ||
+          submittedSuccessfully
+        ) {
+          return;
+        }
+
+        clearMessages();
+
+        // =================================
+        // INSTITUTION AND PROPERTY
+        // =================================
+
+        const institution =
+          institutionSelect.value;
+
+        const accommodation =
+          accommodationSelect.value;
+
+        const validProperty =
+          (PROPERTIES[institution] || []).some(
+            function(property) {
+
+              return property.value === accommodation;
+
+            }
+          );
+
+        if (!validProperty) {
+
+          showError(
+            "Please select a valid accommodation."
+          );
+
+          return;
+        }
+
+        // Prevent unsupported NWU submissions
+        // until backend integration is complete.
+        // No development information is shown
+        // in the institution information box.
+
+        if (
+          institution === "NWU" &&
+          !INSTITUTION_BACKEND_READY
+        ) {
+          return;
+        }
+
+        // =================================
+        // FULL NAMES
+        // =================================
+
+        const name =
+          document.getElementById("name")
+            .value
+            .trim()
+            .replace(/\s+/g, " ");
+
+        const phone =
+          document.getElementById("phone")
+            .value
+            .trim();
+
+        const funding =
+          document.getElementById("funding")
+            .value;
+
+        const gender =
+          document.getElementById("gender")
+            .value;
+
+        const year =
+          document.getElementById("year")
+            .value;
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        // Require a first name and surname.
+        // Keep the backend field name "name"
+        // for compatibility.
+
+        const nameParts =
+          name.split(/\s+/);
+
+        if (
+          nameParts.length < 2 ||
+          nameParts.some(function(part) {
+            return part.length < 2;
+          })
+        ) {
+
+          showError(
+            "Please enter your full first name(s) " +
+            "and surname instead of initials."
+          );
+
+          document.getElementById("name")
+            .focus();
+
+          return;
+        }
+
+        // =================================
+        // SECURITY VERIFICATION
+        // =================================
+
+        const tokenElement =
+          document.querySelector(
+            '[name="cf-turnstile-response"]'
+          );
+
+        const token = tokenElement
+          ? tokenElement.value
+          : "";
+
+        if (!token) {
+
+          showError(
+            "Please complete the security " +
+            "verification and try again."
+          );
+
+          return;
+        }
+
+        submissionInProgress = true;
+
+        submitButton.disabled = true;
+
+        institutionSelect.disabled = true;
+
+        accommodationSelect.disabled = true;
+
+        submitButton.textContent =
+          "Submitting...";
+
+        // =================================
+        // BACKEND PAYLOAD
+        // =================================
+
+        // Existing VUT fields remain
+        // fully compatible with the
+        // current production Worker.
+
+        const payload = {
+
+          name,
+          phone,
+          accommodation,
+          funding,
+          gender,
+          year,
+          token
+
+        };
+
+        // Only send the additional field
+        // after backend support is ready.
+
+        if (INSTITUTION_BACKEND_READY) {
+
+          payload.institution =
+            institution;
+
+        }
+
+        try {
+
+          // =================================
+          // SUBMIT APPLICATION
+          // =================================
+
+          const response = await fetch(
+            WORKER_URL + "/submit",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type": "application/json"
+              },
+
+              body: JSON.stringify(payload)
+            }
+          );
+
+          const result =
+            await response.json();
+
+          if (
+            !response.ok ||
+            result.success !== true
+          ) {
+
+            throw new Error(
+              result.message ||
+              "Your application could not be submitted."
+            );
+
+          }
+
+          // =================================
+          // CHECK CONFIRMATION RESPONSE
+          // =================================
+
+          if (
+            typeof result.trackingToken !== "string" ||
+            typeof result.whatsappUrl !== "string" ||
+            !result.whatsappUrl.startsWith(
+              "https://wa.me/"
+            )
+          ) {
+
+            submittedSuccessfully = true;
+
+            throw new Error(
+              "Your application was saved, but " +
+              "WhatsApp confirmation details are " +
+              "unavailable. Please contact our team " +
+              "before submitting again."
+            );
+          }
+
+          submittedSuccessfully = true;
+
+          successMessage.hidden = false;
+
+          // =================================
+          // SUCCESS MESSAGE
+          // =================================
+
+          const successText =
+            document.createElement("strong");
+
+          successText.textContent =
+            "Application submitted successfully!";
+
+          const explanation =
+            document.createElement("p");
+
+          explanation.textContent =
+            "Your application has been saved. " +
+            "Click below to open WhatsApp and " +
+            "send the prepared message.";
+
+          explanation.style.margin = "8px 0 0";
+
+          // =================================
+          // WHATSAPP BUTTON
+          // =================================
+
+          const whatsappButton =
+            document.createElement("button");
+
+          whatsappButton.type = "button";
+
+          whatsappButton.id =
+            "whatsappConfirmButton";
+
+          whatsappButton.className =
+            "whatsapp-button";
+
+          whatsappButton.textContent =
+            "Confirm via WhatsApp ↗";
+
+          const instructions =
+            document.createElement("p");
+
+          instructions.textContent =
+            "WhatsApp will open with a prepared " +
+            "message. You must press Send in " +
+            "WhatsApp to complete confirmation.";
+
+          instructions.style.marginBottom = "0";
+          instructions.style.fontSize = "12px";
+
+          successMessage.append(
+            successText,
+            explanation,
+            whatsappButton,
+            instructions
+          );
+
+          successMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+
+          // =================================
+          // WHATSAPP CLICK TRACKING
+          // =================================
+
+          whatsappButton.addEventListener(
+            "click",
+            async function() {
+
+              if (whatsappButton.disabled) {
+                return;
+              }
+
+              whatsappButton.disabled = true;
+
+              whatsappButton.textContent =
+                "Connecting to WhatsApp...";
+
+              // Open a tab during the click
+              // to reduce popup blocking.
+
+              const whatsappWindow =
+                window.open(
+                  "about:blank",
+                  "_blank"
+                );
+
+              if (!whatsappWindow) {
+
+                whatsappButton.disabled = false;
+
+                whatsappButton.textContent =
+                  "Confirm via WhatsApp ↗";
+
+                showError(
+                  "Your browser blocked the WhatsApp " +
+                  "window. Please allow pop-ups " +
+                  "and try again."
+                );
+
+                return;
+              }
+
+              try {
+
+                // =========================
+                // RECORD WHATSAPP CLICK
+                // =========================
+
+                const trackingResponse =
+                  await fetch(
+                    WORKER_URL + "/track-click",
+                    {
+                      method: "POST",
+
+                      headers: {
+                        "Content-Type":
+                          "application/json"
+                      },
+
+                      body: JSON.stringify({
+                        trackingToken:
+                          result.trackingToken
+                      })
+                    }
+                  );
+
+                const trackingResult =
+                  await trackingResponse.json();
+
+                if (
+                  !trackingResponse.ok ||
+                  trackingResult.success !== true
+                ) {
+
+                  whatsappWindow.close();
+
+                  whatsappButton.disabled = false;
+
+                  whatsappButton.textContent =
+                    "Try Confirmation Again";
+
+                  showError(
+                    "Your application was saved, " +
+                    "but WhatsApp confirmation could " +
+                    "not be recorded. Please try again."
+                  );
+
+                  return;
+                }
+
+                // =========================
+                // OPEN ORIGINAL WHATSAPP URL
+                // =========================
+
+                errorMessage.textContent = "";
+                errorMessage.hidden = true;
+
+                whatsappWindow.location.replace(
+                  result.whatsappUrl
+                );
+
+                whatsappButton.textContent =
+                  "WhatsApp Opened";
+
+                const clickNotice =
+                  document.createElement("p");
+
+                clickNotice.textContent =
+                  "Your click has been recorded. " +
+                  "Your application is not confirmed " +
+                  "until you send the message and " +
+                  "we verify that it arrived.";
+
+                clickNotice.style.fontWeight =
+                  "700";
+
+                clickNotice.style.marginBottom =
+                  "0";
+
+                successMessage.appendChild(
+                  clickNotice
+                );
+
+              } catch (error) {
+
+                whatsappWindow.close();
+
+                whatsappButton.disabled = false;
+
+                whatsappButton.textContent =
+                  "Try Confirmation Again";
+
+                showError(
+                  "Your application was saved, " +
+                  "but we could not record your " +
+                  "WhatsApp confirmation. " +
+                  "Please try again."
+                );
+
+              }
+            }
+          );
+
+          // =================================
+          // SUBMISSION COMPLETED
+          // =================================
+
+          submitButton.textContent =
+            "Application Submitted";
+
+          if (window.turnstile) {
+            window.turnstile.reset();
+          }
+
+        } catch (error) {
+
+          showError(
+            error.message ||
+            "Something went wrong. Please try again."
+          );
+
+          if (window.turnstile) {
+            window.turnstile.reset();
+          }
+
+        } finally {
+
+          submissionInProgress = false;
+
+          if (!submittedSuccessfully) {
+
+            institutionSelect.disabled = false;
+
+            updateAccommodationOptions(
+              accommodation
+            );
+
+          } else {
+
+            submitButton.disabled = true;
+
+            institutionSelect.disabled = true;
+            accommodationSelect.disabled = true;
+
+            submitButton.textContent =
+              "Application Submitted";
+
+          }
+        }
+      }
+    );
+
+  </script>
 
 </body>
 </html>
